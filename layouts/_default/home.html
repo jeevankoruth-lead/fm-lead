@@ -1,11 +1,34 @@
 {{ define "main" }}
-<div class="split-container">
-  <a class="left-panel" href="/focus/">
-    <h1>FOCUS MINDSET</h1>
-  </a>
+<div class="hero-section">
+  <!-- Left Panel - Focus Mindset -->
+  <div class="hero-panel hero-panel-left">
+    <div class="hero-content">
+      <h1 class="hero-title">FOCUS MINDSET</h1>
+      <p class="hero-subtitle">Structured thinking for ambitious minds</p>
+      <a href="/focus/" class="hero-cta hero-cta-left">
+        <span>Explore Focus</span>
+        <svg class="cta-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </div>
 
-  <a class="right-panel" href="/muser/">
-    <h1>FREE MUSER</h1>
-  </a>
+  <!-- Right Panel - Free Muser -->
+  <div class="hero-panel hero-panel-right">
+    <div class="hero-content">
+      <h1 class="hero-title hero-title-muser">FREE MUSER</h1>
+      <p class="hero-subtitle">Creative exploration without boundaries</p>
+      <a href="/muser/" class="hero-cta hero-cta-right">
+        <span>Discover Muser</span>
+        <svg class="cta-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- Gradient Blend Overlay -->
+  <div class="hero-gradient-blend"></div>
 </div>
 {{ end }}
