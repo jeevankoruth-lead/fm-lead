@@ -99,8 +99,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Try explicit selectors first
-  const left = document.querySelector('.focus-seq') || document.querySelector('.left-panel');
-  const right = document.querySelector('.free-rand') || document.querySelector('.right-panel');
+  let left = document.querySelector('.focus-seq') || document.querySelector('.left-panel');
+  let right = document.querySelector('.free-rand') || document.querySelector('.right-panel');
 
   // If not found, search for visible elements that contain the keywords and have large font-size
   function findVisibleLargeKeyword(keyword) {
