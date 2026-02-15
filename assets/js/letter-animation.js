@@ -98,20 +98,31 @@ function initLetterAnimation() {
     setInterval(cycle, cycleTotal);
   }
 
-  // Try explicit selectors first
-  let left = document.querySelector('.left-panel h1') || document.querySelector('.focus-seq') || document.querySelector('.left-panel');
-  let right = document.querySelector('.right-panel h1') || document.querySelector('.free-rand') || document.querySelector('.right-panel');
+  // Try explicit selectors first with multiple fallback options
+  let left = document.querySelector('.left-panel h1') 
+    || document.querySelector('.left-panel')
+    || document.querySelector('.focus-seq');
+  let right = document.querySelector('.right-panel h1') 
+    || document.querySelector('.right-panel')
+    || document.querySelector('.free-rand');
 
   // If not found, search for visible elements that contain the keywords and have large font-size
   function findVisibleLargeKeyword(keyword) {
-    const candidates = Array.from(document.querySelectorAll('h1,h2,div,span'))
-      .filter(e => e.textContent && new RegExp(keyword, 'i').test(e.textContent) && e.offsetWidth > 0 && e.offsetHeight > 0);
+    const candidates = Array.from(document.querySelectorAll('*'))
+      .filter(e => {
+        if (!e.textContent) return false;
+        if (!new RegExp(keyword, 'i').test(e.textContent)) return false;
+        const pos = e.getBoundingClientRect();
+        return pos.width > 0 && pos.height > 0;
+      });
     if (!candidates.length) return null;
-    // prefer larger font-size
+    // prefer larger font-size and smaller text content (more likely to be title)
     candidates.sort((a, b) => {
       const fa = parseFloat(window.getComputedStyle(a).fontSize) || 0;
       const fb = parseFloat(window.getComputedStyle(b).fontSize) || 0;
-      return fb - fa;
+      const lenDiff = a.textContent.trim().length - b.textContent.trim().length;
+      if (fa !== fb) return fb - fa;
+      return lenDiff;
     });
     return candidates[0];
   }
@@ -132,14 +143,29 @@ function initLetterAnimation() {
 }
 
 function runLetterAnimation() {
-  const ok = initLetterAnimation();
-  if (!ok) {
-    setTimeout(initLetterAnimation, 500);
+  try {
+    const ok = initLetterAnimation();
+    if (!ok) {
+      // More aggressive retry strategy
+      setTimeout(() => initLetterAnimation(), 100);
+      setTimeout(() => initLetterAnimation(), 300);
+      setTimeout(() => initLetterAnimation(), 700);
+      setTimeout(() => initLetterAnimation(), 1500);
+    }
+  } catch (e) {
+    console.error('Letter animation error:', e);
   }
 }
 
+// Execute immediately if DOM is ready, otherwise wait
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", runLetterAnimation);
 } else {
   runLetterAnimation();
 }
+
+// Also try again after a short delay to catch late-loaded content
+window.addEventListener('load', () => {
+  setTimeout(runLetterAnimation, 100);
+});
+
