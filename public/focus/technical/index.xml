@@ -2,49 +2,49 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Technical on FM-Lead</title>
-    <link>https://example.org/focus/technical/</link>
+    <link>http://localhost:1313/focus/technical/</link>
     <description>Recent content in Technical on FM-Lead</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2026 </copyright>
-    <lastBuildDate>Sat, 14 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://example.org/focus/technical/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 14 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/focus/technical/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>ATS manual</title>
-      <link>https://example.org/focus/technical/ats-manual/</link>
+      <link>http://localhost:1313/focus/technical/ats-manual/</link>
       <pubDate>Sat, 14 Feb 2026 00:00:00 +0000</pubDate>
       
-      <guid>https://example.org/focus/technical/ats-manual/</guid>
+      <guid>http://localhost:1313/focus/technical/ats-manual/</guid>
       <description>&lt;p&gt;&lt;span class=&#34;tag-focus-mindset&#34;&gt;Focus Mindset&lt;/span&gt;&lt;/p&gt;&#xA;&lt;p&gt;Focus Mindset - Technical&lt;/p&gt;</description>
       
     </item>
     
     <item>
       <title>back up chiller 3 way valve</title>
-      <link>https://example.org/focus/technical/back-up-chiller-3-way-valve/</link>
+      <link>http://localhost:1313/focus/technical/back-up-chiller-3-way-valve/</link>
       <pubDate>Sat, 14 Feb 2026 00:00:00 +0000</pubDate>
       
-      <guid>https://example.org/focus/technical/back-up-chiller-3-way-valve/</guid>
+      <guid>http://localhost:1313/focus/technical/back-up-chiller-3-way-valve/</guid>
       <description>&lt;p&gt;&lt;span class=&#34;tag-focus-mindset&#34;&gt;Focus Mindset&lt;/span&gt;&lt;/p&gt;&#xA;&lt;p&gt;Focus Mindset - Technical&lt;/p&gt;</description>
       
     </item>
     
     <item>
       <title>genset sync manual</title>
-      <link>https://example.org/focus/technical/genset-sync-manual/</link>
+      <link>http://localhost:1313/focus/technical/genset-sync-manual/</link>
       <pubDate>Sat, 14 Feb 2026 00:00:00 +0000</pubDate>
       
-      <guid>https://example.org/focus/technical/genset-sync-manual/</guid>
+      <guid>http://localhost:1313/focus/technical/genset-sync-manual/</guid>
       <description>&lt;p&gt;&lt;span class=&#34;tag-focus-mindset&#34;&gt;Focus Mindset&lt;/span&gt;&lt;/p&gt;&#xA;&lt;p&gt;Focus Mindset - Technical&lt;/p&gt;</description>
       
     </item>
     
     <item>
       <title>UPD bypass</title>
-      <link>https://example.org/focus/technical/upd-bypass/</link>
+      <link>http://localhost:1313/focus/technical/upd-bypass/</link>
       <pubDate>Sat, 14 Feb 2026 00:00:00 +0000</pubDate>
       
-      <guid>https://example.org/focus/technical/upd-bypass/</guid>
+      <guid>http://localhost:1313/focus/technical/upd-bypass/</guid>
       <description>&lt;p&gt;&lt;span class=&#34;tag-focus-mindset&#34;&gt;Focus Mindset&lt;/span&gt;&lt;/p&gt;&#xA;&lt;p&gt;Focus Mindset - Technical&lt;/p&gt;</description>
       
     </item>

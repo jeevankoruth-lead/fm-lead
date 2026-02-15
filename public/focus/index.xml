@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Focus Mindset on FM-Lead</title>
-    <link>https://example.org/focus/</link>
+    <link>http://localhost:1313/focus/</link>
     <description>Recent content in Focus Mindset on FM-Lead</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2026 </copyright>
-    <lastBuildDate></lastBuildDate><atom:link href="https://example.org/focus/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate></lastBuildDate><atom:link href="http://localhost:1313/focus/index.xml" rel="self" type="application/rss+xml" />
     
   </channel>
 </rss>

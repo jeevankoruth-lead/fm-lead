@@ -3,108 +3,108 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>https://example.org/muser/reviews/casio-ga-2100-4a-watch/</loc>
+    <loc>http://localhost:1313/muser/reviews/casio-ga-2100-4a-watch/</loc>
     <lastmod>2026-02-15T00:00:00+00:00</lastmod>
   </url>
   <url>
-    <loc>https://example.org/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2026-02-15T00:00:00+00:00</lastmod>
   </url>
   <url>
-    <loc>https://example.org/muser/</loc>
+    <loc>http://localhost:1313/muser/</loc>
     <lastmod>2026-02-15T00:00:00+00:00</lastmod>
   </url>
   <url>
-    <loc>https://example.org/muser/reviews/poco-f6-smartphone/</loc>
+    <loc>http://localhost:1313/muser/reviews/poco-f6-smartphone/</loc>
     <lastmod>2026-02-15T00:00:00+00:00</lastmod>
   </url>
   <url>
-    <loc>https://example.org/muser/reviews/</loc>
+    <loc>http://localhost:1313/muser/reviews/</loc>
     <lastmod>2026-02-15T00:00:00+00:00</lastmod>
   </url>
   <url>
-    <loc>https://example.org/muser/satire/asset-code-on-staff/</loc>
+    <loc>http://localhost:1313/muser/satire/asset-code-on-staff/</loc>
     <lastmod>2026-02-14T00:00:00+00:00</lastmod>
   </url>
   <url>
-    <loc>https://example.org/focus/technical/ats-manual/</loc>
+    <loc>http://localhost:1313/focus/technical/ats-manual/</loc>
     <lastmod>2026-02-14T00:00:00+00:00</lastmod>
   </url>
   <url>
-    <loc>https://example.org/muser/satire/audit/</loc>
+    <loc>http://localhost:1313/muser/satire/audit/</loc>
     <lastmod>2026-02-14T00:00:00+00:00</lastmod>
   </url>
   <url>
-    <loc>https://example.org/focus/technical/back-up-chiller-3-way-valve/</loc>
+    <loc>http://localhost:1313/focus/technical/back-up-chiller-3-way-valve/</loc>
     <lastmod>2026-02-14T00:00:00+00:00</lastmod>
   </url>
   <url>
-    <loc>https://example.org/muser/satire/bigger-title-bigger-forehead-tattoo/</loc>
+    <loc>http://localhost:1313/muser/satire/hse-kettle-ptw-rams/</loc>
     <lastmod>2026-02-14T00:00:00+00:00</lastmod>
   </url>
   <url>
-    <loc>https://example.org/focus/</loc>
+    <loc>http://localhost:1313/muser/satire/bigger-title-bigger-forehead-tattoo/</loc>
     <lastmod>2026-02-14T00:00:00+00:00</lastmod>
   </url>
   <url>
-    <loc>https://example.org/focus/technical/genset-sync-manual/</loc>
+    <loc>http://localhost:1313/muser/satire/hse-work-at-height-desk/</loc>
     <lastmod>2026-02-14T00:00:00+00:00</lastmod>
   </url>
   <url>
-    <loc>https://example.org/muser/satire/hse-work-at-height-desk/</loc>
+    <loc>http://localhost:1313/focus/</loc>
     <lastmod>2026-02-14T00:00:00+00:00</lastmod>
   </url>
   <url>
-    <loc>https://example.org/muser/satire/hse-kettle-ptw-rams/</loc>
+    <loc>http://localhost:1313/muser/satire/maximum-maintenance-24-7/</loc>
     <lastmod>2026-02-14T00:00:00+00:00</lastmod>
   </url>
   <url>
-    <loc>https://example.org/muser/satire/hse-near-miss-reporting/</loc>
+    <loc>http://localhost:1313/focus/technical/genset-sync-manual/</loc>
     <lastmod>2026-02-14T00:00:00+00:00</lastmod>
   </url>
   <url>
-    <loc>https://example.org/muser/satire/hse-turning-on-light/</loc>
+    <loc>http://localhost:1313/muser/satire/more-acronyms-qualifications/</loc>
     <lastmod>2026-02-14T00:00:00+00:00</lastmod>
   </url>
   <url>
-    <loc>https://example.org/muser/satire/increase-data-center-tier-level/</loc>
+    <loc>http://localhost:1313/muser/satire/meeting-before-meeting/</loc>
     <lastmod>2026-02-14T00:00:00+00:00</lastmod>
   </url>
   <url>
-    <loc>https://example.org/muser/satire/maximum-maintenance-24-7/</loc>
+    <loc>http://localhost:1313/muser/satire/hse-near-miss-reporting/</loc>
     <lastmod>2026-02-14T00:00:00+00:00</lastmod>
   </url>
   <url>
-    <loc>https://example.org/muser/satire/meeting-before-meeting/</loc>
+    <loc>http://localhost:1313/muser/satire/</loc>
     <lastmod>2026-02-14T00:00:00+00:00</lastmod>
   </url>
   <url>
-    <loc>https://example.org/muser/satire/more-acronyms-qualifications/</loc>
+    <loc>http://localhost:1313/muser/satire/sustainability-go-back-cave-man/</loc>
     <lastmod>2026-02-14T00:00:00+00:00</lastmod>
   </url>
   <url>
-    <loc>https://example.org/muser/satire/</loc>
+    <loc>http://localhost:1313/muser/satire/hse-turning-on-light/</loc>
     <lastmod>2026-02-14T00:00:00+00:00</lastmod>
   </url>
   <url>
-    <loc>https://example.org/muser/satire/sustainability-go-back-cave-man/</loc>
+    <loc>http://localhost:1313/focus/technical/</loc>
     <lastmod>2026-02-14T00:00:00+00:00</lastmod>
   </url>
   <url>
-    <loc>https://example.org/focus/technical/</loc>
+    <loc>http://localhost:1313/focus/technical/upd-bypass/</loc>
     <lastmod>2026-02-14T00:00:00+00:00</lastmod>
   </url>
   <url>
-    <loc>https://example.org/focus/technical/upd-bypass/</loc>
+    <loc>http://localhost:1313/muser/satire/increase-data-center-tier-level/</loc>
     <lastmod>2026-02-14T00:00:00+00:00</lastmod>
   </url>
   <url>
-    <loc>https://example.org/focus/articles/</loc>
+    <loc>http://localhost:1313/focus/articles/</loc>
   </url>
   <url>
-    <loc>https://example.org/muser/opinions/</loc>
+    <loc>http://localhost:1313/muser/opinions/</loc>
   </url>
   <url>
-    <loc>https://example.org/focus/projects/</loc>
+    <loc>http://localhost:1313/focus/projects/</loc>
   </url>
 </urlset>
