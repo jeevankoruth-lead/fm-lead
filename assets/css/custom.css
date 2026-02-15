@@ -219,6 +219,7 @@ main, .main-content, .prose {
   text-decoration: none;
   color: inherit;
   margin-bottom: 0.5rem;
+}
 .focus-block, .muser-block {
   background: rgba(10, 35, 66, 0.7) !important; /* blue with transparency for focus */
   box-shadow: none;
@@ -234,6 +235,45 @@ main, .main-content, .prose {
 body[data-theme="muser"] h1 {
   font-family: 'Kaushan Script', cursive;
 }
+
+@media (max-width: 768px) {
+  .header-row {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .header-logo img {
+    height: auto;
+    max-width: 70vw;
+  }
+
+  .header-nav.left-nav,
+  .header-nav.right-nav,
+  .left-nav,
+  .right-nav {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .menu-list {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .split-container {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .left-panel,
+  .right-panel {
+    width: 100%;
+    min-height: 45vh;
+    font-size: 2rem;
+    padding: 1.5rem 0.75rem;
+    text-align: center;
+  }
 }
 
 .header-nav {
