@@ -1,5 +1,5 @@
 ---
-title: "Free Muser"
+title: "FREE MUSER"
 cardView: true
 cascade:
   theme: "muser"
