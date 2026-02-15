@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "themes/blowfish/config/_default"
+		}
+	],
+	"settings": {
+		"chat.tools.terminal.autoApprove": {
+			"hugo": true
+		}
+	}
+}

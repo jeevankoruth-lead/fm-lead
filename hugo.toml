@@ -1,0 +1,37 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'My New Hugo Site'
+theme = 'blowfish'
+
+[params]
+  disableAssetsBusting = true
+  custom_CSS = ["css/custom.css"]
+
+[themes.focus]
+  primary = "#0A2342"
+  background = "#FFFFFF"
+  text = "#0A2342"
+
+[themes.muser]
+  primary = "#FF4F00"
+  background = "#FFF7F0"
+  text = "#1A1A1A"
+
+  [[menu.main]]
+  name = "Focus Mindset"
+  url = "/focus/"
+  weight = 1
+  identifier = "focus"
+
+[[menu.main]]
+  name = "Free Muser"
+  url = "/muser/"
+  weight = 2
+  identifier = "muser"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+  

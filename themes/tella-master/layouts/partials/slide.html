@@ -1,0 +1,14 @@
+<div class="splide" role="group" aria-label="Top Page Slides">
+    <div class="splide__track">
+        <ul class="splide__list">
+            {{ range .Site.Data.slide }}
+            <li class="splide__slide">
+                <img src="{{ .image }}" alt="{{ .alt }}">
+                <div class="s-fade-txt">
+                    <h1 class="text-4xl font-medium {{ or .color "text-white" }}">{{ .title }}</h1>
+                </div>
+            </li>
+            {{ end }}
+        </ul>
+    </div>
+</div>

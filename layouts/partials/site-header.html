@@ -1,0 +1,32 @@
+<header class="custom-header">
+
+  <!-- Top Center Logo -->
+  <div class="header-logo">
+    <img src="/logo.png" alt="Site Logo">
+  </div>
+
+  <!-- Centered Title -->
+  <div class="header-title">
+    <a href="/">{{ site.Title }}</a>
+  </div>
+
+  <!-- Split Navigation -->
+  <nav class="header-nav">
+    <div class="left-nav">
+      {{ range site.Menus.main }}
+        {{ if eq .Identifier "focus" }}
+          <a href="{{ .URL }}">{{ .Name }}</a>
+        {{ end }}
+      {{ end }}
+    </div>
+
+    <div class="right-nav">
+      {{ range site.Menus.main }}
+        {{ if eq .Identifier "muser" }}
+          <a href="{{ .URL }}">{{ .Name }}</a>
+        {{ end }}
+      {{ end }}
+    </div>
+  </nav>
+
+</header>
