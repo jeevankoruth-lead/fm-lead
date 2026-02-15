@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+function initLetterAnimation() {
   const cycleTotal = 8000; // 8 seconds per cycle (much faster)
 
   function prepareAndAnimate(container) {
@@ -99,8 +99,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Try explicit selectors first
-  let left = document.querySelector('.focus-seq') || document.querySelector('.left-panel');
-  let right = document.querySelector('.free-rand') || document.querySelector('.right-panel');
+  let left = document.querySelector('.left-panel h1') || document.querySelector('.focus-seq') || document.querySelector('.left-panel');
+  let right = document.querySelector('.right-panel h1') || document.querySelector('.free-rand') || document.querySelector('.right-panel');
 
   // If not found, search for visible elements that contain the keywords and have large font-size
   function findVisibleLargeKeyword(keyword) {
@@ -128,4 +128,18 @@ document.addEventListener("DOMContentLoaded", function () {
     right.classList.add('free-rand');
     prepareAndAnimateRandom(right);
   }
-});
+  return left || right;
+}
+
+function runLetterAnimation() {
+  const ok = initLetterAnimation();
+  if (!ok) {
+    setTimeout(initLetterAnimation, 500);
+  }
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", runLetterAnimation);
+} else {
+  runLetterAnimation();
+}
