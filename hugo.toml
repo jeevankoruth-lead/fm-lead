@@ -1,0 +1,4 @@
+baseURL = 'https://fm-lead.com/'
+languageCode = 'en-us'
+title = 'FM-Lead'
+theme = 'ananke'
