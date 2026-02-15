@@ -1,17 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
 
 .left-nav.menu-list {
-  background: rgba(10, 35, 66, 0.95);
+  background: rgba(10, 26, 47, 0.95);
   border-radius: 12px;
   padding: 0.75rem 1.5rem;
-  box-shadow: 0 4px 12px rgba(10, 35, 66, 0.3);
+  box-shadow: 0 4px 12px rgba(10, 26, 47, 0.3);
 }
 .right-nav.menu-list {
-  background: rgba(255, 79, 0, 0.95);
+  background: rgba(138, 59, 0, 0.95);
   border-radius: 12px;
   padding: 0.75rem 1.5rem;
   font-family: 'Kaushan Script', cursive;
-  box-shadow: 0 4px 12px rgba(255, 79, 0, 0.3);
+  box-shadow: 0 4px 12px rgba(138, 59, 0, 0.3);
 }
 /* Always-visible menu lists for header */
 .menu-list {
@@ -19,7 +19,7 @@
   gap: 2rem;
 }
 .menu-list a {
-  color: #fff !important;
+  color: #EAEAEA !important;
   font-weight: 700;
   text-decoration: none;
   font-size: 1rem;
@@ -51,7 +51,7 @@
   left: 0;
   top: 120%;
   min-width: 140px;
-  background: rgba(10, 35, 66, 0.95);
+  background: rgba(10, 26, 47, 0.95);
   box-shadow: 0 2px 8px rgba(0,0,0,0.15);
   border-radius: 6px;
   z-index: 1000;
@@ -61,7 +61,7 @@
   display: flex;
 }
 .dropdown-menu a {
-  color: #fff;
+  color: #EAEAEA;
   padding: 12px 18px;
   text-decoration: none;
   font-weight: 600;
@@ -72,35 +72,35 @@
   border-bottom: none;
 }
 .dropdown-menu a:hover {
-  background: #16325c;
+  background: #1E3A5F;
 }
 /* Force transparency for the two main homepage blocks */
 .flex.justify-center > div:first-child {
-  background-color: rgba(10, 35, 66, 0.7) !important;
+  background-color: rgba(10, 26, 47, 0.7) !important;
 }
 .flex.justify-center > div:last-child {
-  background-color: rgba(255, 79, 0, 0.7) !important;
+  background-color: rgba(138, 59, 0, 0.7) !important;
 }
 /* Force transparency for blue and orange blocks on homepage */
 div[style*="#0A2342"],
 div[style*="#FF4F00"],
 .bg-\[\#0A2342\],
 .bg-\[\#FF4F00\] {
-  background-color: rgba(10, 35, 66, 0.7) !important;
+  background-color: rgba(10, 26, 47, 0.7) !important;
 }
 .bg-\[\#FF4F00\] {
-  background-color: rgba(255, 79, 0, 0.7) !important;
+  background-color: rgba(138, 59, 0, 0.7) !important;
 }
 /* Make blocks with specific background colors transparent */
 [style*="background-color:#0A2342"],
 [style*="background-color: #0A2342"],
 .bg-\[\#0A2342\] {
-  background-color: rgba(10, 35, 66, 0.7) !important;
+  background-color: rgba(10, 26, 47, 0.7) !important;
 }
 [style*="background-color:#FF4F00"],
 [style*="background-color: #FF4F00"],
 .bg-\[\#FF4F00\] {
-  background-color: rgba(255, 79, 0, 0.7) !important;
+  background-color: rgba(138, 59, 0, 0.7) !important;
 }
 /* Full homepage background image */
 html, body {
@@ -127,7 +127,7 @@ body.home-bg::after {
   content: '';
   position: fixed;
   inset: 0;
-  background: radial-gradient(ellipse at center, rgba(10, 35, 66, 0.1) 0%, rgba(10, 35, 66, 0.2) 100%);
+  background: radial-gradient(ellipse at center, rgba(10, 26, 47, 0.15) 0%, rgba(10, 26, 47, 0.25) 100%);
   z-index: -1;
   pointer-events: none;
 }
@@ -158,7 +158,7 @@ main, .main-content, .prose {
 
 /* Left Panel - Focus Mindset (Cool Tones - Cityscape) */
 .hero-panel-left {
-  background: linear-gradient(135deg, rgba(10, 35, 66, 0.92) 0%, rgba(15, 45, 80, 0.88) 100%),
+  background: linear-gradient(135deg, rgba(10, 26, 47, 0.92) 0%, rgba(30, 58, 95, 0.88) 100%),
               url('/images/city.png') no-repeat center center;
   background-size: cover;
   background-blend-mode: multiply;
@@ -168,7 +168,7 @@ main, .main-content, .prose {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 80% 50%, rgba(30, 100, 180, 0.15) 0%, transparent 70%);
+  background: radial-gradient(ellipse at 80% 50%, rgba(30, 58, 95, 0.2) 0%, transparent 70%);
   pointer-events: none;
   transition: opacity 0.5s ease;
   opacity: 0;
@@ -180,7 +180,7 @@ main, .main-content, .prose {
 
 /* Right Panel - Free Muser (Warm Tones - Forest) */
 .hero-panel-right {
-  background: linear-gradient(135deg, rgba(255, 79, 0, 0.88) 0%, rgba(230, 90, 20, 0.92) 100%),
+  background: linear-gradient(135deg, rgba(138, 59, 0, 0.88) 0%, rgba(212, 106, 31, 0.92) 100%),
               url('/images/forest extended.png') no-repeat center center;
   background-size: cover;
   background-blend-mode: multiply;
@@ -190,7 +190,7 @@ main, .main-content, .prose {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 20% 50%, rgba(255, 140, 60, 0.2) 0%, transparent 70%);
+  background: radial-gradient(ellipse at 20% 50%, rgba(212, 106, 31, 0.2) 0%, transparent 70%);
   pointer-events: none;
   transition: opacity 0.5s ease;
   opacity: 0;
@@ -210,11 +210,11 @@ main, .main-content, .prose {
   transform: translateX(-50%);
   background: linear-gradient(
     to right,
-    rgba(10, 35, 66, 0.9) 0%,
-    rgba(80, 50, 40, 0.7) 25%,
-    rgba(140, 60, 30, 0.6) 50%,
-    rgba(200, 70, 20, 0.7) 75%,
-    rgba(255, 79, 0, 0.9) 100%
+    rgba(10, 26, 47, 0.9) 0%,
+    rgba(74, 42, 24, 0.7) 25%,
+    rgba(106, 50, 15, 0.6) 50%,
+    rgba(175, 78, 21, 0.7) 75%,
+    rgba(138, 59, 0, 0.9) 100%
   );
   pointer-events: none;
   z-index: 1;
@@ -260,7 +260,7 @@ main, .main-content, .prose {
 .hero-subtitle {
   font-size: clamp(1rem, 2.5vw, 1.5rem);
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.95);
+  color: rgba(234, 234, 234, 0.95);
   letter-spacing: 0.02em;
   margin-bottom: 2.5rem;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
@@ -438,10 +438,10 @@ body.home-bg .premium-navbar {
   inset: 0;
   background: linear-gradient(
     90deg,
-    rgba(10, 35, 66, 0.05) 0%,
+    rgba(10, 26, 47, 0.08) 0%,
     rgba(255, 255, 255, 0.02) 30%,
     rgba(255, 255, 255, 0.02) 70%,
-    rgba(255, 79, 0, 0.05) 100%
+    rgba(138, 59, 0, 0.08) 100%
   );
   pointer-events: none;
   opacity: 0.6;
@@ -477,7 +477,7 @@ body.home-bg .premium-navbar {
 /* Navigation Links */
 .nav-link {
   position: relative;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(207, 207, 207, 0.95);
   text-decoration: none;
   font-weight: 600;
   font-size: 0.95rem;
@@ -520,27 +520,27 @@ body.home-bg .premium-navbar {
 
 /* Focus Mindset Links */
 .nav-link-focus {
-  color: rgba(173, 216, 230, 1);
-  text-shadow: 0 0 20px rgba(173, 216, 230, 0.3);
+  color: rgba(207, 207, 207, 1);
+  text-shadow: 0 0 20px rgba(30, 58, 95, 0.5);
 }
 
 .nav-link-focus:hover {
-  color: rgba(255, 255, 255, 1);
-  text-shadow: 0 0 25px rgba(173, 216, 230, 0.5);
-  background: rgba(10, 35, 66, 0.15);
+  color: rgba(234, 234, 234, 1);
+  text-shadow: 0 0 25px rgba(30, 58, 95, 0.7);
+  background: rgba(10, 26, 47, 0.2);
 }
 
 /* Free Muser Links */
 .nav-link-muser {
   font-family: 'Kaushan Script', cursive;
-  color: rgba(255, 183, 77, 1);
-  text-shadow: 0 0 20px rgba(255, 183, 77, 0.3);
+  color: rgba(207, 207, 207, 1);
+  text-shadow: 0 0 20px rgba(212, 106, 31, 0.5);
 }
 
 .nav-link-muser:hover {
-  color: rgba(255, 255, 255, 1);
-  text-shadow: 0 0 25px rgba(255, 183, 77, 0.5);
-  background: rgba(255, 79, 0, 0.15);
+  color: rgba(234, 234, 234, 1);
+  text-shadow: 0 0 25px rgba(212, 106, 31, 0.7);
+  background: rgba(138, 59, 0, 0.2);
 }
 
 /* Center Logo - The Divider */
@@ -803,11 +803,11 @@ body[data-theme="muser"] h1 {
     transform: translateY(-50%);
     background: linear-gradient(
       to bottom,
-      rgba(10, 35, 66, 0.9) 0%,
-      rgba(80, 50, 40, 0.7) 25%,
-      rgba(140, 60, 30, 0.6) 50%,
-      rgba(200, 70, 20, 0.7) 75%,
-      rgba(255, 79, 0, 0.9) 100%
+      rgba(10, 26, 47, 0.9) 0%,
+      rgba(74, 42, 24, 0.7) 25%,
+      rgba(106, 50, 15, 0.6) 50%,
+      rgba(175, 78, 21, 0.7) 75%,
+      rgba(138, 59, 0, 0.9) 100%
     );
   }
 
