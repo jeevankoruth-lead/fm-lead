@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
 
+/* ===== HIDE LEGACY MENU-LIST NAV BARS ===== */
+/* These created the disconnected blue/brown boxes */
+.left-nav.menu-list,
+.right-nav.menu-list {
+  display: none !important;
+}
+
+/* Legacy menu-list styles (kept for backwards compatibility but hidden) */
 .left-nav.menu-list {
   background: rgba(10, 26, 47, 0.95);
   border-radius: 12px;
@@ -117,7 +125,7 @@ body.home-bg::before {
   content: '';
   position: fixed;
   inset: 0;
-  background: url('/images/city.png') no-repeat center center;
+  background: url('/images/city extended.png') no-repeat center center;
   background-size: cover;
   z-index: -2;
   pointer-events: none;
@@ -144,6 +152,9 @@ main, .main-content, .prose {
   width: 100%;
   position: relative;
   overflow: hidden;
+  background: url('/images/homepage-split.png') no-repeat center center;
+  background-size: 100% 100%;
+  background-position: center center;
 }
 
 .hero-panel {
@@ -158,17 +169,14 @@ main, .main-content, .prose {
 
 /* Left Panel - Focus Mindset (Cool Tones - Cityscape) */
 .hero-panel-left {
-  background: linear-gradient(135deg, rgba(10, 26, 47, 0.92) 0%, rgba(30, 58, 95, 0.88) 100%),
-              url('/images/city.png') no-repeat center center;
-  background-size: cover;
-  background-blend-mode: multiply;
+  background: rgba(10, 26, 47, 0.25);
 }
 
 .hero-panel-left::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 80% 50%, rgba(30, 58, 95, 0.2) 0%, transparent 70%);
+  background: radial-gradient(ellipse at 80% 50%, rgba(30, 58, 95, 0.15) 0%, transparent 70%);
   pointer-events: none;
   transition: opacity 0.5s ease;
   opacity: 0;
@@ -180,17 +188,14 @@ main, .main-content, .prose {
 
 /* Right Panel - Free Muser (Warm Tones - Forest) */
 .hero-panel-right {
-  background: linear-gradient(135deg, rgba(138, 59, 0, 0.88) 0%, rgba(212, 106, 31, 0.92) 100%),
-              url('/images/forest extended.png') no-repeat center center;
-  background-size: cover;
-  background-blend-mode: multiply;
+  background: rgba(138, 59, 0, 0.25);
 }
 
 .hero-panel-right::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 20% 50%, rgba(212, 106, 31, 0.2) 0%, transparent 70%);
+  background: radial-gradient(ellipse at 20% 50%, rgba(212, 106, 31, 0.15) 0%, transparent 70%);
   pointer-events: none;
   transition: opacity 0.5s ease;
   opacity: 0;
@@ -227,34 +232,39 @@ main, .main-content, .prose {
   position: relative;
   z-index: 2;
   text-align: center;
-  padding: 3rem 2rem;
-  max-width: 600px;
+  padding: 2rem 1.5rem;
+  max-width: 100%;
+  width: 100%;
   transform: translateY(0);
-  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: none;
 }
 
 .hero-panel:hover .hero-content {
-  transform: translateY(-10px);
+  transform: none;
 }
 
 /* Hero Typography with Clear Hierarchy */
 .hero-title {
-  font-size: clamp(2.5rem, 8vw, 5.5rem);
+  font-size: clamp(1.8rem, 4.5vw, 3.2rem);
   font-weight: 900;
   color: #ffffff;
-  letter-spacing: -0.03em;
-  line-height: 1;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
   margin-bottom: 1.25rem;
+  text-transform: uppercase;
   text-shadow: 
-    0 2px 10px rgba(0, 0, 0, 0.3),
-    0 4px 20px rgba(0, 0, 0, 0.2),
-    0 8px 40px rgba(0, 0, 0, 0.15);
-  animation: fadeInUp 0.8s ease-out;
+    0 2px 10px rgba(0, 0, 0, 0.5),
+    0 4px 20px rgba(0, 0, 0, 0.4),
+    0 8px 40px rgba(0, 0, 0, 0.3);
+  white-space: nowrap;
+  display: block;
+  overflow: visible;
 }
 
 .hero-title-muser {
   font-family: 'Kaushan Script', cursive;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
 }
 
 .hero-subtitle {
@@ -264,7 +274,6 @@ main, .main-content, .prose {
   letter-spacing: 0.02em;
   margin-bottom: 2.5rem;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-  animation: fadeInUp 0.8s ease-out 0.2s backwards;
 }
 
 /* CTA Buttons - Clear and Interactive */
@@ -288,7 +297,6 @@ main, .main-content, .prose {
   box-shadow: 
     0 4px 15px rgba(0, 0, 0, 0.2),
     inset 0 1px 0 rgba(255, 255, 255, 0.2);
-  animation: fadeInUp 0.8s ease-out 0.4s backwards;
 }
 
 .hero-cta::before {
@@ -327,19 +335,19 @@ main, .main-content, .prose {
 
 /* Panel Hover Effects */
 .hero-panel:hover {
-  flex: 1.08;
-  filter: brightness(1.08) contrast(1.05);
+  flex: 1.05;
 }
 
 .hero-panel-left:hover {
-  background-blend-mode: soft-light;
+  background: rgba(10, 26, 47, 0.35);
 }
 
 .hero-panel-right:hover {
-  background-blend-mode: soft-light;
+  background: rgba(138, 59, 0, 0.35);
 }
 
-/* Fade In Animation */
+/* Fade In Animation - Disabled */
+/*
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -350,6 +358,7 @@ main, .main-content, .prose {
     transform: translateY(0);
   }
 }
+*/
 
 /* Homepage Layout Enhancements */
 body.home-bg {
@@ -421,14 +430,14 @@ body.home-bg .premium-navbar {
   right: 0;
   width: 100%;
   z-index: 1000;
-  padding: 0.75rem 0;
-  background: rgba(255, 255, 255, 0.05);
+  padding: 0.5rem 0;
+  background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 
-    0 4px 30px rgba(0, 0, 0, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    0 4px 30px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -450,19 +459,20 @@ body.home-bg .premium-navbar {
 .navbar-container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 3rem;
+  padding: 0 2.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 2.5rem;
   position: relative;
+  min-height: 60px;
 }
 
 /* Left and Right Navigation Sections */
 .navbar-section {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1.75rem;
   flex: 1;
 }
 
@@ -474,18 +484,19 @@ body.home-bg .premium-navbar {
   justify-content: flex-end;
 }
 
-/* Navigation Links */
+/* Navigation Links - Unified Typography */
 .nav-link {
   position: relative;
-  color: rgba(207, 207, 207, 0.95);
+  color: rgba(234, 234, 234, 0.95);
   text-decoration: none;
   font-weight: 600;
-  font-size: 0.95rem;
-  letter-spacing: 0.02em;
-  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.03em;
+  padding: 0.4rem 0.9rem;
   border-radius: 8px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   white-space: nowrap;
+  font-family: inherit;
 }
 
 .nav-link::before {
@@ -518,36 +529,39 @@ body.home-bg .premium-navbar {
   width: calc(100% - 2rem);
 }
 
-/* Focus Mindset Links */
+/* Focus Mindset Links - Consistent Typography */
 .nav-link-focus {
-  color: rgba(207, 207, 207, 1);
-  text-shadow: 0 0 20px rgba(30, 58, 95, 0.5);
+  color: rgba(234, 234, 234, 0.95);
+  text-shadow: 0 0 15px rgba(30, 58, 95, 0.4);
 }
 
 .nav-link-focus:hover {
-  color: rgba(234, 234, 234, 1);
-  text-shadow: 0 0 25px rgba(30, 58, 95, 0.7);
-  background: rgba(10, 26, 47, 0.2);
+  color: rgba(255, 255, 255, 1);
+  text-shadow: 0 0 20px rgba(30, 58, 95, 0.6);
+  background: rgba(10, 26, 47, 0.25);
 }
 
-/* Free Muser Links */
+/* Free Muser Links - Consistent Typography with Stylistic Font */
 .nav-link-muser {
   font-family: 'Kaushan Script', cursive;
-  color: rgba(207, 207, 207, 1);
-  text-shadow: 0 0 20px rgba(212, 106, 31, 0.5);
+  color: rgba(234, 234, 234, 0.95);
+  text-shadow: 0 0 15px rgba(212, 106, 31, 0.4);
+  font-size: 0.95rem;
 }
 
 .nav-link-muser:hover {
-  color: rgba(234, 234, 234, 1);
-  text-shadow: 0 0 25px rgba(212, 106, 31, 0.7);
-  background: rgba(138, 59, 0, 0.2);
+  color: rgba(255, 255, 255, 1);
+  text-shadow: 0 0 20px rgba(212, 106, 31, 0.6);
+  background: rgba(138, 59, 0, 0.25);
 }
 
-/* Center Logo - The Divider */
+/* Center Logo - The Divider with Better Spacing */
 .navbar-logo {
   position: relative;
   z-index: 10;
-  padding: 0 1.5rem;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
 }
 
 .navbar-logo::before,
@@ -556,12 +570,12 @@ body.home-bg .premium-navbar {
   position: absolute;
   top: 50%;
   width: 1px;
-  height: 40px;
+  height: 32px;
   transform: translateY(-50%);
   background: linear-gradient(
     to bottom,
     transparent 0%,
-    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0.25) 50%,
     transparent 100%
   );
 }
@@ -584,21 +598,21 @@ body.home-bg .premium-navbar {
 }
 
 .logo-image {
-  height: 50px;
+  height: 45px;
   width: auto;
-  filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.3))
-          drop-shadow(0 0 30px rgba(255, 255, 255, 0.1));
+  filter: drop-shadow(0 3px 10px rgba(0, 0, 0, 0.3))
+          drop-shadow(0 0 25px rgba(255, 255, 255, 0.1));
   transition: filter 0.3s ease;
 }
 
 .logo-link:hover .logo-image {
-  filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.4))
-          drop-shadow(0 0 40px rgba(255, 255, 255, 0.2));
+  filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.4))
+          drop-shadow(0 0 35px rgba(255, 255, 255, 0.2));
 }
 
 /* Add spacing to body for fixed navbar */
 body {
-  padding-top: 90px;
+  padding-top: 75px;
 }
 
 /* Legacy header styles - keeping for backwards compatibility */

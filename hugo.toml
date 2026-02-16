@@ -6,6 +6,7 @@ theme = 'blowfish'
 [params]
   disableAssetsBusting = true
   custom_CSS = ["css/custom.css"]
+  custom_JS = ["js/custom.js"]
 
 [themes.focus]
   primary = "#0A2342"
