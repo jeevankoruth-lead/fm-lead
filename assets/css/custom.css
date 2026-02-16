@@ -30,7 +30,7 @@
   --tracking-normal: 0;
   --tracking-wide: 0.02em;
   --tracking-wider: 0.05em;
-  --tracking-widest: 0.1em; /* +10% for metadata */
+  --tracking-widest: 0.1em;
   
   /* Animation Timings */
   --transition-fast: 0.15s;
@@ -38,6 +38,12 @@
   --transition-slow: 0.6s;
   --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
   --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  
+  /* Colors for shadows & effects */
+  --shadow-dark: rgba(0, 0, 0, 0.5);
+  --shadow-light: rgba(0, 0, 0, 0.3);
+  --text-white-bright: rgba(255, 255, 255, 0.85);
+  --text-white-muted: rgba(255, 255, 255, 0.65);
 }
 
 /* ===== FADE-IN ON SCROLL ANIMATIONS ===== */
@@ -1127,15 +1133,15 @@ body[data-theme="muser"] h1 {
 
   /* Muser Page Mobile Styles */
   body.section-muser h1 {
-    font-size: clamp(2rem, 10vw, 3.5rem);
-    margin: 3rem auto 3rem;
-    padding: 2rem 1.5rem;
-    letter-spacing: 0.06em;
+    font-size: clamp(1.75rem, 6vw, 2.25rem);
+    margin: 30px auto 15px;
+    padding: 35px 1.5rem 15px;
+    letter-spacing: 0.05em;
   }
 
   body.section-muser h1::before {
-    width: calc(100% + 2rem);
-    height: calc(100% + 1.5rem);
+    width: calc(100% + 1rem);
+    height: calc(100% + 1rem);
     border-radius: 16px;
   }
 
@@ -1322,7 +1328,7 @@ article h6,
 
 body.section-focus {
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 body.section-focus::before {
@@ -1817,7 +1823,7 @@ body.section-focus a:not(.card a):not(.nav-link):hover {
 
 body.section-muser {
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 body.section-muser::before {
@@ -1857,13 +1863,13 @@ body.section-muser .prose {
 body.section-muser h1 {
   position: relative;
   text-align: center;
-  font-size: clamp(3rem, 12vw, 6rem);
+  font-size: clamp(2.25rem, 5vw, 2.625rem);
   font-weight: 900;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   color: #EAEAEA;
-  margin: var(--spacing-xl) auto calc(var(--spacing-xl) + var(--spacing-md));
-  padding: var(--spacing-xl) var(--spacing-lg);
+  margin: 50px auto 25px;
+  padding: 50px var(--spacing-lg) 25px;
   line-height: 1.2;
   max-width: 1200px;
   z-index: 1;
@@ -1887,8 +1893,8 @@ body.section-muser h1::before {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: calc(100% + var(--spacing-xl));
-  height: calc(100% + var(--spacing-lg));
+  width: calc(100% + var(--spacing-lg));
+  height: calc(100% + var(--spacing-md));
   transition: all var(--transition-slow) var(--ease-smooth);
   background: linear-gradient(
     135deg,
@@ -2022,26 +2028,71 @@ body.section-muser .article-link.card * {
 body.section-focus article header,
 body.section-muser article header {
   background: transparent;
-  padding: var(--spacing-lg) 0;
+  padding: var(--spacing-lg) 0 12px 0;
   border-radius: 0;
   box-shadow: none;
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: 0;
+  position: relative;
 }
 
-/* Only article content gets white background */
+/* Gradient fade from header to content - smooth visual transition */
+body.section-focus article header::after,
+body.section-muser article header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 28px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.08) 100%
+  );
+  pointer-events: none;
+}
+
+/* Only article content gets tinted background */
 body.section-focus article .article-content,
 body.section-muser article .article-content {
-  background: rgba(255, 255, 255, 0.98);
   padding: calc(var(--spacing-lg) + var(--spacing-sm));
   border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  box-shadow: 
+    0 1px 3px rgba(0, 0, 0, 0.08),
+    0 8px 24px rgba(0, 0, 0, 0.4);
+  margin-bottom: var(--spacing-lg);
+  margin-top: -8px;
+  position: relative;
+}
+
+/* Focus section - subtle cool tint */
+body.section-focus article .article-content {
+  background: linear-gradient(
+    to bottom,
+    rgba(245, 248, 252, 0.99) 0%,
+    rgba(240, 246, 252, 0.98) 100%
+  );
+}
+
+/* Muser section - subtle warm tint */
+body.section-muser article .article-content {
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 250, 245, 0.99) 0%,
+    rgba(254, 247, 240, 0.98) 100%
+  );
+
+/* Footer also gets tinted background */
+body.section-focus article footer {
+  background: rgba(245, 248, 252, 0.98);
+  padding: var(--spacing-lg);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   margin-bottom: var(--spacing-lg);
 }
 
-/* Footer also gets white background */
-body.section-focus article footer,
 body.section-muser article footer {
-  background: rgba(255, 255, 255, 0.98);
+  background: rgba(255, 250, 245, 0.98);
   padding: var(--spacing-lg);
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
@@ -2059,7 +2110,7 @@ body.section-muser article header h1 {
   font-weight: 900 !important;
   line-height: 1.15 !important;
   letter-spacing: -0.02em !important;
-  margin-bottom: var(--spacing-md) !important;
+  margin-bottom: 10px !important;
   margin-top: 0 !important;
   color: #FFFFFF !important;
   text-shadow: 
@@ -2083,15 +2134,16 @@ body.section-focus article header .article-meta,
 body.section-muser article header .text-neutral-500,
 body.section-muser article header .article-meta {
   font-family: var(--focus-font-family) !important;
-  font-size: 13px !important;
-  font-weight: var(--weight-semibold) !important;
-  letter-spacing: 0.08em !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.06em !important;
   text-transform: uppercase !important;
-  color: rgba(255, 255, 255, 0.85) !important;
+  font-variant: small-caps !important;
+  color: rgba(255, 255, 255, 0.65) !important;
   opacity: 1;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-  margin-top: var(--spacing-xs) !important;
-  margin-bottom: var(--spacing-md) !important;
+  margin-top: 2px !important;
+  margin-bottom: 16px !important;
 }
 
 /* Tag badges - Part of metadata - enhanced for dark background */
