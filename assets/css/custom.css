@@ -31,6 +31,117 @@
   --tracking-wide: 0.02em;
   --tracking-wider: 0.05em;
   --tracking-widest: 0.1em; /* +10% for metadata */
+  
+  /* Animation Timings */
+  --transition-fast: 0.15s;
+  --transition-base: 0.3s;
+  --transition-slow: 0.6s;
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ===== FADE-IN ON SCROLL ANIMATIONS ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Apply animations to elements */
+body.section-focus article.card,
+body.section-focus .article-link.card,
+body.section-muser article.card,
+body.section-muser .article-link.card {
+  animation: fadeInUp 0.6s var(--ease-smooth) forwards;
+  animation-delay: calc(var(--card-index, 0) * 0.1s);
+}
+
+body.section-focus h2.section-year,
+body.section-focus h2:first-of-type,
+body.section-muser h2.section-year,
+body.section-muser h2:first-of-type {
+  animation: slideInLeft 0.5s var(--ease-smooth) forwards;
+}
+
+body.section-focus h1,
+body.section-muser h1 {
+  animation: scaleIn 0.8s var(--ease-smooth) forwards;
+}
+
+body.section-focus article header,
+body.section-muser article header {
+  animation: fadeIn 0.6s var(--ease-smooth) forwards;
+}
+
+/* Stagger animation for multiple cards */
+body.section-focus article.card:nth-child(1),
+body.section-muser article.card:nth-child(1) { animation-delay: 0.1s; }
+body.section-focus article.card:nth-child(2),
+body.section-muser article.card:nth-child(2) { animation-delay: 0.2s; }
+body.section-focus article.card:nth-child(3),
+body.section-muser article.card:nth-child(3) { animation-delay: 0.3s; }
+body.section-focus article.card:nth-child(4),
+body.section-muser article.card:nth-child(4) { animation-delay: 0.4s; }
+body.section-focus article.card:nth-child(5),
+body.section-muser article.card:nth-child(5) { animation-delay: 0.5s; }
+body.section-focus article.card:nth-child(6),
+body.section-muser article.card:nth-child(6) { animation-delay: 0.6s; }
+
+/* ===== REDUCED MOTION PREFERENCES ===== */
+/* Respect user preferences for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  /* Keep essential hover states without slow transitions */
+  body.section-focus article.card:hover,
+  body.section-focus .article-link.card:hover,
+  body.section-muser article.card:hover,
+  body.section-muser .article-link.card:hover {
+    transform: none;
+  }
 }
 
 /* Responsive Typography Scale */
@@ -481,7 +592,7 @@ body.home-bg .premium-navbar {
   right: 0;
   width: 100%;
   z-index: 1000;
-  padding: 0.5rem 0;
+  padding: var(--spacing-xs) 0;
   background: rgba(0, 0, 0, 0.35);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
@@ -511,11 +622,11 @@ body.home-bg .premium-navbar {
 .navbar-container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 2.5rem;
+  padding: 0 var(--spacing-lg);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2.5rem;
+  gap: var(--spacing-lg);
   position: relative;
   min-height: 60px;
 }
@@ -524,7 +635,7 @@ body.home-bg .premium-navbar {
 .navbar-section {
   display: flex;
   align-items: center;
-  gap: 1.75rem;
+  gap: calc(var(--spacing-md) + var(--spacing-xs));
   flex: 1;
 }
 
@@ -544,7 +655,7 @@ body.home-bg .premium-navbar {
   font-weight: 600;
   font-size: 0.9rem;
   letter-spacing: 0.06em;
-  padding: 0.5rem 1rem;
+  padding: var(--spacing-xs) var(--spacing-sm);
   border-radius: 6px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   white-space: nowrap;
@@ -572,12 +683,19 @@ body.home-bg .premium-navbar {
 .nav-link-focus {
   color: rgba(234, 234, 234, 0.9);
   text-shadow: 0 0 12px rgba(74, 144, 226, 0.3);
+  transition: all var(--transition-base) var(--ease-smooth);
 }
 
 .nav-link-focus:hover {
   color: #4A90E2;
   text-shadow: 0 0 20px rgba(74, 144, 226, 0.5);
   background: rgba(74, 144, 226, 0.08);
+  transform: translateY(-2px);
+}
+
+.nav-link-focus:active {
+  transform: translateY(0);
+  transition: all 0.1s var(--ease-smooth);
 }
 
 .nav-link-focus:hover::after {
@@ -598,44 +716,97 @@ body.section-focus .nav-link-focus[href*="/focus/"]::after {
   background: #4A90E2;
 }
 
-/* Free Muser Links - Maintain Stylistic Font */
+/* Free Muser Links - Bold Pill Style with Icon */
 .nav-link-muser {
   font-family: 'Kaushan Script', cursive;
-  color: rgba(234, 234, 234, 0.9);
-  text-shadow: 0 0 12px rgba(212, 106, 31, 0.3);
+  color: #FFFFFF;
+  background: linear-gradient(135deg, #FF8C42 0%, #D4661F 100%);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   font-size: 0.95rem;
   letter-spacing: 0.04em;
+  padding: var(--spacing-sm) var(--spacing-md) !important;
+  border-radius: 25px;
+  font-weight: 700;
+  box-shadow: 
+    0 4px 12px rgba(255, 140, 66, 0.4),
+    0 0 20px rgba(255, 140, 66, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: visible;
+  transition: all var(--transition-base) var(--ease-smooth), 
+              transform 0.2s var(--ease-bounce);
+  cursor: pointer;
+}
+
+/* Free Muser Icon Mark (Pencil/Quill) */
+.nav-link-muser::before {
+  content: '✎';
+  position: relative;
+  display: inline-block;
+  margin-right: 0.5rem;
+  font-size: 1.1rem;
+  transform: rotate(-15deg);
+  transition: transform 0.3s ease;
 }
 
 .nav-link-muser:hover {
-  color: #FF8C42;
-  text-shadow: 0 0 20px rgba(255, 140, 66, 0.5);
-  background: rgba(255, 140, 66, 0.08);
+  color: #FFFFFF;
+  background: linear-gradient(135deg, #FFA060 0%, #FF8C42 100%);
+  box-shadow: 
+    0 6px 20px rgba(255, 140, 66, 0.6),
+    0 0 30px rgba(255, 140, 66, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  transform: translateY(-3px) scale(1.05);
+  border-color: rgba(255, 255, 255, 0.4);
+  animation: buttonPulse 1.5s infinite;
 }
 
-.nav-link-muser:hover::after {
-  background: #FF8C42;
+@keyframes buttonPulse {
+  0%, 100% {
+    box-shadow: 
+      0 6px 20px rgba(255, 140, 66, 0.6),
+      0 0 30px rgba(255, 140, 66, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  }
+  50% {
+    box-shadow: 
+      0 6px 20px rgba(255, 140, 66, 0.7),
+      0 0 40px rgba(255, 140, 66, 0.6),
+      inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  }
 }
 
-/* Active state for Muser links */
+.nav-link-muser:active {
+  transform: translateY(-1px) scale(0.98);
+  transition: all 0.1s var(--ease-smooth);
+}
+
+.nav-link-muser:hover::before {
+  transform: rotate(0deg) scale(1.1);
+}
+
+/* Override default underline for pill button */
+.nav-link-muser::after {
+  display: none;
+}
+
+/* Active state for Muser links - Stronger glow */
 .nav-link-muser.active,
 body.section-muser .nav-link-muser[href*="/muser/"] {
-  color: #FF8C42;
-  border-bottom: 2px solid #FF8C42;
-  padding-bottom: calc(0.5rem - 2px);
-}
-
-.nav-link-muser.active::after,
-body.section-muser .nav-link-muser[href*="/muser/"]::after {
-  width: 100%;
-  background: #FF8C42;
+  background: linear-gradient(135deg, #FFA060 0%, #FF8C42 100%);
+  box-shadow: 
+    0 6px 20px rgba(255, 140, 66, 0.7),
+    0 0 40px rgba(255, 140, 66, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  border-color: rgba(255, 255, 255, 0.5);
 }
 
 /* Center Logo - The Divider with Better Spacing */
 .navbar-logo {
   position: relative;
   z-index: 10;
-  padding: 0 2rem;
+  padding: 0 calc(var(--spacing-md) + var(--spacing-xs));
   display: flex;
   align-items: center;
 }
@@ -666,11 +837,16 @@ body.section-muser .nav-link-muser[href*="/muser/"]::after {
 
 .logo-link {
   display: block;
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform var(--transition-base) var(--ease-bounce);
 }
 
 .logo-link:hover {
-  transform: scale(1.05);
+  transform: scale(1.08) rotate(2deg);
+}
+
+.logo-link:active {
+  transform: scale(0.95);
+  transition: transform 0.1s var(--ease-smooth);
 }
 
 .logo-image {
@@ -688,7 +864,7 @@ body.section-muser .nav-link-muser[href*="/muser/"]::after {
 
 /* Add spacing to body for fixed navbar */
 body {
-  padding-top: 75px;
+  padding-top: calc(var(--spacing-xl) + var(--spacing-sm));
 }
 
 /* Legacy header styles - keeping for backwards compatibility */
@@ -1155,8 +1331,8 @@ body.section-focus::before {
   top: 0; left: 0; right: 0; bottom: 0;
   background: url('/images/city extended.png') no-repeat center center;
   background-size: cover;
-  filter: blur(2px);
-  transform: scale(1.05);
+  filter: blur(8px) brightness(0.6);
+  transform: scale(1.1);
   z-index: -2;
   pointer-events: none;
 }
@@ -1167,9 +1343,9 @@ body.section-focus::after {
   top: 0; left: 0; right: 0; bottom: 0;
   background: linear-gradient(
     135deg, 
-    rgba(10, 26, 47, 0.75) 0%, 
-    rgba(10, 26, 47, 0.65) 50%,
-    rgba(30, 58, 95, 0.70) 100%
+    rgba(10, 26, 47, 0.88) 0%, 
+    rgba(10, 26, 47, 0.85) 50%,
+    rgba(30, 58, 95, 0.87) 100%
   );
   z-index: -1;
   pointer-events: none;
@@ -1182,21 +1358,19 @@ body.section-focus .prose {
   z-index: 1;
 }
 
-/* Content area background - Two-tone effect for cards */
+/* Content area background - Minimal container for cards only */
 body.section-focus main > section,
 body.section-focus main > .prose,
 body.section-focus .article-list,
 body.section-focus [class*="grid"] {
-  background: rgba(245, 247, 250, 0.75);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  padding: var(--spacing-lg);
-  border-radius: 12px;
-  margin-bottom: var(--spacing-md);
+  background: transparent;
+  padding: 0 var(--spacing-lg);
+  border-radius: 0;
+  margin-bottom: var(--spacing-lg);
 }
 
 /* ===== SECTION HEADERS WITH DIVIDER LINES =====*/
-/* Year/Category Headers (like "2026") */
+/* Year/Category Headers (like "2026") - Work on dark background */
 body.section-focus h2.section-year,
 body.section-focus h2:first-of-type,
 body.section-focus .year-header {
@@ -1204,11 +1378,13 @@ body.section-focus .year-header {
   font-size: 32px !important;
   font-weight: var(--weight-extrabold) !important;
   letter-spacing: var(--tracking-wide) !important;
-  color: #0A1A2F !important;
+  color: #FFFFFF !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   margin-top: 0 !important;
   margin-bottom: var(--spacing-md) !important;
   padding-bottom: var(--spacing-sm) !important;
   border-bottom: 2px solid #4A90E2;
+  box-shadow: 0 2px 8px rgba(74, 144, 226, 0.4);
   position: relative;
   display: inline-block;
   width: auto;
@@ -1229,11 +1405,72 @@ body.section-focus h2:first-of-type::after {
 
 /* Container for section headers */
 body.section-focus .section-header-wrapper {
-  margin-bottom: var(--spacing-lg);
-  margin-top: var(--spacing-xl);
+  margin-bottom: calc(var(--spacing-lg) + var(--spacing-sm));
+  margin-top: calc(var(--spacing-xl) + var(--spacing-md));
 }
 
 body.section-focus .section-header-wrapper:first-child {
+  margin-top: 0;
+}
+
+/* ===== FREE MUSER SECTION HEADERS WITH DIVIDER LINES =====*/
+/* Year/Category Headers for Muser (like "2026") - Work on dark background */
+body.section-muser h2.section-year,
+body.section-muser h2:first-of-type,
+body.section-muser .year-header {
+  font-family: 'Kaushan Script', cursive !important;
+  font-size: 36px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em !important;
+  color: #FFFFFF !important;
+  text-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.5),
+    0 0 20px rgba(255, 140, 66, 0.4);
+  margin-top: 0 !important;
+  margin-bottom: var(--spacing-md) !important;
+  padding-bottom: var(--spacing-sm) !important;
+  padding-left: 2.5rem !important;
+  border-bottom: 3px solid #FF8C42;
+  box-shadow: 0 3px 12px rgba(255, 140, 66, 0.5);
+  position: relative;
+  display: inline-block;
+  width: auto;
+}
+
+/* Free Muser icon for section headers */
+body.section-muser h2.section-year::before,
+body.section-muser h2:first-of-type::before,
+body.section-muser .year-header::before {
+  content: '✎';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%) rotate(-15deg);
+  font-size: 1.3em;
+  color: #FF8C42;
+  text-shadow: 0 0 20px rgba(255, 140, 66, 0.6);
+}
+
+/* Divider line extends beyond text with Free Muser color */
+body.section-muser h2.section-year::after,
+body.section-muser h2:first-of-type::after {
+  content: '';
+  position: absolute;
+  left: 100%;
+  bottom: -3px;
+  width: 100vw;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(255, 140, 66, 0.4) 0%, transparent 100%);
+  margin-left: var(--spacing-sm);
+}
+
+/* Container for Muser section headers */
+body.section-muser .section-header-wrapper {
+  margin-bottom: calc(var(--spacing-lg) + var(--spacing-sm));
+  margin-top: calc(var(--spacing-xl) + var(--spacing-md));
+}
+
+body.section-muser .section-header-wrapper:first-child {
   margin-top: 0;
 }
 
@@ -1246,8 +1483,8 @@ body.section-focus h1 {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: #EAEAEA;
-  margin: 5rem auto 5rem;
-  padding: 2.5rem 3rem;
+  margin: var(--spacing-xl) auto calc(var(--spacing-xl) + var(--spacing-md));
+  padding: var(--spacing-xl) var(--spacing-lg);
   line-height: 1.2;
   max-width: 1200px;
   z-index: 1;
@@ -1256,6 +1493,12 @@ body.section-focus h1 {
     0 4px 8px rgba(0, 0, 0, 0.2),
     0 8px 16px rgba(0, 0, 0, 0.15),
     0 0 40px rgba(30, 58, 95, 0.4);
+  transition: transform var(--transition-slow) var(--ease-smooth);
+  cursor: default;
+}
+
+body.section-focus h1:hover {
+  transform: translateY(-8px);
 }
 
 body.section-focus h1::before {
@@ -1264,8 +1507,8 @@ body.section-focus h1::before {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: calc(100% + 4rem);
-  height: calc(100% + 2rem);
+  width: calc(100% + var(--spacing-xl));
+  height: calc(100% + var(--spacing-lg));
   background: linear-gradient(
     135deg,
     rgba(10, 26, 47, 0.4) 0%,
@@ -1279,6 +1522,15 @@ body.section-focus h1::before {
     0 8px 32px rgba(0, 0, 0, 0.3),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
   z-index: -1;
+  transition: all var(--transition-slow) var(--ease-smooth);
+}
+
+body.section-focus h1:hover::before {
+  box-shadow: 
+    0 16px 48px rgba(0, 0, 0, 0.4),
+    0 0 60px rgba(74, 144, 226, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  border-color: rgba(74, 144, 226, 0.3);
 }
 
 /* ===== MODULAR KNOWLEDGE BLOCK CARDS ===== */
@@ -1293,7 +1545,7 @@ body.section-focus .article-link.card {
     0 2px 8px rgba(0, 0, 0, 0.06),
     0 1px 2px rgba(0, 0, 0, 0.04) !important;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  padding: 28px 32px 28px 36px !important;
+  padding: calc(var(--spacing-md) + var(--spacing-xs)) var(--spacing-lg) calc(var(--spacing-md) + var(--spacing-xs)) calc(var(--spacing-lg) + var(--spacing-xs)) !important;
   overflow: visible;
   backdrop-filter: none;
 }
@@ -1332,13 +1584,19 @@ body.section-focus .article-link.card::after {
 /* Premium Hover Effects - Lift + Enhanced Shadow */
 body.section-focus article.card:hover,
 body.section-focus .article-link.card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-8px) scale(1.01);
   border-color: rgba(74, 144, 226, 0.2) !important;
   box-shadow: 
-    0 12px 24px rgba(0, 0, 0, 0.12),
-    0 4px 8px rgba(0, 0, 0, 0.08),
-    0 0 0 1px rgba(74, 144, 226, 0.1) !important;
+    0 16px 32px rgba(0, 0, 0, 0.14),
+    0 6px 12px rgba(0, 0, 0, 0.1),
+    0 0 0 1px rgba(74, 144, 226, 0.15) !important;
   background: #FFFFFF !important;
+}
+
+body.section-focus article.card:active,
+body.section-focus .article-link.card:active {
+  transform: translateY(-4px) scale(0.995);
+  transition: all 0.1s var(--ease-smooth);
 }
 
 /* Accent Bar Growth on Hover */
@@ -1428,23 +1686,30 @@ body.section-focus .article-link.card * {
 body.section-focus .article-list,
 body.section-focus [class*="grid"],
 body.section-focus .space-y-10 {
-  gap: var(--spacing-md) !important;
+  gap: calc(var(--spacing-md) + var(--spacing-xs)) !important;
 }
 
 /* Individual card spacing in lists */
 body.section-focus article.card + article.card,
 body.section-focus .article-link.card + .article-link.card {
-  margin-top: var(--spacing-md) !important;
+  margin-top: calc(var(--spacing-md) + var(--spacing-xs)) !important;
 }
 
 /* Section spacing */
 body.section-focus main > section + section {
-  margin-top: var(--spacing-lg) !important;
+  margin-top: calc(var(--spacing-xl) + var(--spacing-sm)) !important;
 }
 
 /* Consistent spacing for all focus content containers */
 body.section-focus main {
-  padding-bottom: var(--spacing-xl);
+  padding-top: var(--spacing-md);
+  padding-bottom: calc(var(--spacing-xl) + var(--spacing-lg));
+}
+
+/* Muser main spacing */
+body.section-muser main {
+  padding-top: var(--spacing-md);
+  padding-bottom: calc(var(--spacing-xl) + var(--spacing-lg));
 }
 
 /* ===== FOCUS SECTION - TYPOGRAPHIC HIERARCHY ===== */
@@ -1561,8 +1826,8 @@ body.section-muser::before {
   top: 0; left: 0; right: 0; bottom: 0;
   background: url('/images/forest extended.png') no-repeat center center;
   background-size: cover;
-  filter: blur(2px);
-  transform: scale(1.05);
+  filter: blur(8px) brightness(0.5);
+  transform: scale(1.1);
   z-index: -2;
   pointer-events: none;
 }
@@ -1573,9 +1838,9 @@ body.section-muser::after {
   top: 0; left: 0; right: 0; bottom: 0;
   background: linear-gradient(
     135deg, 
-    rgba(138, 59, 0, 0.68) 0%, 
-    rgba(106, 46, 0, 0.58) 50%,
-    rgba(212, 106, 31, 0.62) 100%
+    rgba(138, 59, 0, 0.85) 0%, 
+    rgba(106, 46, 0, 0.82) 50%,
+    rgba(212, 106, 31, 0.84) 100%
   );
   z-index: -1;
   pointer-events: none;
@@ -1597,8 +1862,8 @@ body.section-muser h1 {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: #EAEAEA;
-  margin: 5rem auto 5rem;
-  padding: 2.5rem 3rem;
+  margin: var(--spacing-xl) auto calc(var(--spacing-xl) + var(--spacing-md));
+  padding: var(--spacing-xl) var(--spacing-lg);
   line-height: 1.2;
   max-width: 1200px;
   z-index: 1;
@@ -1608,6 +1873,12 @@ body.section-muser h1 {
     0 4px 8px rgba(0, 0, 0, 0.2),
     0 8px 16px rgba(0, 0, 0, 0.15),
     0 0 40px rgba(212, 106, 31, 0.4);
+  transition: transform var(--transition-slow) var(--ease-smooth);
+  cursor: default;
+}
+
+body.section-muser h1:hover {
+  transform: translateY(-8px) rotate(-1deg);
 }
 
 body.section-muser h1::before {
@@ -1616,8 +1887,9 @@ body.section-muser h1::before {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: calc(100% + 4rem);
-  height: calc(100% + 2rem);
+  width: calc(100% + var(--spacing-xl));
+  height: calc(100% + var(--spacing-lg));
+  transition: all var(--transition-slow) var(--ease-smooth);
   background: linear-gradient(
     135deg,
     rgba(138, 59, 0, 0.4) 0%,
@@ -1633,6 +1905,14 @@ body.section-muser h1::before {
   z-index: -1;
 }
 
+body.section-muser h1:hover::before {
+  box-shadow: 
+    0 16px 48px rgba(0, 0, 0, 0.4),
+    0 0 60px rgba(255, 140, 66, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 140, 66, 0.3);
+}
+
 /* Muser page card/block styling for better readability */
 body.section-muser article.card,
 body.section-muser .article-link.card {
@@ -1641,14 +1921,32 @@ body.section-muser .article-link.card {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.99) 0%, rgba(255, 255, 255, 0.95) 100%) !important;
   box-shadow: 
     0 20px 50px rgba(0, 0, 0, 0.35),
-    0 0 0 1px rgba(138, 59, 0, 0.1),
+    0 0 0 1px rgba(255, 140, 66, 0.15),
     inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
   border: none !important;
+  border-left: 5px solid #FF8C42 !important;
   border-radius: 16px !important;
   backdrop-filter: blur(20px);
   transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
-  padding: 2.5rem 2rem !important;
-  overflow: hidden;
+  padding: var(--spacing-lg) calc(var(--spacing-md) + var(--spacing-sm)) var(--spacing-lg) calc(var(--spacing-lg) + var(--spacing-xs)) !important;
+  overflow: visible;
+}
+
+/* Free Muser icon mark on cards */
+body.section-muser article.card::after,
+body.section-muser .article-link.card::after {
+  content: '✎';
+  position: absolute;
+  top: var(--spacing-md);
+  left: -15px;
+  font-size: 1.8rem;
+  color: #FF8C42;
+  text-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.3),
+    0 0 15px rgba(255, 140, 66, 0.5);
+  transform: rotate(-15deg);
+  transition: all 0.4s ease;
+  z-index: 2;
 }
 
 body.section-muser article.card::before {
@@ -1658,7 +1956,7 @@ body.section-muser article.card::before {
   right: -50%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(45deg, transparent 30%, rgba(138, 59, 0, 0.03) 80%, transparent 100%);
+  background: linear-gradient(45deg, transparent 30%, rgba(255, 140, 66, 0.04) 80%, transparent 100%);
   pointer-events: none;
   transition: all 0.6s ease;
 }
@@ -1666,16 +1964,32 @@ body.section-muser article.card::before {
 body.section-muser article.card:hover,
 body.section-muser .article-link.card:hover {
   box-shadow: 
-    0 30px 70px rgba(0, 0, 0, 0.4),
-    0 0 0 2px rgba(138, 59, 0, 0.15),
-    inset 0 1px 0 rgba(255, 255, 255, 1) !important;
-  transform: translateY(-8px) scale(1.02);
+    0 32px 80px rgba(0, 0, 0, 0.45),
+    0 0 0 3px rgba(255, 140, 66, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    0 0 50px rgba(255, 140, 66, 0.4) !important;
+  transform: translateY(-10px) scale(1.02) rotate(-0.5deg);
   background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.98) 100%) !important;
+  border-left-width: 7px !important;
+}
+
+body.section-muser article.card:active,
+body.section-muser .article-link.card:active {
+  transform: translateY(-4px) scale(1.01);
+  transition: all 0.1s var(--ease-smooth);
 }
 
 body.section-muser article.card:hover::before {
   top: 0;
   right: 0;
+}
+
+body.section-muser article.card:hover::after,
+body.section-muser .article-link.card:hover::after {
+  transform: rotate(0deg) scale(1.15);
+  text-shadow: 
+    0 3px 6px rgba(0, 0, 0, 0.4),
+    0 0 25px rgba(255, 140, 66, 0.7);
 }
 
 body.section-muser article.card h3,
@@ -1703,35 +2017,421 @@ body.section-muser .article-link.card * {
   color: #8A3B00 !important;
 }
 
-/* Article content backgrounds for section pages */
-body.section-focus article .article-content,
+/* ===== INTEGRATED ARTICLE BACKGROUNDS ===== */
+/* Header integrates with background - no box */
 body.section-focus article header,
-body.section-focus article footer {
-  background: rgba(255, 255, 255, 0.98);
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  margin-bottom: 1.5rem;
+body.section-muser article header {
+  background: transparent;
+  padding: var(--spacing-lg) 0;
+  border-radius: 0;
+  box-shadow: none;
+  margin-bottom: var(--spacing-lg);
 }
 
-body.section-muser article .article-content,
-body.section-muser article header,
+/* Only article content gets white background */
+body.section-focus article .article-content,
+body.section-muser article .article-content {
+  background: rgba(255, 255, 255, 0.98);
+  padding: calc(var(--spacing-lg) + var(--spacing-sm));
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  margin-bottom: var(--spacing-lg);
+}
+
+/* Footer also gets white background */
+body.section-focus article footer,
 body.section-muser article footer {
   background: rgba(255, 255, 255, 0.98);
-  padding: 2rem;
+  padding: var(--spacing-lg);
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--spacing-lg);
 }
 
+/* ===== ARTICLE VISUAL HIERARCHY ===== */
+/* Clear hierarchy: Hero → Metadata → Body → CTA */
+
+/* HERO - Article Title (Maximum Visual Weight) */
+/* Title interacts with background - white text with shadow */
 body.section-focus article header h1,
 body.section-muser article header h1 {
-  color: #0A1A2F;
-  text-shadow: none;
+  font-size: clamp(2rem, 5vw, 3.5rem) !important;
+  font-weight: 900 !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.02em !important;
+  margin-bottom: var(--spacing-md) !important;
+  margin-top: 0 !important;
+  color: #FFFFFF !important;
+  text-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.6),
+    0 4px 8px rgba(0, 0, 0, 0.4),
+    0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+body.section-focus article header h1 {
+  font-family: var(--focus-font-family) !important;
 }
 
 body.section-muser article header h1 {
-  color: #8A3B00;
+  font-family: 'Kaushan Script', cursive !important;
+}
+
+/* METADATA - Subtle, Secondary (Low Visual Weight) */
+/* Metadata on background - light text with subtle shadow */
+body.section-focus article header .text-neutral-500,
+body.section-focus article header .article-meta,
+body.section-muser article header .text-neutral-500,
+body.section-muser article header .article-meta {
+  font-family: var(--focus-font-family) !important;
+  font-size: 13px !important;
+  font-weight: var(--weight-semibold) !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  color: rgba(255, 255, 255, 0.85) !important;
+  opacity: 1;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  margin-top: var(--spacing-xs) !important;
+  margin-bottom: var(--spacing-md) !important;
+}
+
+/* Tag badges - Part of metadata - enhanced for dark background */
+.tag-focus-mindset,
+.tag-free-muser {
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  padding: 8px 16px !important;
+  display: inline-block;
+  border-radius: 6px;
+  margin-bottom: var(--spacing-sm) !important;
+}
+
+.tag-focus-mindset {
+  background: linear-gradient(135deg, #4A90E2 0%, #2D5F8D 100%);
+  color: #FFFFFF !important;
+  border: none;
+  box-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(74, 144, 226, 0.4);
+}
+
+.tag-free-muser {
+  background: linear-gradient(135deg, #FF8C42 0%, #D4661F 100%);
+  color: #FFFFFF !important;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(255, 140, 66, 0.4);
+  position: relative;
+}
+
+/* Free Muser tag icon */
+.tag-free-muser::before {
+  content: '✎';
+  margin-right: 0.4rem;
+  font-size: 0.9rem;
+  transform: rotate(-10deg);
+  display: inline-block;
+}
+
+/* BODY - Readable, Clear Hierarchy */
+body.section-focus article .article-content,
+body.section-muser article .article-content {
+  font-family: var(--focus-font-family) !important;
+  font-size: 18px !important;
+  line-height: 1.75 !important;
+  color: #2C2C2C !important;
+  font-weight: 400 !important;
+}
+
+/* Body headings hierarchy */
+body.section-focus article .article-content h2,
+body.section-muser article .article-content h2 {
+  font-size: 28px !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.01em !important;
+  margin-top: var(--spacing-lg) !important;
+  margin-bottom: var(--spacing-sm) !important;
+  color: #0A1A2F !important;
+  line-height: 1.3 !important;
+}
+
+body.section-focus article .article-content h3,
+body.section-muser article .article-content h3 {
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  margin-top: var(--spacing-md) !important;
+  margin-bottom: var(--spacing-xs) !important;
+  color: #1A1A1A !important;
+  line-height: 1.4 !important;
+}
+
+body.section-focus article .article-content h4,
+body.section-muser article .article-content h4 {
+  font-size: 19px !important;
+  font-weight: 600 !important;
+  margin-top: var(--spacing-sm) !important;
+  margin-bottom: var(--spacing-xs) !important;
+  color: #2C2C2C !important;
+}
+
+/* Body paragraphs */
+body.section-focus article .article-content p,
+body.section-muser article .article-content p {
+  margin-bottom: var(--spacing-sm) !important;
+  font-size: 18px !important;
+  line-height: 1.75 !important;
+}
+
+/* Body lists */
+body.section-focus article .article-content ul,
+body.section-focus article .article-content ol,
+body.section-muser article .article-content ul,
+body.section-muser article .article-content ol {
+  margin-bottom: var(--spacing-sm) !important;
+  padding-left: var(--spacing-md) !important;
+}
+
+body.section-focus article .article-content li,
+body.section-muser article .article-content li {
+  margin-bottom: var(--spacing-xs) !important;
+  line-height: 1.7 !important;
+}
+
+/* CTA - High Visual Weight, Action-Oriented */
+body.section-focus article .article-content a {
+  color: #4A90E2 !important;
+  font-weight: 600 !important;
+  text-decoration: none;
+  border-bottom: 2px solid rgba(74, 144, 226, 0.3);
+  transition: all 0.2s ease;
+  padding-bottom: 1px;
+}
+
+body.section-focus article .article-content a:hover {
+  color: #2D5F8D !important;
+  border-bottom-color: #2D5F8D;
+  background: rgba(74, 144, 226, 0.05);
+}
+
+/* Free Muser links - Orange accent color */
+body.section-muser article .article-content a {
+  color: #FF8C42 !important;
+  font-weight: 600 !important;
+  text-decoration: none;
+  border-bottom: 2px solid rgba(255, 140, 66, 0.4);
+  transition: all 0.2s ease;
+  padding-bottom: 1px;
+}
+
+body.section-muser article .article-content a:hover {
+  color: #D4661F !important;
+  border-bottom-color: #D4661F;
+  background: rgba(255, 140, 66, 0.08);
+}
+
+/* Button-style CTAs - Focus */
+body.section-focus article .article-content .button,
+body.section-focus article .article-content [class*="btn"] {
+  display: inline-block;
+  padding: 14px 28px !important;
+  background: linear-gradient(135deg, #4A90E2 0%, #2D5F8D 100%);
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
+  font-size: 16px !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase;
+  border: none !important;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-top: var(--spacing-sm);
+  text-decoration: none;
+}
+
+body.section-focus article .article-content .button:hover,
+body.section-focus article .article-content [class*="btn"]:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(74, 144, 226, 0.5);
+  background: linear-gradient(135deg, #2D5F8D 0%, #1E4A6F 100%);
+}
+
+body.section-focus article .article-content .button:active,
+body.section-focus article .article-content [class*="btn"]:active {
+  transform: translateY(-1px) scale(0.98);
+  transition: all 0.1s var(--ease-smooth);
+}
+
+/* Button-style CTAs - Free Muser (Distinct pill style) */
+body.section-muser article .article-content .button,
+body.section-muser article .article-content [class*="btn"] {
+  display: inline-block;
+  padding: 14px 32px !important;
+  background: linear-gradient(135deg, #FF8C42 0%, #D4661F 100%);
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
+  font-size: 16px !important;
+  font-family: 'Kaushan Script', cursive !important;
+  letter-spacing: 0.02em !important;
+  border: 2px solid rgba(255, 255, 255, 0.3) !important;
+  border-radius: 30px;
+  box-shadow: 
+    0 4px 12px rgba(255, 140, 66, 0.4),
+    0 0 20px rgba(255, 140, 66, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-top: var(--spacing-sm);
+  text-decoration: none;
+  position: relative;
+}
+
+/* Free Muser button icon */
+body.section-muser article .article-content .button::before,
+body.section-muser article .article-content [class*="btn"]::before {
+  content: '✎';
+  margin-right: 0.5rem;
+  font-size: 1.1em;
+  transform: rotate(-15deg);
+  display: inline-block;
+  transition: transform var(--transition-base) var(--ease-smooth);
+}
+
+body.section-muser article .article-content .button:hover,
+body.section-muser article .article-content [class*="btn"]:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 
+    0 8px 28px rgba(255, 140, 66, 0.7),
+    0 0 40px rgba(255, 140, 66, 0.5);
+  background: linear-gradient(135deg, #FFA060 0%, #FF8C42 100%);
+  border-color: rgba(255, 255, 255, 0.5) !important;
+  animation: buttonPulse 1.5s infinite;
+}
+
+body.section-muser article .article-content .button:active,
+body.section-muser article .article-content [class*="btn"]:active {
+  transform: translateY(-1px) scale(0.98);
+  transition: all 0.1s var(--ease-smooth);
+}
+
+body.section-muser article .article-content .button:hover::before,
+body.section-muser article .article-content [class*="btn"]:hover::before {
+  transform: rotate(5deg) scale(1.15);
+}
+
+/* Article header container spacing - no border on transparent background */
+body.section-focus article header,
+body.section-muser article header {
+  margin-bottom: var(--spacing-lg) !important;
+  padding-bottom: var(--spacing-md) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Blockquotes - Special visual treatment */
+body.section-focus article .article-content blockquote {
+  border-left: 4px solid #4A90E2;
+  padding: var(--spacing-sm) var(--spacing-md);
+  margin: var(--spacing-md) 0;
+  background: rgba(74, 144, 226, 0.04);
+  border-radius: 0 6px 6px 0;
+  font-style: italic;
+  color: #444 !important;
+}
+
+body.section-focus article .article-content blockquote p {
+  margin-bottom: var(--spacing-xs) !important;
+  font-size: 17px !important;
+}
+
+/* Free Muser blockquotes - Orange accent */
+body.section-muser article .article-content blockquote {
+  border-left: 5px solid #FF8C42;
+  padding: var(--spacing-sm) var(--spacing-md);
+  margin: var(--spacing-md) 0;
+  background: rgba(255, 140, 66, 0.06);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: #444 !important;
+  position: relative;
+}
+
+/* Free Muser blockquote decoration */
+body.section-muser article .article-content blockquote::before {
+  content: '✎';
+  position: absolute;
+  left: -12px;
+  top: 10px;
+  color: #FF8C42;
+  font-size: 1.5em;
+  transform: rotate(-15deg);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+body.section-muser article .article-content blockquote p {
+  margin-bottom: var(--spacing-xs) !important;
+  font-size: 17px !important;
+}
+
+/* Code blocks - Technical content */
+body.section-focus article .article-content code {
+  background: rgba(10, 26, 47, 0.06);
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 16px !important;
+  font-family: 'Consolas', 'Monaco', monospace !important;
+  color: #2D5F8D !important;
+}
+
+body.section-focus article .article-content pre code {
+  display: block;
+  padding: var(--spacing-sm);
+  overflow-x: auto;
+  background: rgba(10, 26, 47, 0.04);
+  border: 1px solid rgba(10, 26, 47, 0.1);
+  border-radius: 6px;
+  font-size: 14px !important;
+}
+
+/* Free Muser code blocks - Orange accent */
+body.section-muser article .article-content code {
+  background: rgba(255, 140, 66, 0.08);
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 16px !important;
+  font-family: 'Consolas', 'Monaco', monospace !important;
+  color: #D4661F !important;
+}
+
+body.section-muser article .article-content pre code {
+  display: block;
+  padding: var(--spacing-sm);
+  overflow-x: auto;
+  background: rgba(255, 140, 66, 0.05);
+  border: 1px solid rgba(255, 140, 66, 0.15);
+  border-radius: 6px;
+  font-size: 14px !important;
+}
+
+/* Images in articles */
+body.section-focus article .article-content img,
+body.section-muser article .article-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin: var(--spacing-md) 0;
+}
+
+/* Strong emphasis */
+body.section-focus article .article-content strong,
+body.section-muser article .article-content strong {
+  font-weight: 700 !important;
+  color: #0A1A2F !important;
+}
+
+/* Emphasis */
+body.section-focus article .article-content em {
+  font-style: italic;
+  color: #1A1A1A !important;
 }
 
 /* Reviews panel background for muser section */
