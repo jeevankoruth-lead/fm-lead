@@ -1,4 +1,55 @@
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+/* ===== TYPOGRAPHIC SYSTEM - FOCUS SECTION ===== */
+:root {
+  /* Focus Typography Scale */
+  --focus-font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --focus-hero-title: 64px;
+  --focus-section-header: 28px;
+  --focus-card-title: 20px;
+  --focus-metadata: 14px;
+  
+  /* Spacing System - 8/16/24/40px increments */
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-md: 24px;
+  --spacing-lg: 40px;
+  --spacing-xl: 64px;
+  
+  /* Font Weights */
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-extrabold: 800;
+  --weight-black: 900;
+  
+  /* Letter Spacing */
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.02em;
+  --tracking-wider: 0.05em;
+  --tracking-widest: 0.1em; /* +10% for metadata */
+}
+
+/* Responsive Typography Scale */
+@media (max-width: 1024px) {
+  :root {
+    --focus-hero-title: 56px;
+    --focus-section-header: 26px;
+    --focus-card-title: 19px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --focus-hero-title: 48px;
+    --focus-section-header: 24px;
+    --focus-card-title: 18px;
+    --focus-metadata: 13px;
+  }
+}
 
 /* ===== HIDE LEGACY MENU-LIST NAV BARS ===== */
 /* These created the disconnected blue/brown boxes */
@@ -431,13 +482,14 @@ body.home-bg .premium-navbar {
   width: 100%;
   z-index: 1000;
   padding: 0.5rem 0;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.35);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 2px solid rgba(74, 144, 226, 0.15);
   box-shadow: 
-    0 4px 30px rgba(0, 0, 0, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    0 4px 20px rgba(0, 0, 0, 0.4),
+    0 1px 3px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -484,75 +536,99 @@ body.home-bg .premium-navbar {
   justify-content: flex-end;
 }
 
-/* Navigation Links - Unified Typography */
+/* Navigation Links - Premium Editorial Style */
 .nav-link {
   position: relative;
-  color: rgba(234, 234, 234, 0.95);
+  color: rgba(234, 234, 234, 0.9);
   text-decoration: none;
   font-weight: 600;
   font-size: 0.9rem;
-  letter-spacing: 0.03em;
-  padding: 0.4rem 0.9rem;
-  border-radius: 8px;
+  letter-spacing: 0.06em;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   white-space: nowrap;
   font-family: inherit;
+  display: inline-block;
 }
 
-.nav-link::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 8px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.nav-link:hover::before {
-  opacity: 1;
-}
-
+/* Smooth underline animation */
 .nav-link::after {
   content: '';
   position: absolute;
-  bottom: 0.25rem;
-  left: 50%;
+  bottom: 0;
+  left: 0;
   width: 0;
   height: 2px;
   background: currentColor;
-  transform: translateX(-50%);
-  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-link:hover::after {
-  width: calc(100% - 2rem);
+  width: 100%;
 }
 
-/* Focus Mindset Links - Consistent Typography */
+/* Focus Mindset Links - Brand Color Integration */
 .nav-link-focus {
-  color: rgba(234, 234, 234, 0.95);
-  text-shadow: 0 0 15px rgba(30, 58, 95, 0.4);
+  color: rgba(234, 234, 234, 0.9);
+  text-shadow: 0 0 12px rgba(74, 144, 226, 0.3);
 }
 
 .nav-link-focus:hover {
-  color: rgba(255, 255, 255, 1);
-  text-shadow: 0 0 20px rgba(30, 58, 95, 0.6);
-  background: rgba(10, 26, 47, 0.25);
+  color: #4A90E2;
+  text-shadow: 0 0 20px rgba(74, 144, 226, 0.5);
+  background: rgba(74, 144, 226, 0.08);
 }
 
-/* Free Muser Links - Consistent Typography with Stylistic Font */
+.nav-link-focus:hover::after {
+  background: #4A90E2;
+}
+
+/* Active state for Focus links */
+.nav-link-focus.active,
+body.section-focus .nav-link-focus[href*="/focus/"] {
+  color: #4A90E2;
+  border-bottom: 2px solid #4A90E2;
+  padding-bottom: calc(0.5rem - 2px);
+}
+
+.nav-link-focus.active::after,
+body.section-focus .nav-link-focus[href*="/focus/"]::after {
+  width: 100%;
+  background: #4A90E2;
+}
+
+/* Free Muser Links - Maintain Stylistic Font */
 .nav-link-muser {
   font-family: 'Kaushan Script', cursive;
-  color: rgba(234, 234, 234, 0.95);
-  text-shadow: 0 0 15px rgba(212, 106, 31, 0.4);
+  color: rgba(234, 234, 234, 0.9);
+  text-shadow: 0 0 12px rgba(212, 106, 31, 0.3);
   font-size: 0.95rem;
+  letter-spacing: 0.04em;
 }
 
 .nav-link-muser:hover {
-  color: rgba(255, 255, 255, 1);
-  text-shadow: 0 0 20px rgba(212, 106, 31, 0.6);
-  background: rgba(138, 59, 0, 0.25);
+  color: #FF8C42;
+  text-shadow: 0 0 20px rgba(255, 140, 66, 0.5);
+  background: rgba(255, 140, 66, 0.08);
+}
+
+.nav-link-muser:hover::after {
+  background: #FF8C42;
+}
+
+/* Active state for Muser links */
+.nav-link-muser.active,
+body.section-muser .nav-link-muser[href*="/muser/"] {
+  color: #FF8C42;
+  border-bottom: 2px solid #FF8C42;
+  padding-bottom: calc(0.5rem - 2px);
+}
+
+.nav-link-muser.active::after,
+body.section-muser .nav-link-muser[href*="/muser/"]::after {
+  width: 100%;
+  background: #FF8C42;
 }
 
 /* Center Logo - The Divider with Better Spacing */
@@ -886,6 +962,27 @@ body[data-theme="muser"] h1 {
     height: calc(100% + 1.5rem);
     border-radius: 16px;
   }
+
+  /* Card Mobile Adjustments */
+  body.section-focus article.card,
+  body.section-focus .article-link.card,
+  body.section-muser article.card,
+  body.section-muser .article-link.card {
+    padding: 20px 20px 20px 24px !important;
+  }
+
+  /* Hero to content gap on mobile */
+  .focus-hero-section {
+    margin-bottom: 32px;
+  }
+
+  /* Content area mobile padding */
+  body.section-focus main > section,
+  body.section-focus main > .prose,
+  body.section-focus .article-list,
+  body.section-focus [class*="grid"] {
+    padding: var(--spacing-sm);
+  }
 }
 
 .header-nav {
@@ -1085,6 +1182,61 @@ body.section-focus .prose {
   z-index: 1;
 }
 
+/* Content area background - Two-tone effect for cards */
+body.section-focus main > section,
+body.section-focus main > .prose,
+body.section-focus .article-list,
+body.section-focus [class*="grid"] {
+  background: rgba(245, 247, 250, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: var(--spacing-lg);
+  border-radius: 12px;
+  margin-bottom: var(--spacing-md);
+}
+
+/* ===== SECTION HEADERS WITH DIVIDER LINES =====*/
+/* Year/Category Headers (like "2026") */
+body.section-focus h2.section-year,
+body.section-focus h2:first-of-type,
+body.section-focus .year-header {
+  font-family: var(--focus-font-family) !important;
+  font-size: 32px !important;
+  font-weight: var(--weight-extrabold) !important;
+  letter-spacing: var(--tracking-wide) !important;
+  color: #0A1A2F !important;
+  margin-top: 0 !important;
+  margin-bottom: var(--spacing-md) !important;
+  padding-bottom: var(--spacing-sm) !important;
+  border-bottom: 2px solid #4A90E2;
+  position: relative;
+  display: inline-block;
+  width: auto;
+}
+
+/* Divider line extends beyond text */
+body.section-focus h2.section-year::after,
+body.section-focus h2:first-of-type::after {
+  content: '';
+  position: absolute;
+  left: 100%;
+  bottom: -2px;
+  width: 100vw;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(74, 144, 226, 0.2) 0%, transparent 100%);
+  margin-left: var(--spacing-sm);
+}
+
+/* Container for section headers */
+body.section-focus .section-header-wrapper {
+  margin-bottom: var(--spacing-lg);
+  margin-top: var(--spacing-xl);
+}
+
+body.section-focus .section-header-wrapper:first-child {
+  margin-top: 0;
+}
+
 /* Focus page heading styling */
 body.section-focus h1 {
   position: relative;
@@ -1129,73 +1281,266 @@ body.section-focus h1::before {
   z-index: -1;
 }
 
-/* Focus page card/block styling for better readability */
+/* ===== MODULAR KNOWLEDGE BLOCK CARDS ===== */
 body.section-focus article.card,
 body.section-focus .article-link.card {
   position: relative;
   z-index: 1;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.99) 0%, rgba(255, 255, 255, 0.95) 100%) !important;
+  background: #FFFFFF !important;
+  border: 1px solid rgba(10, 26, 47, 0.08) !important;
+  border-radius: 8px !important;
   box-shadow: 
-    0 20px 50px rgba(0, 0, 0, 0.35),
-    0 0 0 1px rgba(10, 26, 47, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
-  border: none !important;
-  border-radius: 16px !important;
-  backdrop-filter: blur(20px);
-  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
-  padding: 2.5rem 2rem !important;
-  overflow: hidden;
+    0 2px 8px rgba(0, 0, 0, 0.06),
+    0 1px 2px rgba(0, 0, 0, 0.04) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 28px 32px 28px 36px !important;
+  overflow: visible;
+  backdrop-filter: none;
 }
 
-body.section-focus article.card::before {
+/* Left Accent Bar - Focus Color */
+body.section-focus article.card::before,
+body.section-focus .article-link.card::before {
   content: '';
   position: absolute;
-  top: -50%;
-  right: -50%;
-  width: 100%;
+  top: 0;
+  left: 0;
+  width: 4px;
   height: 100%;
-  background: linear-gradient(45deg, transparent 30%, rgba(10, 26, 47, 0.03) 80%, transparent 100%);
-  pointer-events: none;
-  transition: all 0.6s ease;
+  background: linear-gradient(180deg, #4A90E2 0%, #2D5F8D 100%);
+  border-radius: 8px 0 0 8px;
+  transition: width 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 0 rgba(74, 144, 226, 0);
 }
 
-body.section-focus article.card:hover,
-body.section-focus .article-link.card:hover {
-  box-shadow: 
-    0 30px 70px rgba(0, 0, 0, 0.4),
-    0 0 0 2px rgba(10, 26, 47, 0.15),
-    inset 0 1px 0 rgba(255, 255, 255, 1) !important;
-  transform: translateY(-8px) scale(1.02);
-  background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.98) 100%) !important;
-}
-
-body.section-focus article.card:hover::before {
+/* Subtle Background Pattern - Optional */
+body.section-focus article.card::after,
+body.section-focus .article-link.card::after {
+  content: '';
+  position: absolute;
   top: 0;
   right: 0;
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle at top right, rgba(74, 144, 226, 0.03) 0%, transparent 70%);
+  pointer-events: none;
+  border-radius: 0 8px 0 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
+/* Premium Hover Effects - Lift + Enhanced Shadow */
+body.section-focus article.card:hover,
+body.section-focus .article-link.card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(74, 144, 226, 0.2) !important;
+  box-shadow: 
+    0 12px 24px rgba(0, 0, 0, 0.12),
+    0 4px 8px rgba(0, 0, 0, 0.08),
+    0 0 0 1px rgba(74, 144, 226, 0.1) !important;
+  background: #FFFFFF !important;
+}
+
+/* Accent Bar Growth on Hover */
+body.section-focus article.card:hover::before,
+body.section-focus .article-link.card:hover::before {
+  width: 6px;
+  box-shadow: 2px 0 8px rgba(74, 144, 226, 0.3);
+}
+
+/* Background Pattern Reveal on Hover */
+body.section-focus article.card:hover::after,
+body.section-focus .article-link.card:hover::after {
+  opacity: 1;
+}
+
+/* Card Titles - Typography System */
 body.section-focus article.card h3,
 body.section-focus .article-link.card h3 {
+  font-family: var(--focus-font-family) !important;
+  font-size: var(--focus-card-title) !important;
+  font-weight: var(--weight-extrabold) !important;
+  letter-spacing: var(--tracking-tight) !important;
   color: #0A1A2F !important;
-  font-weight: 800 !important;
   text-shadow: none;
-  font-size: clamp(1.25rem, 3vw, 1.75rem) !important;
-  margin-bottom: 1rem !important;
-  letter-spacing: -0.01em;
+  margin-bottom: var(--spacing-xs) !important;
+  margin-top: 0 !important;
+  line-height: 1.3 !important;
 }
 
+/* Card Descriptions */
 body.section-focus article.card p,
 body.section-focus .article-link.card p {
+  font-family: var(--focus-font-family) !important;
   color: #555555 !important;
-  font-size: 0.97rem !important;
-  line-height: 1.7 !important;
-  margin: 0.75rem 0 !important;
-  font-weight: 500;
+  font-size: 15px !important;
+  font-weight: var(--weight-regular) !important;
+  line-height: 1.65 !important;
+  margin: var(--spacing-xs) 0 !important;
+}
+
+/* Card Metadata - Tightened Spacing */
+body.section-focus article.card .article-meta,
+body.section-focus article.card time,
+body.section-focus article.card .meta,
+body.section-focus .article-link.card .article-meta,
+body.section-focus .article-link.card time,
+body.section-focus .article-link.card .meta {
+  font-family: var(--focus-font-family) !important;
+  font-size: var(--focus-metadata) !important;
+  font-weight: var(--weight-semibold) !important;
+  letter-spacing: var(--tracking-widest) !important;
+  text-transform: uppercase !important;
+  color: #888 !important;
+  margin-top: var(--spacing-sm) !important;
+  margin-bottom: 0 !important;
+  padding-top: var(--spacing-xs) !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  flex-wrap: wrap;
+}
+
+/* Individual metadata items */
+body.section-focus article.card .article-meta > *,
+body.section-focus .article-link.card .article-meta > * {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Metadata separators */
+body.section-focus article.card .article-meta > *:not(:last-child)::after,
+body.section-focus .article-link.card .article-meta > *:not(:last-child)::after {
+  content: '•';
+  margin-left: var(--spacing-xs);
+  color: #CCC;
+  font-weight: normal;
 }
 
 body.section-focus article.card *,
 body.section-focus .article-link.card * {
   color: #0A1A2F !important;
+}
+
+/* ===== VERTICAL RHYTHM & SPACING ===== */
+/* Card Grid Spacing */
+body.section-focus .article-list,
+body.section-focus [class*="grid"],
+body.section-focus .space-y-10 {
+  gap: var(--spacing-md) !important;
+}
+
+/* Individual card spacing in lists */
+body.section-focus article.card + article.card,
+body.section-focus .article-link.card + .article-link.card {
+  margin-top: var(--spacing-md) !important;
+}
+
+/* Section spacing */
+body.section-focus main > section + section {
+  margin-top: var(--spacing-lg) !important;
+}
+
+/* Consistent spacing for all focus content containers */
+body.section-focus main {
+  padding-bottom: var(--spacing-xl);
+}
+
+/* ===== FOCUS SECTION - TYPOGRAPHIC HIERARCHY ===== */
+/* Apply Inter font family to all Focus section content */
+body.section-focus,
+body.section-focus * {
+  font-family: var(--focus-font-family);
+}
+
+/* Section Headers (h2) - 24-28px */
+body.section-focus h2,
+body.section-focus article h2,
+body.section-focus .prose h2 {
+  font-family: var(--focus-font-family) !important;
+  font-size: var(--focus-section-header) !important;
+  font-weight: var(--weight-bold) !important;
+  letter-spacing: var(--tracking-wide) !important;
+  line-height: 1.3 !important;
+  margin-top: var(--spacing-lg) !important;
+  margin-bottom: var(--spacing-md) !important;
+  color: #0A1A2F !important;
+}
+
+/* Sub-section Headers (h3, h4) */
+body.section-focus h3,
+body.section-focus article h3:not(.card h3),
+body.section-focus .prose h3 {
+  font-family: var(--focus-font-family) !important;
+  font-size: 22px !important;
+  font-weight: var(--weight-semibold) !important;
+  letter-spacing: var(--tracking-normal) !important;
+  line-height: 1.4 !important;
+  margin-top: var(--spacing-md) !important;
+  margin-bottom: var(--spacing-sm) !important;
+  color: #0A1A2F !important;
+}
+
+body.section-focus h4,
+body.section-focus article h4,
+body.section-focus .prose h4 {
+  font-family: var(--focus-font-family) !important;
+  font-size: var(--focus-card-title) !important;
+  font-weight: var(--weight-semibold) !important;
+  letter-spacing: var(--tracking-normal) !important;
+  line-height: 1.4 !important;
+  margin-top: var(--spacing-sm) !important;
+  margin-bottom: var(--spacing-xs) !important;
+  color: #0A1A2F !important;
+}
+
+/* Body Text */
+body.section-focus p,
+body.section-focus article p:not(.card p),
+body.section-focus .prose p {
+  font-family: var(--focus-font-family) !important;
+  font-size: 16px !important;
+  font-weight: var(--weight-regular) !important;
+  line-height: 1.7 !important;
+  margin-bottom: var(--spacing-sm) !important;
+  color: #333 !important;
+}
+
+/* Lists */
+body.section-focus ul,
+body.section-focus ol,
+body.section-focus li {
+  font-family: var(--focus-font-family) !important;
+  font-size: 16px !important;
+  font-weight: var(--weight-regular) !important;
+  line-height: 1.7 !important;
+}
+
+/* Consistent spacing for lists */
+body.section-focus ul,
+body.section-focus ol {
+  margin-bottom: var(--spacing-sm) !important;
+  margin-top: var(--spacing-xs) !important;
+}
+
+body.section-focus li {
+  margin-bottom: var(--spacing-xs) !important;
+}
+
+/* Links */
+body.section-focus a:not(.card a):not(.nav-link) {
+  font-family: var(--focus-font-family) !important;
+  font-weight: var(--weight-medium) !important;
+  color: #4A90E2 !important;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(74, 144, 226, 0.3);
+  transition: all 0.2s ease;
+}
+
+body.section-focus a:not(.card a):not(.nav-link):hover {
+  color: #2D5F8D !important;
+  border-bottom-color: #2D5F8D;
 }
 
 /* ===== MUSER PAGE BACKGROUND ===== */
@@ -1401,8 +1746,8 @@ body.section-muser .reviews-panel {
 .focus-hero-section {
   width: 100%;
   background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
-  padding: 3rem 0;
-  margin-bottom: 2rem;
+  padding: var(--spacing-lg) 0;
+  margin-bottom: var(--spacing-md);
   position: relative;
   overflow: hidden;
 }
@@ -1429,40 +1774,37 @@ body.section-muser .reviews-panel {
 .focus-hero-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 var(--spacing-md);
   position: relative;
   z-index: 1;
   text-align: center;
 }
 
 .focus-hero-title {
-  font-size: 3rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  font-family: var(--focus-font-family);
+  font-size: var(--focus-hero-title);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-wider);
   color: #ffffff;
   margin: 0;
   padding: 0;
   text-transform: uppercase;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  line-height: 1.1;
 }
 
 .focus-hero-accent-line {
   width: 120px;
   height: 2px;
   background: #4A90E2;
-  margin: 1.5rem auto 0;
+  margin: var(--spacing-sm) auto 0;
   box-shadow: 0 0 10px rgba(74, 144, 226, 0.5);
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .focus-hero-section {
-    padding: 2rem 0;
-  }
-  
-  .focus-hero-title {
-    font-size: 2rem;
-    letter-spacing: 0.06em;
+    padding: var(--spacing-md) 0;
   }
   
   .focus-hero-accent-line {
@@ -1471,10 +1813,6 @@ body.section-muser .reviews-panel {
 }
 
 @media (max-width: 480px) {
-  .focus-hero-title {
-    font-size: 1.5rem;
-  }
-  
   .focus-hero-accent-line {
     width: 60px;
   }
