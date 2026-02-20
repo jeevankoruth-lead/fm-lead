@@ -1,6 +1,7 @@
 ---
 title: "Poco F6 - Smartphone"
 date: 2026-02-15
+featureimage: "/images/forest extended.png"
 draft: false
 tags: ["Free Muser"]
 ---

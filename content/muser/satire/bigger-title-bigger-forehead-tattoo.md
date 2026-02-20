@@ -1,6 +1,7 @@
 ---
 title: "Bigger your title, the bigger your forehead sticker should be."
 date: 2026-02-14
+featureimage: "/images/forest extended.png"
 draft: false
 tags: ["Free Muser"]
 ---

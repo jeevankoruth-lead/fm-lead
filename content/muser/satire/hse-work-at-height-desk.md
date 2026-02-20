@@ -1,6 +1,7 @@
 ---
 title: "Employees who work on any floor above ground floor are effectively working at heights"
 date: 2026-02-14
+featureimage: "/images/forest extended.png"
 draft: false
 tags: ["Free Muser"]
 ---

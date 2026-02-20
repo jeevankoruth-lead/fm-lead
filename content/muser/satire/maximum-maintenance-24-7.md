@@ -1,6 +1,7 @@
 ---
 title: "From routine maintenance to 24/7 continuous maintenance"
 date: 2026-02-14
+featureimage: "/images/forest extended.png"
 draft: false
 tags: ["Free Muser"]
 ---

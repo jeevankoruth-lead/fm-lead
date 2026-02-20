@@ -1,6 +1,7 @@
 ---
 title: "Casio GA-2100-4A - Watch"
 date: 2026-02-15
+featureimage: "/images/casio-ga-2100-4a-watch-1.jpg"
 draft: false
 tags: ["Free Muser"]
 reviewPanelImages:
