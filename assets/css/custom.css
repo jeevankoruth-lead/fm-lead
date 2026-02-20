@@ -257,3 +257,7 @@ body {
     min-height: 44vh;
   }
 }
+
+#search-results .text-neutral-500 > span.px-2.text-primary-500 {
+  display: none;
+}

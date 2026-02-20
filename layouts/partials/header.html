@@ -1,26 +1,23 @@
-<header class="premium-navbar">
-  <div class="navbar-container">
-    <!-- Left Navigation - Focus Mindset -->
-    <nav class="navbar-section navbar-left">
+<header class="custom-header">
+  <div class="header-row">
+    <nav class="header-nav left-nav">
       {{ range .Site.Menus.main }}
         {{ if eq .Identifier "focus" }}
-          <a href="{{ .URL }}" class="nav-link nav-link-focus">{{ .Name }}</a>
+          <a href="{{ .URL }}">{{ .Name }}</a>
         {{ end }}
       {{ end }}
     </nav>
-
-    <!-- Center Logo - Divider -->
-    <div class="navbar-logo">
-      <a href="/" class="logo-link">
-        <img src="/logo.png" alt="Site Logo" class="logo-image nozoom" data-zoom-disable>
-      </a>
+    <div class="header-center">
+      <div class="header-logo">
+        <a href="/">
+          <img src="/logo.png" alt="Site Logo" class="nozoom" data-zoom-disable>
+        </a>
+      </div>
     </div>
-
-    <!-- Right Navigation - Free Muser -->
-    <nav class="navbar-section navbar-right">
+    <nav class="header-nav right-nav">
       {{ range .Site.Menus.main }}
         {{ if eq .Identifier "muser" }}
-          <a href="{{ .URL }}" class="nav-link nav-link-muser">{{ .Name }}</a>
+          <a href="{{ .URL }}">{{ .Name }}</a>
         {{ end }}
       {{ end }}
     </nav>

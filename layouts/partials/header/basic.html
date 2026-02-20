@@ -1,24 +1,21 @@
-<header class="premium-navbar">
-  <div class="navbar-container">
-    <!-- Left Navigation - Focus Mindset -->
-    <nav class="navbar-section navbar-left">
-      <a href="{{ "/focus/articles/" | relURL }}" class="nav-link nav-link-focus">Articles</a>
-      <a href="{{ "/focus/projects/" | relURL }}" class="nav-link nav-link-focus">Projects</a>
-      <a href="{{ "/focus/technical/" | relURL }}" class="nav-link nav-link-focus">Technical</a>
+<header class="custom-header">
+  <div class="header-row">
+    <nav class="header-nav left-nav menu-list">
+      <a href="{{ "/focus/articles/" | relURL }}">Articles</a>
+      <a href="{{ "/focus/projects/" | relURL }}">Projects</a>
+      <a href="{{ "/focus/technical/" | relURL }}">Technical</a>
     </nav>
-
-    <!-- Center Logo - Divider -->
-    <div class="navbar-logo">
-      <a href="/" class="logo-link">
-        <img src="/logo.png" alt="Site Logo" class="logo-image nozoom" data-zoom-disable>
-      </a>
+    <div class="header-center">
+      <div class="header-logo">
+        <a href="/">
+          <img src="/logo.png" alt="Site Logo" class="nozoom" data-zoom-disable>
+        </a>
+      </div>
     </div>
-
-    <!-- Right Navigation - Free Muser -->
-    <nav class="navbar-section navbar-right">
-      <a href="{{ "/muser/reviews/" | relURL }}" class="nav-link nav-link-muser">Reviews</a>
-      <a href="{{ "/muser/satire/" | relURL }}" class="nav-link nav-link-muser">Satire</a>
-      <a href="{{ "/muser/opinions/" | relURL }}" class="nav-link nav-link-muser">Opinions</a>
+    <nav class="header-nav right-nav menu-list">
+      <a href="{{ "/muser/reviews/" | relURL }}">Reviews</a>
+      <a href="{{ "/muser/satire/" | relURL }}">Satire</a>
+      <a href="{{ "/muser/opinions/" | relURL }}">Opinions</a>
     </nav>
   </div>
 </header>

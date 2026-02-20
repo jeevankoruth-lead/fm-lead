@@ -6,7 +6,19 @@ theme = 'blowfish'
 [params]
   disableAssetsBusting = true
   custom_CSS = ["css/custom.css"]
-  custom_JS = ["js/custom.js"]
+
+  [params.article]
+    showDate = false
+    showDateUpdated = false
+
+  [params.list]
+    groupByYear = false
+
+  [params.term]
+    groupByYear = false
+
+  [params.footer]
+    showCopyright = false
 
 [themes.focus]
   primary = "#0A2342"
