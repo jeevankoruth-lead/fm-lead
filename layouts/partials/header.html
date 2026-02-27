@@ -7,13 +7,6 @@
         {{ end }}
       {{ end }}
     </nav>
-    <div class="header-center">
-      <div class="header-logo">
-        <a href="/">
-          <img src="/logo-v2.png" alt="Site Logo" class="nozoom" data-zoom-disable>
-        </a>
-      </div>
-    </div>
     <nav class="header-nav right-nav">
       {{ range .Site.Menus.main }}
         {{ if eq .Identifier "muser" }}
