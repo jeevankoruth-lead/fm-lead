@@ -133,15 +133,34 @@ body {
 }
 
 .hero-center-logo a {
-  display: inline-block;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(0.35rem, 0.8vw, 0.65rem);
+  border-radius: clamp(12px, 1.6vw, 20px);
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.32);
+}
+
+.hero-center-logo a::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: calc(-18px - 1.2vw);
+  bottom: calc(-18px - 1.2vw);
+  width: 1px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.48), rgba(255, 255, 255, 0));
+  z-index: -1;
 }
 
 .hero-center-logo img {
   display: block;
   width: auto;
-  height: clamp(120px, 16vw, 220px);
-  max-width: 38vw;
-  filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.35));
+  height: clamp(104px, 13vw, 168px);
+  max-width: 30vw;
+  border-radius: clamp(8px, 1.1vw, 14px);
 }
 
 .hero-panel {
@@ -245,8 +264,8 @@ body {
   }
 
   .hero-center-logo img {
-    height: clamp(90px, 18vw, 150px);
-    max-width: 44vw;
+    height: clamp(86px, 16vw, 132px);
+    max-width: 36vw;
   }
 }
 
@@ -287,9 +306,13 @@ body {
     margin: 1rem 0;
   }
 
+  .hero-center-logo a::before {
+    display: none;
+  }
+
   .hero-center-logo img {
-    height: clamp(76px, 24vw, 120px);
-    max-width: 62vw;
+    height: clamp(74px, 22vw, 108px);
+    max-width: 56vw;
   }
 
   .hero-panel {
