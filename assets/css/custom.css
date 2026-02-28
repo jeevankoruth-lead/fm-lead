@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&family=Playfair+Display:wght@600;700&display=swap');
 
 :root {
   --focus: #0a2342;
@@ -182,6 +182,20 @@ body.text-lg {
 
 body.leading-7 {
   line-height: 1.6;
+}
+
+.brand-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  min-height: 44px;
+  padding: 0.7rem 1.2rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
 }
 
 .hero-section {
@@ -492,4 +506,439 @@ html.dark .hero-cta {
 
 #search-results .text-neutral-500 > span.px-2.text-primary-500 {
   display: none;
+}
+
+body.section-focus {
+  background: #fafafa;
+  color: #0f0f0f;
+  font-family: 'Inter', sans-serif;
+}
+
+body.section-focus .focus-ops-shell {
+  max-width: 100%;
+  margin: 2rem 0 3rem;
+}
+
+body.section-focus .focus-ops-hero,
+body.section-focus .focus-ops-intro,
+body.section-focus .focus-ops-card,
+body.section-focus .focus-ops-empty {
+  padding: 32px;
+  border: 1px solid #d4d4d4;
+  background: #fafafa;
+}
+
+body.section-focus .focus-ops-hero {
+  position: relative;
+  background: linear-gradient(145deg, #fafafa 0%, #f4f6f8 100%);
+  margin-bottom: 1.5rem;
+}
+
+body.section-focus .focus-ops-title {
+  margin: 0;
+  color: #0f0f0f;
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+body.section-focus .focus-ops-summary {
+  max-width: 75ch;
+  margin: 1rem 0 0;
+  color: #2a2a2a;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+body.section-focus .focus-ops-pillars {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 1.5rem;
+}
+
+body.section-focus .focus-ops-pillar {
+  grid-column: span 4;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #0f0f0f;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+body.section-focus .focus-ops-pillar svg {
+  width: 18px;
+  height: 18px;
+  color: #007aff;
+}
+
+body.section-focus .focus-ops-intro {
+  margin-bottom: 1.5rem;
+}
+
+body.section-focus .focus-ops-intro p {
+  margin: 0;
+  color: #2a2a2a;
+  line-height: 1.6;
+}
+
+body.section-focus .focus-ops-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+body.section-focus .focus-ops-card {
+  grid-column: span 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 260px;
+  transition: transform 180ms linear, box-shadow 180ms linear;
+}
+
+body.section-focus .focus-ops-card:hover,
+body.section-focus .focus-ops-card:focus-within {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(15, 15, 15, 0.14);
+}
+
+body.section-focus .focus-ops-card-title {
+  margin: 0;
+  color: #0f0f0f;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+body.section-focus .focus-ops-card-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+body.section-focus .focus-ops-card-title a:hover,
+body.section-focus .focus-ops-card-title a:focus-visible {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+body.section-focus .focus-ops-card-summary {
+  margin: 0.9rem 0 1.6rem;
+  color: #2a2a2a;
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+body.section-focus .focus-ops-card-cta {
+  color: #007aff;
+  letter-spacing: 0.02em;
+  transition: color 180ms linear;
+}
+
+body.section-focus .focus-ops-card-cta svg {
+  width: 16px;
+  height: 16px;
+}
+
+body.section-focus .focus-ops-card-cta:hover,
+body.section-focus .focus-ops-card-cta:focus-visible {
+  color: #005fcc;
+}
+
+body.section-focus .focus-ops-empty p {
+  margin: 0;
+  color: #2a2a2a;
+}
+
+@media (max-width: 1024px) {
+  body.section-focus .focus-ops-card {
+    grid-column: span 6;
+  }
+
+  body.section-focus .focus-ops-pillar {
+    grid-column: span 6;
+  }
+}
+
+@media (max-width: 700px) {
+  body.section-focus .focus-ops-hero,
+  body.section-focus .focus-ops-intro,
+  body.section-focus .focus-ops-card,
+  body.section-focus .focus-ops-empty {
+    padding: 24px;
+  }
+
+  body.section-focus .focus-ops-card,
+  body.section-focus .focus-ops-pillar {
+    grid-column: span 12;
+  }
+}
+
+body.section-muser {
+  color: #f5ede0;
+  background: linear-gradient(160deg, #4b0082 0%, #26134b 48%, #0f1a3a 100%);
+  font-family: 'Inter', sans-serif;
+}
+
+body.section-muser .muser-studio-shell {
+  width: 100%;
+  margin: 1.5rem 0 3rem;
+}
+
+body.section-muser .muser-studio-hero,
+body.section-muser .muser-studio-intro,
+body.section-muser .muser-card,
+body.section-muser .muser-empty {
+  padding: 24px;
+}
+
+body.section-muser .muser-studio-hero {
+  position: relative;
+  overflow: hidden;
+  border-radius: 22px;
+  border: 1px solid rgba(245, 237, 224, 0.2);
+  background: radial-gradient(circle at 10% 20%, rgba(255, 95, 95, 0.32), transparent 34%),
+    radial-gradient(circle at 88% 15%, rgba(245, 237, 224, 0.16), transparent 36%),
+    linear-gradient(140deg, rgba(75, 0, 130, 0.96), rgba(20, 24, 61, 0.95));
+}
+
+body.section-muser .muser-studio-art {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+body.section-muser .muser-art-shape {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(1px);
+  opacity: 0.88;
+}
+
+body.section-muser .muser-art-one {
+  width: 160px;
+  height: 160px;
+  top: -42px;
+  left: -34px;
+  background: rgba(255, 95, 95, 0.72);
+}
+
+body.section-muser .muser-art-two {
+  width: 140px;
+  height: 140px;
+  right: 10%;
+  top: 36%;
+  background: rgba(245, 237, 224, 0.18);
+}
+
+body.section-muser .muser-art-three {
+  width: 220px;
+  height: 220px;
+  right: -75px;
+  bottom: -75px;
+  background: rgba(255, 95, 95, 0.34);
+}
+
+body.section-muser .muser-studio-title {
+  position: relative;
+  margin: 0;
+  color: #f5ede0;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+body.section-muser .muser-studio-subtitle {
+  position: relative;
+  margin: 0.9rem 0 0;
+  max-width: 72ch;
+  color: rgba(245, 237, 224, 0.92);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+body.section-muser .muser-story-headings {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+body.section-muser .muser-story-headings span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.42rem 0.78rem;
+  border-radius: 999px;
+  color: #f5ede0;
+  background: rgba(245, 237, 224, 0.13);
+  border: 1px solid rgba(245, 237, 224, 0.22);
+  font-size: 0.84rem;
+  font-weight: 600;
+}
+
+body.section-muser .muser-story-headings span i {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #ff5f5f;
+}
+
+body.section-muser .muser-studio-intro {
+  margin: -24px 0 1.5rem;
+  max-width: 760px;
+  border-radius: 16px;
+  border: 1px solid rgba(245, 237, 224, 0.22);
+  background: rgba(12, 18, 42, 0.65);
+  backdrop-filter: blur(3px);
+}
+
+body.section-muser .muser-studio-intro p {
+  margin: 0;
+  color: rgba(245, 237, 224, 0.9);
+  line-height: 1.6;
+}
+
+body.section-muser .muser-studio-intro blockquote,
+body.section-muser .article-content blockquote {
+  margin: 1rem 0 0;
+  padding: 0.75rem 0 0.2rem 0.9rem;
+  border-left: 3px solid #ff5f5f;
+  color: #f5ede0;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.08rem;
+}
+
+body.section-muser .muser-masonry {
+  column-count: 3;
+  column-gap: 1rem;
+}
+
+body.section-muser .muser-card {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  margin: 0 0 1rem;
+  break-inside: avoid;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(245, 237, 224, 0.2);
+  background: linear-gradient(165deg, rgba(75, 0, 130, 0.45), rgba(15, 26, 58, 0.82));
+  transition: transform 300ms ease-in-out, background-color 300ms ease-in-out, box-shadow 300ms ease-in-out;
+}
+
+body.section-muser .muser-card:hover,
+body.section-muser .muser-card:focus-within {
+  transform: rotate(-0.8deg) translateY(-4px);
+  background: linear-gradient(165deg, rgba(255, 95, 95, 0.25), rgba(15, 26, 58, 0.9));
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.34);
+}
+
+body.section-muser .muser-card-1,
+body.section-muser .muser-card-3 {
+  transform-origin: center top;
+}
+
+body.section-muser .muser-card-1:hover,
+body.section-muser .muser-card-3:hover,
+body.section-muser .muser-card-1:focus-within,
+body.section-muser .muser-card-3:focus-within {
+  transform: rotate(0.85deg) translateY(-4px);
+}
+
+body.section-muser .muser-card-image-wrap {
+  margin: 0;
+  height: 180px;
+  overflow: hidden;
+}
+
+body.section-muser .muser-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+body.section-muser .muser-card-body {
+  padding: 24px;
+}
+
+body.section-muser .muser-card-kicker {
+  margin: 0;
+  font-size: 0.76rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: rgba(245, 237, 224, 0.72);
+}
+
+body.section-muser .muser-card-title {
+  margin: 0.55rem 0 0;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.55rem;
+  line-height: 1.22;
+}
+
+body.section-muser .muser-card-title a {
+  color: #f5ede0;
+  text-decoration: none;
+}
+
+body.section-muser .muser-card-title a:hover,
+body.section-muser .muser-card-title a:focus-visible {
+  color: #ff5f5f;
+}
+
+body.section-muser .muser-card-summary {
+  margin: 0.85rem 0 0;
+  color: rgba(245, 237, 224, 0.9);
+  line-height: 1.6;
+}
+
+body.section-muser .muser-card-cta {
+  margin-top: 1rem;
+  color: #ff5f5f;
+  border: 1px solid rgba(255, 95, 95, 0.55);
+  background: rgba(255, 95, 95, 0.08);
+  transition: transform 300ms cubic-bezier(0.18, 0.89, 0.32, 1.28), color 300ms ease-in-out;
+}
+
+body.section-muser .muser-card-cta:hover,
+body.section-muser .muser-card-cta:focus-visible {
+  color: #ffd0d0;
+  transform: translateX(4px);
+}
+
+body.section-muser .muser-empty {
+  border-radius: 14px;
+  border: 1px dashed rgba(245, 237, 224, 0.35);
+  background: rgba(15, 26, 58, 0.58);
+}
+
+body.section-muser .muser-empty p {
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  body.section-muser .muser-masonry {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 700px) {
+  body.section-muser .muser-masonry {
+    column-count: 1;
+  }
+
+  body.section-muser .muser-studio-title {
+    font-size: clamp(2rem, 10vw, 2.6rem);
+  }
 }

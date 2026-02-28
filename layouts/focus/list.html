@@ -1,0 +1,75 @@
+{{ define "main" }}
+  {{ $orderedPages := .Pages.ByTitle }}
+  {{ $paginator := .Paginate $orderedPages }}
+
+  <section class="focus-ops-shell">
+    <header class="focus-ops-hero">
+      {{ if .Params.showBreadcrumbs | default (site.Params.list.showBreadcrumbs | default false) }}
+        {{ partial "breadcrumbs.html" . }}
+      {{ end }}
+      <h1 class="focus-ops-title">{{ .Title }}</h1>
+      <p class="focus-ops-summary">
+        Precision systems for high-stakes execution. Build executive control with disciplined mental models,
+        decision frameworks, and operational psychology designed for real-world operators.
+      </p>
+      <div class="focus-ops-pillars" aria-label="Focus domains">
+        <span class="focus-ops-pillar">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 12h16M12 4v16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+          </svg>
+          Mental Models
+        </span>
+        <span class="focus-ops-pillar">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 7h16M4 12h12M4 17h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+          </svg>
+          Decision Frameworks
+        </span>
+        <span class="focus-ops-pillar">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M5 19h14M7 16V8m5 8V5m5 11v-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+          </svg>
+          Operational Psychology
+        </span>
+      </div>
+    </header>
+
+    {{ if .Content }}
+      <section class="focus-ops-intro">
+        {{ .Content }}
+      </section>
+    {{ end }}
+
+    {{ if gt (len $paginator.Pages) 0 }}
+      <section class="focus-ops-grid" aria-label="Framework collection">
+        {{ range $paginator.Pages }}
+          {{ $summary := .Summary | plainify }}
+          <article class="focus-ops-card">
+            <h2 class="focus-ops-card-title">
+              <a href="{{ .RelPermalink }}">{{ .Title | emojify }}</a>
+            </h2>
+            <p class="focus-ops-card-summary">
+              {{ if $summary }}
+                {{ $summary }}
+              {{ else }}
+                Structured guidance for disciplined execution, system thinking, and operational control.
+              {{ end }}
+            </p>
+            <a class="brand-cta focus-ops-card-cta" href="{{ .RelPermalink }}">
+              Read Framework
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </a>
+          </article>
+        {{ end }}
+      </section>
+    {{ else }}
+      <section class="focus-ops-empty">
+        <p>No frameworks published yet.</p>
+      </section>
+    {{ end }}
+  </section>
+
+  {{ partial "pagination.html" . }}
+{{ end }}

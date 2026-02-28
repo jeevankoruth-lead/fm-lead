@@ -1,0 +1,71 @@
+{{ define "main" }}
+  {{ $orderedPages := .Pages.ByDate.Reverse }}
+  {{ $paginator := .Paginate $orderedPages }}
+
+  <section class="muser-studio-shell">
+    <header class="muser-studio-hero">
+      {{ if .Params.showBreadcrumbs | default (site.Params.list.showBreadcrumbs | default false) }}
+        {{ partial "breadcrumbs.html" . }}
+      {{ end }}
+      <div class="muser-studio-art" aria-hidden="true">
+        <span class="muser-art-shape muser-art-one"></span>
+        <span class="muser-art-shape muser-art-two"></span>
+        <span class="muser-art-shape muser-art-three"></span>
+      </div>
+      <h1 class="muser-studio-title">{{ .Title }}</h1>
+      <p class="muser-studio-subtitle">
+        Ideas from the edges of operations, technology, and human absurdity. This is the cinematic lab for
+        experiments, stories, and sharp commentary.
+      </p>
+      <div class="muser-story-headings" aria-label="Creative tracks">
+        <span><i aria-hidden="true"></i>Rants from the Control Room</span>
+        <span><i aria-hidden="true"></i>Thought Experiments</span>
+        <span><i aria-hidden="true"></i>The Human Side of FM</span>
+      </div>
+    </header>
+
+    {{ if .Content }}
+      <section class="muser-studio-intro">
+        {{ .Content }}
+        <blockquote>
+          Systems are technical. Work is human. Great operations need both.
+        </blockquote>
+      </section>
+    {{ end }}
+
+    {{ if gt (len $paginator.Pages) 0 }}
+      <section class="muser-masonry" aria-label="Creative collection">
+        {{ range $index, $page := $paginator.Pages }}
+          {{ $summary := $page.Summary | plainify }}
+          <article class="muser-card muser-card-{{ mod $index 4 }}">
+            {{ with $page.Params.featureimage }}
+              <figure class="muser-card-image-wrap">
+                <img src="{{ . }}" alt="{{ $page.Title }}" loading="lazy" decoding="async" class="muser-card-image">
+              </figure>
+            {{ end }}
+            <div class="muser-card-body">
+              <p class="muser-card-kicker">{{ $page.Section | title }}</p>
+              <h2 class="muser-card-title">
+                <a href="{{ $page.RelPermalink }}">{{ $page.Title | emojify }}</a>
+              </h2>
+              <p class="muser-card-summary">
+                {{ if $summary }}
+                  {{ $summary }}
+                {{ else }}
+                  Story-driven ideas, bold takes, and curious experiments from the creative side of facilities life.
+                {{ end }}
+              </p>
+              <a class="brand-cta muser-card-cta" href="{{ $page.RelPermalink }}">Enter Story</a>
+            </div>
+          </article>
+        {{ end }}
+      </section>
+    {{ else }}
+      <section class="muser-empty">
+        <p>The studio lights are on. New pieces are coming soon.</p>
+      </section>
+    {{ end }}
+  </section>
+
+  {{ partial "pagination.html" . }}
+{{ end }}
