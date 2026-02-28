@@ -1,42 +1,9 @@
 {{ define "main" }}
-<div class="hero-shell">
-  <div class="hero-brand">
-    <img src="/logo-v2.png" alt="FM-Lead" class="hero-brand-logo nozoom" data-zoom-disable>
-    <p class="hero-brand-tagline">FM-Lead: Systems thinking for facilities, careers, and creative minds.</p>
-  </div>
-
-  <div class="hero-section">
-    <!-- Left Panel - Focus Mindset -->
-    <a href="/focus/" class="hero-panel hero-panel-left hero-card-link" aria-label="Explore Focus">
-      <div class="hero-image" aria-hidden="true"></div>
-      <div class="hero-content">
-        <h1 class="hero-title">Focus Mindset</h1>
-        <p class="hero-subtitle">Structured thinking for ambitious operators</p>
-        <p class="hero-support">Frameworks, SOPs, and systems for people who build and run critical assets.</p>
-        <span class="hero-cta hero-cta-left">
-          <span>Explore Focus</span>
-          <svg class="cta-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </span>
-      </div>
-    </a>
-
-    <!-- Right Panel - Free Muser -->
-    <a href="/muser/" class="hero-panel hero-panel-right hero-card-link" aria-label="Discover Muser">
-      <div class="hero-image" aria-hidden="true"></div>
-      <div class="hero-content">
-        <h1 class="hero-title hero-title-muser">Free Muser</h1>
-        <p class="hero-subtitle">Creative exploration without boundaries</p>
-        <p class="hero-support">Ideas, stories, and experiments from the edges of work, tech, and life.</p>
-        <span class="hero-cta hero-cta-right">
-          <span>Discover Muser</span>
-          <svg class="cta-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </span>
-      </div>
-    </a>
-  </div>
+<div class="fm-home">
+  {{ partial "home/hero.html" . }}
+  {{ partial "home/categories.html" . }}
+  {{ partial "home/featured.html" . }}
+  {{ partial "home/about.html" . }}
+  {{ partial "home/latest.html" . }}
 </div>
 {{ end }}

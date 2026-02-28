@@ -19,9 +19,9 @@
     {{ $sectionClass = " section-muser" }}
   {{ end }}
   <body class="{{ $bodyLayout }} {{ $bodyColor }} {{ if site.Params.enableStyledScrollbar | default true }}bf-scrollbar{{ end }}{{ $sectionClass }}">
-    <div id="the-top" class="absolute flex self-center">
+    <div id="the-top" class="absolute left-0 top-0 z-50">
       <a
-        class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
+        class="fm-skip-link"
         href="#main-content">
         <span class="font-bold text-primary-600 pe-2 dark:text-primary-400">&darr;</span>
         {{ i18n "nav.skip_to_main" }}

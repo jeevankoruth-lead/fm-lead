@@ -1,0 +1,16 @@
+<section class="fm-home-latest fm-reveal" aria-labelledby="home-latest-title">
+  <h2 id="home-latest-title">Latest Articles</h2>
+  {{ $latest := first 6 (where .Site.RegularPages.ByDate.Reverse "Section" "in" (slice "focus" "muser")) }}
+  {{ if gt (len $latest) 0 }}
+    <div class="fm-home-latest-grid">
+      {{ range $latest }}
+        <article class="fm-latest-card">
+          <h3><a href="{{ .RelPermalink }}">{{ .Title | emojify }}</a></h3>
+          <p>{{ .Summary | plainify | truncate 120 }}</p>
+        </article>
+      {{ end }}
+    </div>
+  {{ else }}
+    <p>No published articles yet.</p>
+  {{ end }}
+</section>
