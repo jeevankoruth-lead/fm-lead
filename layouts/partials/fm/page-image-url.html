@@ -1,0 +1,39 @@
+{{ $page := .page }}
+{{ $name := .name | default "" }}
+{{ $resize := .resize | default "900x" }}
+{{ $allowAuto := .allowAuto | default false }}
+{{ $disableImageOptimization := site.Store.Get "disableImageOptimization" }}
+
+{{ $url := "" }}
+{{ $resource := "" }}
+
+{{ if and $name (or (strings.HasPrefix $name "http://") (strings.HasPrefix $name "https://") (strings.HasPrefix $name "data:")) }}
+  {{ $url = $name }}
+{{ else }}
+  {{ with $page }}
+    {{ if $name }}
+      {{ $resource = .Resources.GetMatch $name }}
+      {{ if not $resource }}{{ $resource = .Resources.GetMatch (printf "images/%s" $name) }}{{ end }}
+      {{ if not $resource }}{{ $resource = .Resources.GetMatch (printf "%s.*" $name) }}{{ end }}
+      {{ if not $resource }}{{ $resource = .Resources.GetMatch (printf "images/%s.*" $name) }}{{ end }}
+    {{ else if $allowAuto }}
+      {{ $images := .Resources.ByType "image" }}
+      {{ range slice "*feature*" "*cover*" "*thumbnail*" }}
+        {{ if not $resource }}{{ $resource = $images.GetMatch . }}{{ end }}
+      {{ end }}
+    {{ end }}
+
+    {{ with $resource }}
+      {{ $url = .RelPermalink }}
+      {{ if not (or $disableImageOptimization (eq .MediaType.SubType "svg") (eq .MediaType.SubType "gif")) }}
+        {{ $url = (.Resize $resize).RelPermalink }}
+      {{ end }}
+    {{ else }}
+      {{ if $name }}
+        {{ $url = $name }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ return $url }}

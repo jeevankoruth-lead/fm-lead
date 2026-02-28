@@ -37,8 +37,9 @@
       <section class="muser-masonry" aria-label="Creative collection">
         {{ range $index, $page := $paginator.Pages }}
           {{ $summary := $page.Summary | plainify }}
+          {{ $featureImageURL := partial "fm/page-image-url.html" (dict "page" $page "name" ($page.Params.featureimage | default "") "resize" "960x" "allowAuto" true) }}
           <article class="muser-card muser-card-{{ mod $index 4 }}">
-            {{ with $page.Params.featureimage }}
+            {{ with $featureImageURL }}
               <figure class="muser-card-image-wrap">
                 <img src="{{ . }}" alt="{{ $page.Title }}" loading="lazy" decoding="async" class="muser-card-image">
               </figure>

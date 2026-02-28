@@ -81,9 +81,10 @@
           {{ with .Params.reviewPanelImages }}
             <div class="mb-6 space-y-4">
               {{ range . }}
+                {{ $reviewImageURL := partial "fm/page-image-url.html" (dict "page" $ "name" .src "resize" "900x") }}
                 <figure class="m-0">
                   <img
-                    src="{{ .src }}"
+                    src="{{ $reviewImageURL }}"
                     alt="{{ .alt | default "Review image" }}"
                     loading="lazy"
                     decoding="async"
