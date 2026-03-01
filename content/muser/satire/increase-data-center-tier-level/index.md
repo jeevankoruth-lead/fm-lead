@@ -1,7 +1,7 @@
 ﻿---
 title: "Uptime Data Center Tier System Upgrade"
 date: 2026-02-14
-featureimage: "images\312datacente.png"
+featureimage: "images/312datacente.png"
 draft: false
 tags: ["Free Muser"]
 ---
