@@ -340,8 +340,35 @@ html.dark .reading-mode-toggle-track {
   overflow: hidden;
 }
 
+.fm-home-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('/images/homepage-split.png');
+  background-repeat: no-repeat;
+  background-position: center 42%;
+  background-size: min(64%, 760px);
+  opacity: 0.04;
+  transition: opacity 220ms ease-in-out;
+  pointer-events: none;
+}
+
+.fm-home-hero:hover::after,
+.fm-home-hero:focus-within::after {
+  opacity: 0.13;
+}
+
 html.dark .fm-home-hero {
   background: linear-gradient(140deg, #182339 0%, #121d30 60%, #0c1526 100%);
+}
+
+html.dark .fm-home-hero::after {
+  opacity: 0.06;
+}
+
+html.dark .fm-home-hero:hover::after,
+html.dark .fm-home-hero:focus-within::after {
+  opacity: 0.16;
 }
 
 .fm-home-hero-grid {
