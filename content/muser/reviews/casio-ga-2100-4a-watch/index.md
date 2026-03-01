@@ -4,11 +4,6 @@ date: 2026-02-15
 featureimage: "images/casio-ga-2100-4a-watch-1.jpg"
 draft: false
 tags: ["Free Muser"]
-reviewPanelImages:
-  - src: "images/casio-ga-2100-4a-watch-1.jpg"
-    alt: "Casio GA-2100-4A closeup"
-  - src: "images/casio-ga-2100-4a-watch-2.jpg"
-    alt: "Casio GA-2100-4A lifestyle"
 ---
 
 <span class="tag-free-muser">Free Muser</span>
@@ -23,9 +18,7 @@ Free Muser - Review
 
 Ah yes, the GA-2100-4A. A timepiece so bold in hue it looks like it was designed by a traffic cone with a flair for punctuality. It's red. Very red. The kind of red that screams "I'm trying" while the rest of the watch whispers "I'm not." If you've ever wanted your wrist to resemble a fire alarm, congratulations—this is your moment.
 
-<div align="center">
-  <img src="content\muser\reviews\casio-ga-2100-4a-watch\images\fire alarm panel on wrist.png" alt="Centered Watch" width="400" />
-</div>
+![Centered Watch](images/fire alarm panel on wrist.png)
 
 
 The octagonal bezel? Casio calls it "modern." Fans call it "CasiOak." I call it "a geometry teacher's fever dream." It's like someone tried to design a luxury watch but got distracted halfway through and settled for "close enough." And the analog-digital combo? It's perfect for people who enjoy redundancy in their timekeeping.
