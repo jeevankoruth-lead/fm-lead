@@ -1,7 +1,7 @@
 ﻿---
-title: "Before using kettle, staff need RAMS"
+title: "Every Activity needs PTW and RAMS"
 date: 2026-02-14
-featureimage: "images/forest extended.png"
+featureimage: "images/kettlethumb.png"
 draft: false
 tags: ["Free Muser"]
 ---

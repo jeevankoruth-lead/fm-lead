@@ -1,7 +1,7 @@
 ﻿---
-title: "From routine maintenance to 24/7 continuous maintenance"
+title: "From Routine Maintenance to 24/7 Continuous Maximum Maintenance"
 date: 2026-02-14
-featureimage: "images/forest extended.png"
+featureimage: "images/maxmainthumb.png"
 draft: false
 tags: ["Free Muser"]
 ---
@@ -19,6 +19,10 @@ Routine maintenance is for amateurs, dreamers, and people who still believe in h
 Real professionals know the truth:
 If you’re not maintaining everything, everywhere, all at once, 24/7, you’re basically committing corporate terrorism.
 Because apparently, the moment you skip one PM, the entire building collapses like a Jenga tower made of sadness.
+
+![Jenga tower metaphor](images/jenga.jpg)
+
+
 ________________________________________
 The Myth of Routine Maintenance
 Routine maintenance sounds nice on paper:

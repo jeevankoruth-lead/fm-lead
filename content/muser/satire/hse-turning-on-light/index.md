@@ -1,7 +1,7 @@
 ﻿---
-title: "Switching on office lights needs to be safer"
+title: "Switching on Office Lights needs to be Process based"
 date: 2026-02-14
-featureimage: "images/forest extended.png"
+featureimage: "images/lightsthumb.png"
 draft: false
 tags: ["Free Muser"]
 ---
