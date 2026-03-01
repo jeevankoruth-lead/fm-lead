@@ -1,7 +1,7 @@
 {{ define "main" }}
   {{ .Scratch.Set "scope" "single" }}
   {{ $isReview := strings.HasPrefix .RelPermalink "/muser/reviews/" }}
-  <article>
+  <article{{ if $isReview }} class="review-cinematic"{{ end }}>
     {{/* Hero */}}
     {{ if .Params.showHero | default (site.Params.article.showHero | default false) }}
       {{ $heroStyle := .Params.heroStyle }}

@@ -1601,3 +1601,331 @@ html:not(.dark) body.section-muser .muser-empty {
   border-color: rgba(99, 102, 241, 0.35);
   background: rgba(255, 255, 255, 0.66);
 }
+
+body.section-muser .reviews-layout {
+  gap: 2rem;
+}
+
+body.section-muser .reviews-main {
+  min-width: 0;
+}
+
+body.section-muser .reviews-main .article-content {
+  max-width: 72ch;
+  margin: 0 auto 4rem;
+  padding: clamp(1rem, 2.2vw, 1.5rem);
+  border-radius: 18px;
+  border: 1px solid rgba(245, 237, 224, 0.2);
+  background: rgba(12, 18, 42, 0.42);
+}
+
+body.section-muser .tag-free-muser {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0 0 0.9rem;
+  padding: 0.34rem 0.78rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 95, 95, 0.45);
+  background: rgba(255, 95, 95, 0.12);
+  color: #ffd7d7;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+body.section-muser .reviews-main .article-content h2,
+body.section-muser .reviews-main .article-content h3 {
+  margin-top: 2.1rem;
+  margin-bottom: 0.8rem;
+  color: #f8ecdf;
+  font-family: 'Playfair Display', serif;
+  line-height: 1.2;
+}
+
+body.section-muser .reviews-main .article-content p,
+body.section-muser .reviews-main .article-content li,
+body.section-muser .reviews-main .article-content td,
+body.section-muser .reviews-main .article-content th {
+  color: rgba(245, 237, 224, 0.92);
+}
+
+body.section-muser .reviews-main .article-content hr {
+  margin: 1.9rem 0;
+  border: 0;
+  border-top: 1px dashed rgba(245, 237, 224, 0.34);
+}
+
+body.section-muser .reviews-main .article-content figure {
+  margin: 1.5rem 0;
+}
+
+body.section-muser .reviews-main .article-content figure img,
+body.section-muser .reviews-main .article-content > img {
+  width: 100%;
+  border-radius: 14px;
+  border: 1px solid rgba(245, 237, 224, 0.24);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.28);
+}
+
+body.section-muser .reviews-main .article-content table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 1.5rem 0;
+  border: 1px solid rgba(245, 237, 224, 0.22);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+body.section-muser .reviews-main .article-content thead th {
+  background: rgba(255, 95, 95, 0.16);
+  color: #fff0f0;
+  font-weight: 700;
+}
+
+body.section-muser .reviews-main .article-content tbody tr:nth-child(odd) {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+body.section-muser .reviews-main .article-content th,
+body.section-muser .reviews-main .article-content td {
+  border-color: rgba(245, 237, 224, 0.15);
+}
+
+body.section-muser .reviews-panel {
+  width: 100%;
+}
+
+body.section-muser .reviews-panel > div {
+  border-radius: 14px;
+}
+
+@media (min-width: 1024px) {
+  body.section-muser .reviews-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    align-items: start;
+  }
+
+  body.section-muser .reviews-panel {
+    position: sticky;
+    top: 9rem;
+  }
+}
+
+html:not(.dark) body.section-muser .reviews-main .article-content {
+  border-color: rgba(99, 102, 241, 0.24);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+html:not(.dark) body.section-muser .tag-free-muser {
+  border-color: rgba(190, 24, 93, 0.36);
+  background: rgba(190, 24, 93, 0.1);
+  color: #831843;
+}
+
+html:not(.dark) body.section-muser .reviews-main .article-content h2,
+html:not(.dark) body.section-muser .reviews-main .article-content h3 {
+  color: #312e81;
+}
+
+html:not(.dark) body.section-muser .reviews-main .article-content p,
+html:not(.dark) body.section-muser .reviews-main .article-content li,
+html:not(.dark) body.section-muser .reviews-main .article-content td,
+html:not(.dark) body.section-muser .reviews-main .article-content th {
+  color: #374151;
+}
+
+html:not(.dark) body.section-muser .reviews-main .article-content hr {
+  border-top-color: rgba(99, 102, 241, 0.28);
+}
+
+html:not(.dark) body.section-muser .reviews-main .article-content figure img,
+html:not(.dark) body.section-muser .reviews-main .article-content > img {
+  border-color: rgba(99, 102, 241, 0.22);
+  box-shadow: 0 12px 24px rgba(30, 41, 59, 0.14);
+}
+
+html:not(.dark) body.section-muser .reviews-main .article-content table {
+  border-color: rgba(99, 102, 241, 0.26);
+}
+
+html:not(.dark) body.section-muser .reviews-main .article-content thead th {
+  background: rgba(99, 102, 241, 0.12);
+  color: #312e81;
+}
+
+html:not(.dark) body.section-muser .reviews-main .article-content tbody tr:nth-child(odd) {
+  background: rgba(99, 102, 241, 0.04);
+}
+
+body.section-muser article.review-cinematic #single_header {
+  position: relative;
+  max-width: 72ch;
+  margin: 1.7rem auto 1.1rem;
+  padding: clamp(1.1rem, 2vw, 1.6rem);
+  border-radius: 18px;
+  border: 1px solid rgba(245, 237, 224, 0.24);
+  background:
+    radial-gradient(circle at 12% 10%, rgba(255, 95, 95, 0.26), transparent 36%),
+    linear-gradient(160deg, rgba(44, 17, 74, 0.74), rgba(11, 19, 41, 0.72));
+  overflow: hidden;
+}
+
+body.section-muser article.review-cinematic #single_header h1 {
+  margin-bottom: 0.6rem;
+  color: #fff2e8;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+  text-shadow: 0 8px 20px rgba(0, 0, 0, 0.24);
+}
+
+body.section-muser article.review-cinematic #single_header .text-neutral-500 {
+  color: rgba(245, 237, 224, 0.84);
+}
+
+body.section-muser article.review-cinematic .reviews-main .article-content {
+  font-size: 1.07rem;
+  line-height: 1.85;
+}
+
+body.section-muser article.review-cinematic .reviews-main .article-content > p:first-of-type {
+  margin-top: 0.2rem;
+  font-size: clamp(1.14rem, 2.4vw, 1.32rem);
+  line-height: 1.75;
+  color: #fff0e4;
+}
+
+body.section-muser article.review-cinematic .reviews-main .article-content > p:first-of-type::first-letter {
+  float: left;
+  margin: 0.18rem 0.45rem 0.05rem 0;
+  color: #ff8f8f;
+  font-family: 'Playfair Display', serif;
+  font-size: 3.4em;
+  font-weight: 700;
+  line-height: 0.8;
+}
+
+body.section-muser article.review-cinematic .reviews-main .article-content h2 {
+  position: relative;
+  padding-bottom: 0.35rem;
+  margin-top: 2.35rem;
+  font-size: clamp(1.55rem, 2.6vw, 2rem);
+  letter-spacing: -0.01em;
+}
+
+body.section-muser article.review-cinematic .reviews-main .article-content h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: min(132px, 36%);
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(255, 95, 95, 1), rgba(255, 95, 95, 0));
+}
+
+body.section-muser article.review-cinematic .reviews-main .article-content h3 {
+  font-size: clamp(1.2rem, 2vw, 1.45rem);
+}
+
+body.section-muser article.review-cinematic .reviews-main .article-content figure,
+body.section-muser article.review-cinematic .reviews-main .article-content > img {
+  margin: 2rem 0;
+}
+
+body.section-muser article.review-cinematic .reviews-main .article-content figure img,
+body.section-muser article.review-cinematic .reviews-main .article-content > img {
+  border-radius: 16px;
+  border: 1px solid rgba(245, 237, 224, 0.28);
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.34);
+}
+
+body.section-muser article.review-cinematic .reviews-main .article-content blockquote {
+  margin: 1.7rem 0;
+  padding: 1rem 1.05rem;
+  border-left: 4px solid #ff5f5f;
+  border-radius: 0 12px 12px 0;
+  background: rgba(255, 95, 95, 0.1);
+  color: #fff2e6;
+  font-size: 1.14rem;
+  line-height: 1.65;
+}
+
+body.section-muser article.review-cinematic .reviews-panel > div {
+  border: 1px solid rgba(245, 237, 224, 0.24);
+  background: rgba(12, 18, 42, 0.55);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.24);
+}
+
+body.section-muser article.review-cinematic .reviews-panel h2 {
+  color: #fff0e4;
+  font-family: 'Playfair Display', serif;
+}
+
+body.section-muser article.review-cinematic .reviews-panel a {
+  color: rgba(245, 237, 224, 0.92);
+}
+
+body.section-muser article.review-cinematic .reviews-panel a:hover,
+body.section-muser article.review-cinematic .reviews-panel a:focus-visible {
+  color: #ffd0d0;
+}
+
+html:not(.dark) body.section-muser article.review-cinematic #single_header {
+  border-color: rgba(99, 102, 241, 0.22);
+  background:
+    radial-gradient(circle at 12% 10%, rgba(236, 72, 153, 0.18), transparent 36%),
+    linear-gradient(160deg, rgba(255, 255, 255, 0.95), rgba(243, 246, 255, 0.93));
+}
+
+html:not(.dark) body.section-muser article.review-cinematic #single_header h1 {
+  color: #312e81;
+  text-shadow: none;
+}
+
+html:not(.dark) body.section-muser article.review-cinematic #single_header .text-neutral-500 {
+  color: #4b5563;
+}
+
+html:not(.dark) body.section-muser article.review-cinematic .reviews-main .article-content > p:first-of-type {
+  color: #1f2937;
+}
+
+html:not(.dark) body.section-muser article.review-cinematic .reviews-main .article-content > p:first-of-type::first-letter {
+  color: #be185d;
+}
+
+html:not(.dark) body.section-muser article.review-cinematic .reviews-main .article-content h2::after {
+  background: linear-gradient(90deg, rgba(190, 24, 93, 0.8), rgba(190, 24, 93, 0));
+}
+
+html:not(.dark) body.section-muser article.review-cinematic .reviews-main .article-content blockquote {
+  background: rgba(99, 102, 241, 0.08);
+  border-left-color: #be185d;
+  color: #1f2937;
+}
+
+html:not(.dark) body.section-muser article.review-cinematic .reviews-panel > div {
+  border-color: rgba(99, 102, 241, 0.24);
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 10px 20px rgba(30, 41, 59, 0.12);
+}
+
+html:not(.dark) body.section-muser article.review-cinematic .reviews-panel h2 {
+  color: #312e81;
+}
+
+html:not(.dark) body.section-muser article.review-cinematic .reviews-panel a {
+  color: #374151;
+}
+
+html:not(.dark) body.section-muser article.review-cinematic .reviews-panel a:hover,
+html:not(.dark) body.section-muser article.review-cinematic .reviews-panel a:focus-visible {
+  color: #9d174d;
+}
