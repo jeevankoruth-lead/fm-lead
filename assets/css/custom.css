@@ -333,6 +333,9 @@ html.dark .reading-mode-toggle-track {
 }
 
 .fm-home-hero {
+  --spotlight-x: -220px;
+  --spotlight-y: -220px;
+  --spotlight-size: 170px;
   position: relative;
   padding: 120px var(--space-24) 80px;
   border-radius: 16px;
@@ -348,14 +351,25 @@ html.dark .reading-mode-toggle-track {
   background-repeat: no-repeat;
   background-position: center 42%;
   background-size: min(64%, 760px);
-  opacity: 0.04;
-  transition: opacity 220ms ease-in-out;
+  opacity: 0.98;
+  transition: opacity 180ms ease-in-out;
+  -webkit-mask-image: radial-gradient(
+    circle var(--spotlight-size) at var(--spotlight-x) var(--spotlight-y),
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.96) 48%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  mask-image: radial-gradient(
+    circle var(--spotlight-size) at var(--spotlight-x) var(--spotlight-y),
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.96) 48%,
+    rgba(0, 0, 0, 0) 100%
+  );
   pointer-events: none;
 }
 
-.fm-home-hero:hover::after,
-.fm-home-hero:focus-within::after {
-  opacity: 0.13;
+.fm-home-hero.is-spotlight-active::after {
+  opacity: 1;
 }
 
 html.dark .fm-home-hero {
@@ -363,12 +377,17 @@ html.dark .fm-home-hero {
 }
 
 html.dark .fm-home-hero::after {
-  opacity: 0.06;
+  opacity: 0.94;
 }
 
-html.dark .fm-home-hero:hover::after,
-html.dark .fm-home-hero:focus-within::after {
-  opacity: 0.16;
+html.dark .fm-home-hero.is-spotlight-active::after {
+  opacity: 1;
+}
+
+@media (hover: none), (pointer: coarse) {
+  .fm-home-hero::after {
+    display: none;
+  }
 }
 
 .fm-home-hero-grid {
