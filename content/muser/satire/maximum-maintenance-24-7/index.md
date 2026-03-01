@@ -75,12 +75,12 @@ Here’s how it goes:
 •	Asset fails
 •	Client screams
 •	You fix it
-•	Client still screams
+•	Client screams harder
 •	You implement 24/7 monitoring
 •	Client screams about cost
 •	You reduce monitoring
 •	Asset fails again
-•	Client screams louder
+•	Client whispers first and then screams louder
 •	Repeat until retirement or death (whichever comes first)
 This is known as the FM Circle of Life™.
 ________________________________________
