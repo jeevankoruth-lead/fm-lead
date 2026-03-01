@@ -1,7 +1,7 @@
 ﻿---
-title: "High performance team members should be asset tagged"
+title: "High Performance Team Members should be Asset Tagged"
 date: 2026-02-14
-featureimage: "images/forest extended.png"
+featureimage: "images/technicianassetcodethumb.png"
 draft: false
 tags: ["Free Muser"]
 ---

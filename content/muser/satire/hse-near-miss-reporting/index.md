@@ -1,7 +1,7 @@
 ﻿---
-title: "Near missing reporting should be done every waking moment"
+title: "Near Miss Reporting Should be done every Waking Moment"
 date: 2026-02-14
-featureimage: "images/forest extended.png"
+featureimage: "images/nearmissreportthumb.png"
 draft: false
 tags: ["Free Muser"]
 ---

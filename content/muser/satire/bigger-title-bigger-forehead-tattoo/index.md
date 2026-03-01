@@ -1,7 +1,7 @@
 ﻿---
-title: "Bigger your title, the bigger your forehead sticker should be."
+title: "Bigger Your Title, Bigger your Forehead Sticker"
 date: 2026-02-14
-featureimage: "images/forest extended.png"
+featureimage: "images/foreheadthumb.png"
 draft: false
 tags: ["Free Muser"]
 ---
