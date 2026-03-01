@@ -2,7 +2,7 @@
 title: "back up chiller 3 way valve"
 date: 2026-02-14
 featureimage: "images/city extended.png"
-draft: false
+draft: true
 tags: ["Focus Mindset"]
 ---
 
