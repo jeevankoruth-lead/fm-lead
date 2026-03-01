@@ -1,7 +1,7 @@
 ﻿---
 title: "Maximizing Acronyms and Qualification Credentials"
 date: 2026-02-14
-featureimage: "images/forest extended.png"
+featureimage: "images/acrothumb.png"
 draft: false
 tags: ["Free Muser"]
 ---
