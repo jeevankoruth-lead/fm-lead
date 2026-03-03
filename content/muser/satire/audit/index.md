@@ -8,5 +8,4 @@ tags: ["Free Muser"]
 
 <span class="tag-free-muser">Free Muser</span>
 
-Free Muser - Satire
-
+## Free Muser - Satire

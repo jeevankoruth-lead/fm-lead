@@ -8,9 +8,8 @@ tags: ["Free Muser"]
 
 <span class="tag-free-muser">Free Muser</span>
 
-Free Muser - Review
-
-## Poco F6 Review: The Smartphone That's Trying Too Hard… and Somehow Succeeds
+## Free Muser - Review
+### Poco F6 Review: The Smartphone That's Trying Too Hard… and Somehow Succeeds
 
 The Poco F6 is yet another phone that thinks it's special. It's got a name that sounds like a rejected fighter jet and a spec sheet that screams "Look at me!"—which is ironic, because the design is about as memorable as a beige wall in a dentist's office.
 
@@ -18,7 +17,7 @@ It's marketed as a performance beast, but let's be honest: unless you're renderi
 
 ---
 
-## 🧊 The Dry Truth: What It Actually Offers
+### 🧊 The Dry Truth: What It Actually Offers
 
 - **Processor**: Snapdragon 8s Gen 3. It's fast. Not "solve world hunger" fast, but "open 17 tabs and still play Genshin Impact" fast.
 - **Display**: 6.67" AMOLED, 120Hz, Dolby Vision. It's bright enough to blind your future, which is good because you probably weren't looking at it anyway.
@@ -29,7 +28,7 @@ It's marketed as a performance beast, but let's be honest: unless you're renderi
 
 ---
 
-## 🧾 Summary: Specs, Build, Warranty, Price & Where to Buy
+### 🧾 Summary: Specs, Build, Warranty, Price & Where to Buy
 
 | Category | Details |
 |----------|---------|
@@ -45,7 +44,7 @@ It's marketed as a performance beast, but let's be honest: unless you're renderi
 
 ---
 
-## ⭐ Final Verdict: 8.7/10 Stars
+### ⭐ Final Verdict: 8.7/10 Stars
 
 The Poco F6 is like that quiet kid in class who ends up acing the exam while everyone else was busy showing off. It's not flashy, it's not trying to be your best friend, but it gets the job done—efficiently, quietly, and with just enough flair to make you feel like you didn't waste your money.
 
