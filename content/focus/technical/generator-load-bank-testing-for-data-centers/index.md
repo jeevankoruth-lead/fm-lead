@@ -1,7 +1,7 @@
 ---
 title: "Generator Load bank Testing for Data Centers"
 date: 2026-03-03
-draft: true
+draft: false
 tags: ["Focus Mindset"]
 ---
 
@@ -26,6 +26,10 @@ Data centre generators spend most of their life in standby, creating predictable
 
 These are common RCA findings in Tier II-IV environments after real transfer events.
 
+![Oxidised diesel fuel showing darkened, degraded diesel sample with visible contamination characteristics](oxidiseddieselfuel.jpg)
+
+*Fig. 1. Oxidised diesel fuel sample indicating degradation risk in standby generator systems [9].*
+
 ### 3. SFG20 Requirements Beyond “Monthly Start-Up”
 SFG20 schedules 07-02, 07-03, and 07-04 define a broader verification regime [5]-[7]:
 
@@ -35,6 +39,10 @@ SFG20 schedules 07-02, 07-03, and 07-04 define a broader verification regime [5]
 - Fuel integrity checks: sampling, contamination checks, and corrective fuel conditioning.
 - Exhaust and thermal checks: confirmation of appropriate operating temperature and combustion behaviour.
 - ATS-integrated testing: system-level verification, not isolated genset operation.
+
+![Wet stacking deposits in generator exhaust path showing carbon fouling associated with prolonged low-load operation](wetstack.jpg)
+
+*Fig. 2. Wet stacking-related carbon deposits observed in a standby generator exhaust condition [8].*
 
 ### 4. Why Data Centres Require Stricter Load Validation
 Data centres are electrically unforgiving during transfer events:
@@ -91,3 +99,5 @@ Deficient evidence can contribute to claim disputes, contractual penalties, cert
 5. SFG20, “Maintenance Schedule 07-02: Standby Generators,” Building Engineering Services Association (BESA), 2023.
 6. SFG20, “Maintenance Schedule 07-03: Generator Control Systems,” Building Engineering Services Association (BESA), 2023.
 7. SFG20, “Maintenance Schedule 07-04: Fuel Systems for Standby Generators,” Building Engineering Services Association (BESA), 2023.
+8. Atlantic Power Energy, “Wet Stacking in Generators: Causes, Consequences, and Solutions,” [Online]. Available: https://atlanticpowerenergy.com/wet-stacking-in-generators-causes-consequences-and-solutions/. [Accessed: Mar. 5, 2026].
+9. WASP PFS, “Beating The Heat: How To Protect Stored Diesel,” Mar. 25, 2025. [Online]. Available: https://wasp-pfs.com/beating-the-heat-how-to-protect-stored-diesel/. [Accessed: Mar. 5, 2026].

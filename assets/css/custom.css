@@ -319,6 +319,26 @@ html.dark .reading-mode-toggle-track {
   background: rgba(248, 250, 252, 0.08);
 }
 
+.article-content :is(h2, h3, h4)#references + :is(ol, ul, p),
+.article-content :is(h2, h3, h4)#reference + :is(ol, ul, p),
+.article-content :is(h2, h3, h4)#bibliography + :is(ol, ul, p) {
+  font-size: 0.94em;
+  line-height: 1.6;
+}
+
+.article-content h2#references,
+.article-content h2#reference,
+.article-content h2#bibliography,
+.article-content h3#references,
+.article-content h3#reference,
+.article-content h3#bibliography,
+.article-content h4#references,
+.article-content h4#reference,
+.article-content h4#bibliography {
+  font-size: 0.98em;
+  font-weight: 600;
+}
+
 .reading-mode-toggle-thumb {
   transition: transform 190ms ease-in-out;
 }

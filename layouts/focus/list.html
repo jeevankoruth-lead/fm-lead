@@ -1,5 +1,5 @@
 {{ define "main" }}
-  {{ $orderedPages := .Pages.ByTitle }}
+  {{ $orderedPages := .RegularPagesRecursive.ByTitle }}
   {{ $paginator := .Paginate $orderedPages }}
 
   <section class="focus-ops-shell">
