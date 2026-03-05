@@ -1,7 +1,7 @@
 ---
 title: "UPS External Bypass Switch does not mean Zero Downtime"
 date: 2026-03-01
-featureimage: "/images/upsextthum.png"
+featureimage: "images/upsextthum.png"
 draft: false
 tags: ["Focus Mindset"]
 ---

@@ -1,6 +1,7 @@
 ---
 title: "Generator Load bank Testing for Data Centers"
 date: 2026-03-03
+featureimage: "loadtestgenthumb.jpg"
 draft: false
 tags: ["Focus Mindset"]
 ---

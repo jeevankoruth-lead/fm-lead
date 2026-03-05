@@ -43,8 +43,15 @@
     {{ if gt (len $paginator.Pages) 0 }}
       <section class="focus-ops-grid" aria-label="Framework collection">
         {{ range $paginator.Pages }}
+          {{ $page := . }}
           {{ $summary := .Summary | plainify }}
+          {{ $featureImageURL := partial "fm/page-image-url.html" (dict "page" . "name" (.Params.featureimage | default "") "resize" "960x" "allowAuto" true) }}
           <article class="focus-ops-card">
+            {{ with $featureImageURL }}
+              <figure class="focus-ops-card-image-wrap">
+                <img src="{{ . }}" alt="{{ $page.Title }}" loading="lazy" decoding="async" class="focus-ops-card-image">
+              </figure>
+            {{ end }}
             <h2 class="focus-ops-card-title">
               <a href="{{ .RelPermalink }}">{{ .Title | emojify }}</a>
             </h2>
