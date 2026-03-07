@@ -86,7 +86,7 @@ body.home-bg::after {
 }
 
 html.dark body.home-bg {
-  background: #0b0c10;
+  background: #000;
 }
 
 /* Extend section/home backgrounds to viewport edges beyond centered body width */
