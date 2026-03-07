@@ -1,5 +1,6 @@
----
+﻿---
 title: "UPS External Bypass Switch does not mean Zero Downtime"
+description: "Why an external UPS bypass switch does not guarantee zero downtime, plus the operational controls that actually reduce risk."
 date: 2026-03-01
 featureimage: "images/upsextthum.png"
 draft: false

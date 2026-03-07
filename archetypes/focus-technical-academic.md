@@ -2,6 +2,8 @@
 title: "{{ replace .File.ContentBaseName "-" " " | title }}"
 date: {{ .Date }}
 featureimage: "/images/your-image.png"
+description: ""
+summary: ""
 draft: true
 tags: ["Focus Mindset"]
 ---

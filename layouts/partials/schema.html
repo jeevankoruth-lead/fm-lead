@@ -1,67 +1,119 @@
+{{- $siteURL := site.Home.Permalink -}}
+{{- $lang := site.LanguageCode | default "en-us" -}}
+{{- $publisherName := site.Params.seo.publisherName | default site.Params.Author.name | default site.Title -}}
+{{- $publisherType := site.Params.seo.publisherType | default "Organization" -}}
+{{- $publisherLogo := site.Params.seo.publisherLogo | default "/logo-v2.png" -}}
+{{- if and $publisherLogo (not (or (strings.HasPrefix $publisherLogo "http://") (strings.HasPrefix $publisherLogo "https://") (strings.HasPrefix $publisherLogo "data:"))) -}}
+  {{- $publisherLogo = absURL $publisherLogo -}}
+{{- end -}}
+{{- $publisher := dict "@type" $publisherType "name" $publisherName -}}
+{{- if $publisherLogo -}}
+  {{- $publisher = merge $publisher (dict "logo" (dict "@type" "ImageObject" "url" $publisherLogo)) -}}
+{{- end -}}
+
 {{ if .IsHome -}}
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "@id": {{ site.Home.Permalink | safeURL }},
-    "name": "{{ .Site.Title | safeJS }}",
-    {{ with .Site.Params.description }}"description": "{{ . | safeJS }}",{{ end }}
-    {{ with .Site.LanguageCode }}"inLanguage": "{{ . }}",{{ end }}
-    "url": {{ site.Home.Permalink | safeURL }},
-    {{ with .Site.Params.keywords }}"keywords": {{ . }},{{ end }}
-    "publisher" : {
-      "@type": "Person",
-      "name": "{{ .Site.Params.Author.name | safeJS }}"
-    }
-  }
-  </script>
-{{ else }}
-  <script type="application/ld+json">
-  [{
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "articleSection": "{{ (site.GetPage .Section).Title | safeJS }}",
-    "name": "{{ .Title | safeJS }}",
-    "headline": "{{ .Title | safeJS }}",
-    {{ with .Description }}"description": "{{ . | safeJS }}",{{ end }}
-    {{ with .Site.LanguageCode }}"inLanguage": "{{ . }}",{{ end }}
-    "url" : {{ .Permalink }},
-    "author" : {
-      "@type": "Person",
-      "name": "{{ .Site.Params.Author.name | safeJS }}"
-    },
-    {{ if .Keywords }}
-    {{ with .Keywords }}"keywords": {{ . }},{{ end }}
-    {{ else }}
-    {{ with .Params.tags }}"keywords": {{ . }},{{ end }}
-    {{ end }}
-    "mainEntityOfPage": "true",
-    "wordCount": "{{ .WordCount }}"
-  }{{ if site.Params.enableStructuredBreadcrumbs | default false }},
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {{- $position := 0 -}}
-      {{- range .Ancestors -}}
-        {{- if not .IsHome -}}
-          {{- $position = add $position 1 -}}
-          {
-            "@type": "ListItem",
-            "position": {{ $position }},
-            "name": "{{ .Title }}",
-            "item": {{ .Permalink }}
-          },
+  {{- $siteDescription := site.Params.description | default site.Title -}}
+  {{- $webSite := dict
+    "@context" "https://schema.org"
+    "@type" "WebSite"
+    "@id" (printf "%s#website" $siteURL)
+    "name" site.Title
+    "description" $siteDescription
+    "inLanguage" $lang
+    "url" $siteURL
+    "publisher" $publisher
+    "potentialAction" (dict
+      "@type" "SearchAction"
+      "target" (dict
+        "@type" "EntryPoint"
+        "urlTemplate" (printf "%sq={search_term_string}" (absURL "/?"))
+      )
+      "query-input" "required name=search_term_string"
+    )
+  -}}
+  {{- $organization := dict
+    "@context" "https://schema.org"
+    "@type" $publisherType
+    "@id" (printf "%s#organization" $siteURL)
+    "name" $publisherName
+    "url" $siteURL
+    "description" $siteDescription
+    "inLanguage" $lang
+  -}}
+  {{- if $publisherLogo -}}
+    {{- $organization = merge $organization (dict "logo" $publisherLogo) -}}
+  {{- end -}}
+  <script type="application/ld+json">{{ slice $webSite $organization | jsonify | safeJS }}</script>
+{{- else if .IsPage -}}
+  {{- $description := .Description | default .Summary | default .Plain | default site.Params.description | plainify | htmlUnescape | strings.TrimSpace | truncate 180 -}}
+  {{- $rawKeywords := .Params.keywords | default .Params.tags | default site.Params.keywords -}}
+  {{- $keywords := slice -}}
+  {{- with $rawKeywords -}}
+    {{- if reflect.IsSlice . -}}
+      {{- range . -}}
+        {{- $candidate := printf "%v" . | strings.TrimSpace -}}
+        {{- if $candidate -}}
+          {{- $keywords = $keywords | append $candidate -}}
         {{- end -}}
       {{- end -}}
-      {{- $position = add $position 1 -}}
-      {
-        "@type": "ListItem",
-        "position": {{ $position }},
-        "name": "{{ .Title }}",
-        "item": {{ .Permalink }}
-      }
-    ]
-  }{{ end }}]
-  </script>
-{{ end }}
+    {{- else -}}
+      {{- range (split (printf "%v" .) ",") -}}
+        {{- $candidate := . | strings.TrimSpace -}}
+        {{- if $candidate -}}
+          {{- $keywords = $keywords | append $candidate -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $featureImage := partial "fm/page-image-url.html" (dict "page" . "name" (.Params.featureimage | default "") "resize" "1200x630" "allowAuto" true) -}}
+  {{- if and $featureImage (not (or (strings.HasPrefix $featureImage "http://") (strings.HasPrefix $featureImage "https://") (strings.HasPrefix $featureImage "data:"))) -}}
+    {{- $featureImage = absURL $featureImage -}}
+  {{- end -}}
+  {{- $articleSection := .Section -}}
+  {{- with site.GetPage .Section -}}
+    {{- $articleSection = .Title -}}
+  {{- end -}}
+  {{- $published := .PublishDate | default .Date -}}
+  {{- $modified := .Lastmod | default .Date -}}
+  {{- $schema := dict
+    "@context" "https://schema.org"
+    "@type" "Article"
+    "mainEntityOfPage" (dict "@type" "WebPage" "@id" .Permalink)
+    "url" .Permalink
+    "headline" .Title
+    "name" .Title
+    "description" $description
+    "articleSection" $articleSection
+    "inLanguage" $lang
+    "author" (dict "@type" "Person" "name" $publisherName)
+    "publisher" $publisher
+    "datePublished" ($published.Format "2006-01-02T15:04:05Z07:00")
+    "dateModified" ($modified.Format "2006-01-02T15:04:05Z07:00")
+    "wordCount" .WordCount
+  -}}
+  {{- if gt (len $keywords) 0 -}}
+    {{- $schema = merge $schema (dict "keywords" $keywords) -}}
+  {{- end -}}
+  {{- if $featureImage -}}
+    {{- $schema = merge $schema (dict "image" (slice $featureImage)) -}}
+  {{- end -}}
+  <script type="application/ld+json">{{ $schema | jsonify | safeJS }}</script>
+{{- else -}}
+  {{- $description := .Description | default .Summary | default .Plain | default site.Params.description | plainify | htmlUnescape | strings.TrimSpace | truncate 180 -}}
+  {{- $schema := dict
+    "@context" "https://schema.org"
+    "@type" "WebPage"
+    "mainEntityOfPage" (dict "@type" "WebPage" "@id" .Permalink)
+    "url" .Permalink
+    "name" (.Title | default site.Title)
+    "description" $description
+    "inLanguage" $lang
+    "isPartOf" (dict
+      "@type" "WebSite"
+      "@id" (printf "%s#website" $siteURL)
+      "name" site.Title
+      "url" $siteURL
+    )
+  -}}
+  <script type="application/ld+json">{{ $schema | jsonify | safeJS }}</script>
+{{- end }}

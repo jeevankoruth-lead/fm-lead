@@ -1,5 +1,6 @@
----
+﻿---
 title: "ATS Transfer Testing for Data Centers"
+description: "How to run ATS transfer testing in data centers with practical checks for timing, permissives, and real-world failover behavior."
 date: 2026-03-03T19:29:22+04:00
 featureimage: "/images/your-image.png"
 draft: true

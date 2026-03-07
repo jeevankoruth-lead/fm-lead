@@ -1,5 +1,6 @@
 ﻿---
 title: "Maximizing Acronyms and Qualification Credentials"
+description: "A satire on acronym overload and qualification signaling in facilities and corporate environments."
 date: 2026-02-14
 featureimage: "images/acrothumb.png"
 draft: false

@@ -1,5 +1,6 @@
 ﻿---
 title: "Meetings Before Meetings. Part of Operational Excellence"
+description: "Satirical take on pre-meeting culture in CRES and how coordination theater consumes real execution time."
 date: 2026-02-14
 featureimage: "images/premeetingthumb.png"
 draft: false

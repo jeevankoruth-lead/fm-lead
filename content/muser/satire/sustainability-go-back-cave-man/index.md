@@ -1,5 +1,6 @@
 ﻿---
 title: "Sustainability in CRES. Actionable Steps"
+description: "Satirical commentary on extreme sustainability narratives and the gap between slogans and workable progress."
 date: 2026-02-14
 featureimage: "images/cavethumb.png"
 draft: false
@@ -42,7 +43,7 @@ Step 2: Demolish the building.
 Concrete = carbon.
 Steel = carbon.
 Glass = carbon.
-Your building is basically a giant CO₂ piñata.
+Your building is basically a giant CO2 piñata.
 Step 3: Replace it with a cave.
 Not a fancy cave.
 Not a “biophilic, nature-inspired, open-plan cave.”

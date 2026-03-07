@@ -1,5 +1,6 @@
 ﻿---
 title: "Uptime Data Center Tier System Upgrade"
+description: "A satire on chasing data center tier labels instead of fixing practical reliability and operational discipline."
 date: 2026-02-14
 featureimage: "images/312datacente.png"
 draft: false

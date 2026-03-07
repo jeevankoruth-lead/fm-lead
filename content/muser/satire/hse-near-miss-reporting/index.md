@@ -1,5 +1,6 @@
 ﻿---
 title: "Near Miss Reporting Should be done every Waking Moment"
+description: "Satirical look at near-miss reporting culture and how process volume can overshadow actual learning."
 date: 2026-02-14
 featureimage: "images/nearmissreportthumb.png"
 draft: false

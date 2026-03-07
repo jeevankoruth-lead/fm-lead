@@ -1,5 +1,6 @@
----
+﻿---
 title: "Generator Load bank Testing for Data Centers"
+description: "Why generator load bank testing matters in data centers, with SFG20 alignment, test scope, and reliability evidence."
 date: 2026-03-03
 featureimage: "loadtestgenthumb.jpg"
 draft: false
@@ -31,7 +32,7 @@ These are common RCA findings in Tier II-IV environments after real transfer eve
 
 *Fig. 1. Oxidised diesel fuel sample indicating degradation risk in standby generator systems [9].*
 
-### 3. SFG20 Requirements Beyond “Monthly Start-Up”
+### 3. SFG20 Requirements Beyond â€œMonthly Start-Upâ€
 SFG20 schedules 07-02, 07-03, and 07-04 define a broader verification regime [5]-[7]:
 
 - Monthly functional test: start and run verification at no or low load.
@@ -93,12 +94,12 @@ Deficient evidence can contribute to claim disputes, contractual penalties, cert
 
 ## References
 
-1. U.S. Department of Energy, “Diesel Generator Wet Stacking: Causes and Prevention,” Office of Energy Efficiency & Renewable Energy, 2020.
-2. Caterpillar Inc., “Generator Set Load Acceptance and Transient Response,” Caterpillar Technical Application Guide, 2019.
-3. Cummins Power Generation, “Load Bank Performance Testing,” Cummins Technical Bulletin, 2021.
-4. FG Wilson, “The Importance of Load Bank Testing for Standby Generators,” FG Wilson Technical Bulletin, 2020.
-5. SFG20, “Maintenance Schedule 07-02: Standby Generators,” Building Engineering Services Association (BESA), 2023.
-6. SFG20, “Maintenance Schedule 07-03: Generator Control Systems,” Building Engineering Services Association (BESA), 2023.
-7. SFG20, “Maintenance Schedule 07-04: Fuel Systems for Standby Generators,” Building Engineering Services Association (BESA), 2023.
-8. Atlantic Power Energy, “Wet Stacking in Generators: Causes, Consequences, and Solutions,” [Online]. Available: https://atlanticpowerenergy.com/wet-stacking-in-generators-causes-consequences-and-solutions/. [Accessed: Mar. 5, 2026].
-9. WASP PFS, “Beating The Heat: How To Protect Stored Diesel,” Mar. 25, 2025. [Online]. Available: https://wasp-pfs.com/beating-the-heat-how-to-protect-stored-diesel/. [Accessed: Mar. 5, 2026].
+1. U.S. Department of Energy, â€œDiesel Generator Wet Stacking: Causes and Prevention,â€ Office of Energy Efficiency & Renewable Energy, 2020.
+2. Caterpillar Inc., â€œGenerator Set Load Acceptance and Transient Response,â€ Caterpillar Technical Application Guide, 2019.
+3. Cummins Power Generation, â€œLoad Bank Performance Testing,â€ Cummins Technical Bulletin, 2021.
+4. FG Wilson, â€œThe Importance of Load Bank Testing for Standby Generators,â€ FG Wilson Technical Bulletin, 2020.
+5. SFG20, â€œMaintenance Schedule 07-02: Standby Generators,â€ Building Engineering Services Association (BESA), 2023.
+6. SFG20, â€œMaintenance Schedule 07-03: Generator Control Systems,â€ Building Engineering Services Association (BESA), 2023.
+7. SFG20, â€œMaintenance Schedule 07-04: Fuel Systems for Standby Generators,â€ Building Engineering Services Association (BESA), 2023.
+8. Atlantic Power Energy, â€œWet Stacking in Generators: Causes, Consequences, and Solutions,â€ [Online]. Available: https://atlanticpowerenergy.com/wet-stacking-in-generators-causes-consequences-and-solutions/. [Accessed: Mar. 5, 2026].
+9. WASP PFS, â€œBeating The Heat: How To Protect Stored Diesel,â€ Mar. 25, 2025. [Online]. Available: https://wasp-pfs.com/beating-the-heat-how-to-protect-stored-diesel/. [Accessed: Mar. 5, 2026].

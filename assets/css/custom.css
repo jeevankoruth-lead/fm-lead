@@ -558,13 +558,13 @@ html.dark .fm-home-cta-block {
   margin-top: var(--space-16);
   background: #007aff;
   color: #ffffff;
-  transition: transform 180ms linear, filter 180ms linear;
+  transition: transform 140ms linear, background-color 140ms linear;
 }
 
 .fm-home-cta-button:hover,
 .fm-home-cta-button:focus-visible {
   transform: translateY(-2px);
-  filter: brightness(0.95);
+  background: #0069d9;
 }
 
 .fm-home-latest-grid {
@@ -1109,7 +1109,10 @@ body.section-focus .focus-ops-card {
   flex-direction: column;
   justify-content: space-between;
   min-height: 260px;
-  transition: transform 180ms linear, box-shadow 180ms linear;
+  contain: layout paint;
+  content-visibility: auto;
+  contain-intrinsic-size: 280px;
+  transition: transform 140ms linear;
 }
 
 body.section-focus .focus-ops-card-image-wrap {
@@ -1128,7 +1131,7 @@ body.section-focus .focus-ops-card-image {
 body.section-focus .focus-ops-card:hover,
 body.section-focus .focus-ops-card:focus-within {
   transform: translateY(-3px);
-  box-shadow: 0 4px 10px rgba(15, 15, 15, 0.14);
+  box-shadow: 0 2px 6px rgba(15, 15, 15, 0.1);
 }
 
 body.section-focus .focus-ops-card-title {
@@ -1597,7 +1600,34 @@ body.section-focus .focus-ops-card-cta {
 
 body.section-focus .focus-ops-card:hover,
 body.section-focus .focus-ops-card:focus-within {
-  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.14);
+  box-shadow: 0 3px 8px rgba(15, 23, 42, 0.1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fm-reveal {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .fm-home-cta-button,
+  .fm-feature-card,
+  .hero-panel,
+  body.section-focus .focus-ops-card {
+    transition: none;
+  }
+
+  .fm-home-cta-button:hover,
+  .fm-home-cta-button:focus-visible,
+  .fm-feature-card:hover,
+  .fm-feature-card:focus-visible,
+  .hero-panel:hover,
+  .hero-panel:focus-within,
+  body.section-focus .focus-ops-card:hover,
+  body.section-focus .focus-ops-card:focus-within {
+    transform: none;
+    box-shadow: none;
+  }
 }
 
 html.dark body.section-focus .focus-ops-hero {

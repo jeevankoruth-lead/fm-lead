@@ -1,5 +1,6 @@
 ﻿---
 title: "Switching on Office Lights needs to be Process based"
+description: "A satire on bureaucratic safety culture where even turning on a light needs procedure, forms, and approvals."
 date: 2026-02-14
 featureimage: "images/lightsthumb.png"
 draft: false

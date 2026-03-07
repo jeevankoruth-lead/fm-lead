@@ -1,0 +1,5 @@
+{{ $alg := .Site.Params.fingerprintAlgorithm | default "sha512" }}
+{{ with resources.Get "js/inp-optimizations.js" }}
+  {{ $script := . | resources.Minify | resources.Fingerprint $alg }}
+  <script defer src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}"></script>
+{{ end }}

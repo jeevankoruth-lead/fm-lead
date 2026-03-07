@@ -1,11 +1,19 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://fmlead.com/'
 languageCode = 'en-us'
 title = 'FM-Lead'
 theme = 'blowfish'
+enableRobotsTXT = true
 
 [params]
+  description = "FM-Lead blends technical facility leadership insights with reflective commentary across Focus Mindset and Free Muser."
+  keywords = ["facility management", "data center operations", "critical facilities", "engineering leadership", "operations strategy", "FM-Lead"]
+  images = ["/logo-v2.png"]
+  robots = "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
   disableAssetsBusting = true
   custom_CSS = ["css/custom.css"]
+
+  [params.Author]
+    name = "FM-Lead"
 
   [params.article]
     showDate = false
