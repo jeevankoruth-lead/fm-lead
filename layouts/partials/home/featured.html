@@ -1,22 +1,52 @@
 <section class="fm-home-featured fm-reveal" aria-labelledby="home-featured-title">
   <h2 id="home-featured-title">Featured Content</h2>
+  {{ $city := resources.Get "images/city extended.png" }}
+  {{ $forest := resources.Get "images/forest extended.png" }}
+  {{ $split := resources.Get "images/homepage-split.png" }}
+  {{ $cityCardPNG := $city }}
+  {{ $forestCardPNG := $forest }}
+  {{ $splitCardPNG := $split }}
+  {{ $cityCardWebP := "" }}
+  {{ $forestCardWebP := "" }}
+  {{ $splitCardWebP := "" }}
+  {{ with $city }}
+    {{ $cityCardPNG = .Resize "900x" }}
+    {{ $cityCardWebP = .Resize "900x webp q72" }}
+  {{ end }}
+  {{ with $forest }}
+    {{ $forestCardPNG = .Resize "900x" }}
+    {{ $forestCardWebP = .Resize "900x webp q72" }}
+  {{ end }}
+  {{ with $split }}
+    {{ $splitCardPNG = .Resize "900x" }}
+    {{ $splitCardWebP = .Resize "900x webp q72" }}
+  {{ end }}
   <div class="fm-home-featured-grid">
     <a href="{{ "/focus/" | relURL }}" class="fm-feature-card" aria-label="Start with Focus Mindset">
-      <img src="/images/city extended.png" alt="Focus Mindset" loading="lazy" decoding="async">
+      <picture>
+        {{ with $cityCardWebP }}<source srcset="{{ .RelPermalink }}" type="image/webp">{{ end }}
+        <img src="{{ with $cityCardPNG }}{{ .RelPermalink }}{{ else }}/images/city extended.png{{ end }}" alt="Focus Mindset" loading="lazy" decoding="async"{{ with $cityCardPNG }} width="{{ .Width }}" height="{{ .Height }}"{{ end }}>
+      </picture>
       <div class="fm-feature-card-content">
         <h3>Focus Mindset</h3>
         <p>Precision systems, disciplined frameworks, and operator-grade insights.</p>
       </div>
     </a>
     <a href="{{ "/muser/" | relURL }}" class="fm-feature-card" aria-label="Explore Free Muser">
-      <img src="/images/forest extended.png" alt="Free Muser" loading="lazy" decoding="async">
+      <picture>
+        {{ with $forestCardWebP }}<source srcset="{{ .RelPermalink }}" type="image/webp">{{ end }}
+        <img src="{{ with $forestCardPNG }}{{ .RelPermalink }}{{ else }}/images/forest extended.png{{ end }}" alt="Free Muser" loading="lazy" decoding="async"{{ with $forestCardPNG }} width="{{ .Width }}" height="{{ .Height }}"{{ end }}>
+      </picture>
       <div class="fm-feature-card-content">
         <h3>Free Muser</h3>
         <p>Creative essays, satire, and thought experiments from the human side of FM.</p>
       </div>
     </a>
     <a href="{{ "/focus/technical/" | relURL }}" class="fm-feature-card" aria-label="Browse technical manuals">
-      <img src="/images/homepage-split.png" alt="Technical manuals" loading="lazy" decoding="async">
+      <picture>
+        {{ with $splitCardWebP }}<source srcset="{{ .RelPermalink }}" type="image/webp">{{ end }}
+        <img src="{{ with $splitCardPNG }}{{ .RelPermalink }}{{ else }}/images/homepage-split.png{{ end }}" alt="Technical manuals" loading="lazy" decoding="async"{{ with $splitCardPNG }} width="{{ .Width }}" height="{{ .Height }}"{{ end }}>
+      </picture>
       <div class="fm-feature-card-content">
         <h3>Technical Guides</h3>
         <p>Actionable manuals and field-tested playbooks for critical environments.</p>

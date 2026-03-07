@@ -1,0 +1,59 @@
+{{- $disableImageOptimizationMD := .Page.Site.Params.disableImageOptimizationMD | default false -}}
+{{- $urlStr := .Destination | safeURL -}}
+{{- $url := urls.Parse $urlStr -}}
+{{- $isRemote := findRE "^(https?|data)" $url.Scheme -}}
+{{- $resource := "" -}}
+{{- if not $isRemote -}}
+  {{- $resource = or ($.Page.Resources.GetMatch $urlStr) (resources.Get $urlStr) -}}
+{{- end -}}
+
+{{- $src := $urlStr -}}
+{{- $imgWidth := "" -}}
+{{- $imgHeight := "" -}}
+{{- $srcset := "" -}}
+{{- $sizes := "(min-width: 1200px) 860px, (min-width: 768px) 78vw, 94vw" -}}
+
+{{- if and $resource (not $isRemote) -}}
+  {{- $isSVG := eq $resource.MediaType.SubType "svg" -}}
+  {{- $isGIF := eq $resource.MediaType.SubType "gif" -}}
+  {{- $shouldOptimize := and (not $disableImageOptimizationMD) (not $isSVG) (not $isGIF) -}}
+  {{- if $shouldOptimize -}}
+    {{- $img960 := $resource -}}
+    {{- $img1280 := $resource -}}
+    {{- if gt $resource.Width 960 -}}
+      {{- $img960 = $resource.Resize "960x" -}}
+    {{- end -}}
+    {{- if gt $resource.Width 1280 -}}
+      {{- $img1280 = $resource.Resize "1280x" -}}
+    {{- end -}}
+    {{- $src = $img960.RelPermalink -}}
+    {{- $srcset = printf "%s 960w, %s 1280w" $img960.RelPermalink $img1280.RelPermalink -}}
+    {{- $imgWidth = $img960.Width -}}
+    {{- $imgHeight = $img960.Height -}}
+  {{- else -}}
+    {{- $src = $resource.RelPermalink -}}
+    {{- with $resource.Width }}{{ $imgWidth = . }}{{ end -}}
+    {{- with $resource.Height }}{{ $imgHeight = . }}{{ end -}}
+  {{- end -}}
+{{- end -}}
+
+<figure class="fm-article-image"
+  {{- range $k, $v := .Attributes -}}
+    {{- if $v -}}
+      {{- printf " %s=%q" $k ($v | transform.HTMLEscape) | safeHTMLAttr -}}
+    {{- end -}}
+  {{- end -}}>
+  <img
+    class="fm-article-image__img"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="{{ .Text }}"
+    src="{{ $src }}"
+    {{ with $srcset }}srcset="{{ . }}" sizes="{{ $sizes }}"{{ end }}
+    {{ with $imgWidth }}width="{{ . }}"{{ end }}
+    {{ with $imgHeight }}height="{{ . }}"{{ end }}>
+  {{- with .Title -}}
+    <figcaption>{{ . | markdownify }}</figcaption>
+  {{- end -}}
+</figure>

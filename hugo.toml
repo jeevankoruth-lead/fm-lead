@@ -55,4 +55,9 @@ enableRobotsTXT = true
     [markup.goldmark.renderer]
       unsafe = true
 
+[imaging]
+  quality = 75
+  resampleFilter = "Lanczos"
+  anchor = "Smart"
+
   

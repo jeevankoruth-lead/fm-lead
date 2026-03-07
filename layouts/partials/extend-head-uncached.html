@@ -3,3 +3,45 @@
   {{ $script := . | resources.Minify | resources.Fingerprint $alg }}
   <script defer src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}"></script>
 {{ end }}
+
+{{ with resources.Get "js/custom.js" }}
+  {{ $custom := . | resources.Minify | resources.Fingerprint $alg }}
+  <script defer src="{{ $custom.RelPermalink }}" integrity="{{ $custom.Data.Integrity }}"></script>
+{{ end }}
+
+{{ $cityURL := "/images/city extended.png" }}
+{{ $forestURL := "/images/forest extended.png" }}
+{{ $splitURL := "/images/homepage-split.png" }}
+{{ $cityWebP := "" }}
+{{ $forestWebP := "" }}
+{{ $splitWebP := "" }}
+
+{{ with resources.Get "images/city extended.png" }}
+  {{ $cityURL = (.Resize "1600x").RelPermalink }}
+  {{ $cityWebP = (.Resize "1600x webp q72").RelPermalink }}
+{{ end }}
+{{ with resources.Get "images/forest extended.png" }}
+  {{ $forestURL = (.Resize "1600x").RelPermalink }}
+  {{ $forestWebP = (.Resize "1600x webp q72").RelPermalink }}
+{{ end }}
+{{ with resources.Get "images/homepage-split.png" }}
+  {{ $splitURL = (.Resize "1400x").RelPermalink }}
+  {{ $splitWebP = (.Resize "1400x webp q72").RelPermalink }}
+{{ end }}
+
+<style>
+  :root {
+    --fm-city-image: image-set(
+      url('{{ if $cityWebP }}{{ $cityWebP }}{{ else }}{{ $cityURL }}{{ end }}') type('image/webp'),
+      url('{{ $cityURL }}') type('image/png')
+    );
+    --fm-forest-image: image-set(
+      url('{{ if $forestWebP }}{{ $forestWebP }}{{ else }}{{ $forestURL }}{{ end }}') type('image/webp'),
+      url('{{ $forestURL }}') type('image/png')
+    );
+    --fm-home-split-image: image-set(
+      url('{{ if $splitWebP }}{{ $splitWebP }}{{ else }}{{ $splitURL }}{{ end }}') type('image/webp'),
+      url('{{ $splitURL }}') type('image/png')
+    );
+  }
+</style>
