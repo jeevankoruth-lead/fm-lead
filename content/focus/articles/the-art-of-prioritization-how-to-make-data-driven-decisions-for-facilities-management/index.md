@@ -1,6 +1,6 @@
 ---
 title: "The Art of Prioritization: How to Make Data-Driven Decisions for Facilities Management"
-date: 2026-03-10
+date: 2026-03-11
 draft: false
 description: "Focus Mindset article"
 featureimage: "images/feature.png"
