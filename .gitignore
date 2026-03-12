@@ -1,2 +1,5 @@
 public/
 resources/
+.env
+tools/content_email_agent/.env
+tools/content_email_agent/state.json
