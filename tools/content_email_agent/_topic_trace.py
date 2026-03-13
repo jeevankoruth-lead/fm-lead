@@ -1,11 +1,11 @@
 from pathlib import Path
 import email, imaplib
-from content_email_agent import load_config, ContentEmailAgent, DRAFT_TOKEN_RE
+from fmlead_com_focus_a_writer import load_config, FMLeadComFocusAWriter, DRAFT_TOKEN_RE
 
 env = Path(r"C:/Hugo/bin/fmlead/tools/content_email_agent/.env")
 state = Path(r"C:/Hugo/bin/fmlead/tools/content_email_agent/state.json")
 config = load_config(env)
-agent = ContentEmailAgent(config=config, state_path=state)
+agent = FMLeadComFocusAWriter(config=config, state_path=state)
 processed = set(agent.state.get("processed_message_ids", []))
 
 M = imaplib.IMAP4_SSL(config.imap_host, config.imap_port)

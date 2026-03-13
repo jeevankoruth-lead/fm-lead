@@ -89,19 +89,19 @@ Copy-Item tools/content_email_agent/.env.example tools/content_email_agent/.env
 Create and send a new draft:
 
 ```powershell
-python tools/content_email_agent/content_email_agent.py new --brief "Write about focus mindset for facility leaders under pressure" --title "Focus Mindset Under Pressure"
+python tools/content_email_agent/fmlead_com_focus_a_writer.py new --brief "Write about focus mindset for facility leaders under pressure" --title "Focus Mindset Under Pressure"
 ```
 
 Run the email loop (polls inbox):
 
 ```powershell
-python tools/content_email_agent/content_email_agent.py watch
+python tools/content_email_agent/fmlead_com_focus_a_writer.py watch
 ```
 
 Send daily topic approval requests immediately (manual trigger):
 
 ```powershell
-python tools/content_email_agent/content_email_agent.py daily-topics
+python tools/content_email_agent/fmlead_com_focus_a_writer.py daily-topics
 ```
 
 Or run the launcher:
@@ -113,7 +113,7 @@ powershell -ExecutionPolicy Bypass -File tools/content_email_agent/run_watch.ps1
 Optional: publish one approved draft manually by id:
 
 ```powershell
-python tools/content_email_agent/content_email_agent.py publish --draft-id <id>
+python tools/content_email_agent/fmlead_com_focus_a_writer.py publish --draft-id <id>
 ```
 
 ## Approval rules

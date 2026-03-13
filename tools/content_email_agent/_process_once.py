@@ -1,10 +1,10 @@
 from pathlib import Path
-from content_email_agent import load_config, ContentEmailAgent
+from fmlead_com_focus_a_writer import load_config, FMLeadComFocusAWriter
 
 env = Path(r"C:/Hugo/bin/fmlead/tools/content_email_agent/.env")
 state = Path(r"C:/Hugo/bin/fmlead/tools/content_email_agent/state.json")
 config = load_config(env)
-agent = ContentEmailAgent(config=config, state_path=state)
+agent = FMLeadComFocusAWriter(config=config, state_path=state)
 agent._read_unseen_feedback()
 print("processed_once")
 changed = 0

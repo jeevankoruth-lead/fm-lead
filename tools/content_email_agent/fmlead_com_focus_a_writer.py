@@ -29,6 +29,7 @@ DRAFT_TOKEN_RE = re.compile(r"\[FM-LEAD-DRAFT:([a-z0-9\-]+)\]", re.IGNORECASE)
 TOPIC_SUBJECT_PREFIX = "Content Approval Request- Focus Mindset - Articles - /"
 TOPIC_ID_RE = re.compile(r"topic\s*id\s*:\s*([a-z0-9]{8,32})", re.IGNORECASE)
 WATCH_SINGLETON_PORT = 47291
+AGENT_NAME = "FMLead.com_Focus_A_Writer"
 
 
 @dataclass
@@ -78,7 +79,7 @@ class Config:
     image_body2_filename: str
 
 
-class ContentEmailAgent:
+class FMLeadComFocusAWriter:
     def __init__(self, config: Config, state_path: Path):
         self.config = config
         self.state_path = state_path
@@ -1600,7 +1601,7 @@ def load_config(env_path: Path) -> Config:
 
 def main() -> None:
     script_dir = Path(__file__).resolve().parent
-    parser = argparse.ArgumentParser(description="FM-Lead Focus Mindset email content agent")
+    parser = argparse.ArgumentParser(description=f"{AGENT_NAME} email content agent")
     parser.add_argument("command", choices=["new", "watch", "publish", "daily-topics"], help="Run one command")
     parser.add_argument("--title", help="Draft title")
     parser.add_argument("--brief", help="Draft brief/instructions")
@@ -1610,7 +1611,7 @@ def main() -> None:
     args = parser.parse_args()
     config = load_config(Path(args.env_file))
     state_path = script_dir / "state.json"
-    agent = ContentEmailAgent(config=config, state_path=state_path)
+    agent = FMLeadComFocusAWriter(config=config, state_path=state_path)
 
     if args.command == "new":
         if not args.title or not args.brief:
@@ -1636,3 +1637,7 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
+
+# Backward-compatible alias for older scripts importing the previous class name.
+ContentEmailAgent = FMLeadComFocusAWriter

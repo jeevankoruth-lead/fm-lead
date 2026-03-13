@@ -1,12 +1,12 @@
 from pathlib import Path
 import os, imaplib, email
 from dotenv import load_dotenv
-from content_email_agent import load_config, ContentEmailAgent
+from fmlead_com_focus_a_writer import load_config, FMLeadComFocusAWriter
 
 env = Path(r"C:/Hugo/bin/fmlead/tools/content_email_agent/.env")
 state = Path(r"C:/Hugo/bin/fmlead/tools/content_email_agent/state.json")
 config = load_config(env)
-agent = ContentEmailAgent(config=config, state_path=state)
+agent = FMLeadComFocusAWriter(config=config, state_path=state)
 
 load_dotenv(env)
 M = imaplib.IMAP4_SSL(os.getenv("IMAP_HOST"), int(os.getenv("IMAP_PORT", "993")))
