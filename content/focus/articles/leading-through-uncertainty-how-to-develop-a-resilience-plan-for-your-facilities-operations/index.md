@@ -1,7 +1,7 @@
 ---
 title: "Leading Through Uncertainty: How to Develop a Resilience Plan for Your Facilities Operations"
 date: 2026-03-10
-draft: false
+draft: true
 description: "Focus Mindset article"
 tags:
   - "focus mindset"

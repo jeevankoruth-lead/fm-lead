@@ -1,7 +1,7 @@
 ---
 title: "Focus Mindset Test"
 date: 2026-03-09
-draft: false
+draft: true
 description: "Focus Mindset article"
 tags:
   - "focus mindset"

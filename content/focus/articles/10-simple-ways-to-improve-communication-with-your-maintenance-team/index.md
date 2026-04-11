@@ -1,7 +1,7 @@
 ---
 title: "10 Simple Ways to Improve Communication with Your Maintenance Team"
 date: 2026-03-12
-draft: false
+draft: true
 description: "Focus Mindset article"
 tags:
   - "focus mindset"
