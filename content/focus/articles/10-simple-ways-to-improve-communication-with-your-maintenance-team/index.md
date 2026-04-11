@@ -1,12 +1,9 @@
 ---
-title: "10 Simple Ways to Improve Communication with Your Maintenance Team"
+title: 10 Simple Ways to Improve Communication with Your Maintenance Team
 date: 2026-03-12
-draft: true
-description: "Focus Mindset article"
-tags:
-  - "focus mindset"
-  - "leadership"
-  - "execution"
+draft: false
+description: Focus Mindset article
+tags: [focus mindset, leadership, execution]
 ---
 
 **10 Simple Ways to Improve Communication with Your Maintenance Team**
@@ -107,3 +104,5 @@ Continuous improvement ensures that team members are always seeking ways to impr
 10. Encourage continuous improvement to improve performance, productivity, and communication.
 
 By implementing these 10 simple yet practical tips, you can improve communication with your maintenance team, reduce errors, and increase productivity. Remember, effective communication is crucial for smooth operations in facilities management. By establishing clear roles, responsibilities, and communication channels, you can ensure that your maintenance team is working efficiently and effectively.
+
+Over communication is also a problem so always find a balance.
