@@ -3,16 +3,16 @@ title: "The Art of Prioritization: How to Make Data-Driven Decisions for Facilit
 date: 2026-03-11
 draft: true
 description: "Focus Mindset article"
-featureimage: "images/feature.png"
+featureimage: "/images/feature.jpg"
 tags:
   - "focus mindset"
   - "leadership"
   - "execution"
 ---
 
-![Supporting image 1 for The Art of Prioritization: How to Make Data-Driven Decisions for Facilities Management](images/detail-1.png)
+![Supporting image 1 for The Art of Prioritization: How to Make Data-Driven Decisions for Facilities Management](/images/detail-1.jpg)
 
-![Supporting image 2 for The Art of Prioritization: How to Make Data-Driven Decisions for Facilities Management](images/detail-2.png)
+![Supporting image 2 for The Art of Prioritization: How to Make Data-Driven Decisions for Facilities Management](/images/detail-2.jpg)
 
 **The Art of Prioritization: How to Make Data-Driven Decisions for Facilities Management**
 

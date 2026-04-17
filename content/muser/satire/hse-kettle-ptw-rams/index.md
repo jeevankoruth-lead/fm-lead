@@ -2,7 +2,7 @@
 title: "Every Activity needs PTW and RAMS"
 description: "A workplace satire on over-engineered HSE paperwork, from kettle permits to RAMS for the obvious."
 date: 2026-02-14
-featureimage: "images/kettlethumb.png"
+featureimage: "/images/kettlethumb.jpg"
 draft: false
 tags: ["Free Muser"]
 ---

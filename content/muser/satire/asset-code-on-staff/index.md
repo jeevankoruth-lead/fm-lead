@@ -2,7 +2,7 @@
 title: "High Performance Team Members should be Asset Tagged"
 description: "A satire on asset code obsession and how labeling culture can outgrow real maintenance outcomes."
 date: 2026-02-14
-featureimage: "images/technicianassetcodethumb.png"
+featureimage: "/images/technicianassetcodethumb.jpg"
 draft: false
 tags: ["Free Muser"]
 ---

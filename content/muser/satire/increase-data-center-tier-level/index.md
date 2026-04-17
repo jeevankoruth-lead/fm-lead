@@ -2,10 +2,9 @@
 title: "Uptime Data Center Tier System Upgrade"
 description: "A satire on chasing data center tier labels instead of fixing practical reliability and operational discipline."
 date: 2026-02-14
-featureimage: "images/312datacente.png"
+featureimage: "/images/312datacente.jpg"
 draft: false
 tags: ["Free Muser"]
----
 
 <span class="tag-free-muser">Free Muser</span>
 
@@ -21,6 +20,7 @@ If we want TRUE reliability, TRUE uptime, TRUE operational supremacy…
 We need at least 400 tiers. Minimum.
 Because nothing says “resilient infrastructure” like a tiering system so complicated it requires its own PhD.
 ________________________________________
+![312datacente](/images/312datacente.jpg)
 ### Tier V: The “We Swear It Won’t Break” Tier
 This tier guarantees:
 - 99.999999% uptime
@@ -28,6 +28,7 @@ This tier guarantees:
 - A technician who lives inside the UPS room
 - A priest on standby for exorcisms
 ________________________________________
+![Priest in data center waiting for an exorcism](/images/Priest%20in%20data%20center%20waiting%20for%20an%20exorcism.jpg)
 ### Tier VI: The “We Built This on a Volcano” Tier
 For clients who demand:
 - Zero downtime
@@ -41,6 +42,7 @@ ________________________________________
 ### Tier VII: The “We Can Survive a Nuclear Strike” Tier
 Features:
 - EMP proof everything
+![Gravity is overrated](/images/Gravity%20is%20overrated.jpg)
 - Walls thicker than a bank vault
 - A bunker stocked with snacks for 200 years
 - A dedicated team of engineers who haven’t seen sunlight since 2014
@@ -50,6 +52,7 @@ This tier rejects the laws of nature entirely.
 - Gravity resistant racks
 - Quantum powered cooling
 - Servers that exist in multiple states of uptime simultaneously
+![Back to an unhappy marriage](/images/Back%20to%20an%20unhappy%20marriage.jpg)
 - Schrödinger’s BMS
 ________________________________________
 ### Tier IX: The “We Maintain the Universe” Tier

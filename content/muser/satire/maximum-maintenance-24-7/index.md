@@ -2,7 +2,7 @@
 title: "From Routine Maintenance to 24/7 Continuous Maximum Maintenance"
 description: "Satire on nonstop maintenance culture and the myth that more activity always means better reliability."
 date: 2026-02-14
-featureimage: "images/maxmainthumb.png"
+featureimage: "/images/maxmainthumb.jpg"
 draft: false
 tags: ["Free Muser"]
 ---

@@ -2,7 +2,7 @@
 title: "Poco F6 - Smartphone"
 description: "Straightforward review of the POCO F6 with performance, camera, battery, and value insights for practical buyers."
 date: 2026-02-15
-featureimage: "images/poco-f6-back-hand.png"
+featureimage: "/images/poco-f6-back-hand.jpg"
 draft: false
 tags: ["Free Muser"]
 ---
