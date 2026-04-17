@@ -6,6 +6,8 @@ featureimage: "/images/312datacente.jpg"
 draft: false
 tags: ["Free Muser"]
 
+---
+
 <span class="tag-free-muser">Free Muser</span>
 
 ## Uptime Institute Has 4 Data Center Tiers. We Need Way More. Like… 400.
