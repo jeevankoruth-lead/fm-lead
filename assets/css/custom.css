@@ -1,3 +1,21 @@
+/* Improved figure and figcaption styling for visible, attractive captions */
+figure {
+  display: table;
+  margin: 2em auto;
+  text-align: center;
+}
+figure img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+figcaption {
+  font-size: 0.95em;
+  color: #666;
+  margin-top: 0.5em;
+  text-align: center;
+}
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&family=Playfair+Display:wght@600;700&display=swap');
 
 :root {
