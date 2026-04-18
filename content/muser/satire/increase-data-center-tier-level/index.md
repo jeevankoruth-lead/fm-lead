@@ -48,7 +48,7 @@ Features:
 - A bunker stocked with snacks for 200 years
 - A dedicated team of engineers who haven’t seen sunlight since 2014
 ________________________________________
-![Gravity is overrated](../../../../static/images/Gravity%20is%20overrated.jpg "Gravity is overrated")
+![Gravity is overrated](../../../../static/images/Gravity%20is%20overrated.jpg "Gravity is overrated"){: style="max-width: 400px; display: block; margin: 1.5em auto;" }
 ### Tier VIII: The “We Don’t Even Trust Physics Anymore” Tier
 This tier rejects the laws of nature entirely.
 - Gravity resistant racks
@@ -56,8 +56,7 @@ This tier rejects the laws of nature entirely.
 - Servers that exist in multiple states of uptime simultaneously
 - Schrödinger’s BMS
 ________________________________________
-![Back to an unhappy marriage](../../../../static/images/Back%20to%20an%20unhappy%20marriage.jpg "Back to an unhappy marriage")
-![Gravity is overrated](../../../../static/images/Gravity%20is%20overrated.jpg "Gravity is overrated")
+![Back to an unhappy marriage](../../../../static/images/Back%20to%20an%20unhappy%20marriage.jpg "Back to an unhappy marriage"){: style="max-width: 400px; display: block; margin: 1.5em auto;" }
 ### Tier IX: The “We Maintain the Universe” Tier
 At this level, the data center is so reliable that:
 - It stabilizes the local weather
@@ -65,7 +64,7 @@ At this level, the data center is so reliable that:
 - It fixes your marriage
 - It automatically renews your certifications
 ________________________________________
-![Back to an unhappy marriage](../../../../static/images/Back%20to%20an%20unhappy%20marriage.jpg "Back to an unhappy marriage")
+ 
 ### Tier X: The “God Mode” Tier
 This is the final form of uptime.
 Requirements:
