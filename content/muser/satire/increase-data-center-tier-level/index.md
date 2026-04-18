@@ -44,19 +44,19 @@ ________________________________________
 ### Tier VII: The “We Can Survive a Nuclear Strike” Tier
 Features:
 - EMP proof everything
-![Gravity is overrated](../../../../static/images/Gravity%20is%20overrated.jpg "Gravity is overrated")
 - Walls thicker than a bank vault
 - A bunker stocked with snacks for 200 years
 - A dedicated team of engineers who haven’t seen sunlight since 2014
 ________________________________________
+![Gravity is overrated](../../../../static/images/Gravity%20is%20overrated.jpg "Gravity is overrated")
 ### Tier VIII: The “We Don’t Even Trust Physics Anymore” Tier
 This tier rejects the laws of nature entirely.
 - Gravity resistant racks
 - Quantum powered cooling
 - Servers that exist in multiple states of uptime simultaneously
-![Back to an unhappy marriage](../../../../static/images/Back%20to%20an%20unhappy%20marriage.jpg "Back to an unhappy marriage")
 - Schrödinger’s BMS
 ________________________________________
+![Back to an unhappy marriage](../../../../static/images/Back%20to%20an%20unhappy%20marriage.jpg "Back to an unhappy marriage")
 ### Tier IX: The “We Maintain the Universe” Tier
 At this level, the data center is so reliable that:
 - It stabilizes the local weather
