@@ -23,7 +23,7 @@ We need at least 400 tiers. Minimum.
 Because nothing says “resilient infrastructure” like a tiering system so complicated it requires its own PhD.
 ________________________________________
 <figure>
-	<img src="../../../../static/images/312datacente.jpg" alt="312datacente.jpg">
+	<img src="../../../../static/images/312datacente.jpg" alt="">
 	<figcaption>312datacente</figcaption>
 </figure>
 ### Tier V: The “We Swear It Won’t Break” Tier
@@ -34,7 +34,7 @@ This tier guarantees:
 - A priest on standby for exorcisms
 ________________________________________
 <figure>
-	<img src="../../../../static/images/Priest%20in%20data%20center%20waiting%20for%20an%20exorcism.jpg" alt="Priest in data center waiting for an exorcism.jpg">
+	<img src="../../../../static/images/Priest%20in%20data%20center%20waiting%20for%20an%20exorcism.jpg" alt="">
 	<figcaption>Priest in data center waiting for an exorcism</figcaption>
 </figure>
 ### Tier VI: The “We Built This on a Volcano” Tier
@@ -51,7 +51,7 @@ ________________________________________
 Features:
 - EMP proof everything
 <figure>
-	<img src="../../../../static/images/Gravity%20is%20overrated.jpg" alt="Gravity is overrated.jpg">
+	<img src="../../../../static/images/Gravity%20is%20overrated.jpg" alt="">
 	<figcaption>Gravity is overrated</figcaption>
 </figure>
 - Walls thicker than a bank vault
@@ -64,7 +64,7 @@ This tier rejects the laws of nature entirely.
 - Quantum powered cooling
 - Servers that exist in multiple states of uptime simultaneously
 <figure>
-	<img src="../../../../static/images/Back%20to%20an%20unhappy%20marriage.jpg" alt="Back to an unhappy marriage.jpg">
+	<img src="../../../../static/images/Back%20to%20an%20unhappy%20marriage.jpg" alt="">
 	<figcaption>Back to an unhappy marriage</figcaption>
 </figure>
 - Schrödinger’s BMS
