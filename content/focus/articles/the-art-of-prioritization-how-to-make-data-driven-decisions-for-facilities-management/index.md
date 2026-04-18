@@ -3,7 +3,7 @@ title: "The Art of Prioritization: How to Make Data-Driven Decisions for Facilit
 date: 2026-03-11
 draft: true
 description: "Focus Mindset article"
-featureimage: "/images/feature.jpg"
+featureimage: "/images/feature.png"
 tags:
   - "focus mindset"
   - "leadership"
