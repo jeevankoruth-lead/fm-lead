@@ -22,10 +22,7 @@ If we want TRUE reliability, TRUE uptime, TRUE operational supremacy…
 We need at least 400 tiers. Minimum.
 Because nothing says “resilient infrastructure” like a tiering system so complicated it requires its own PhD.
 ________________________________________
-<figure>
-	<img src="../../../../static/images/312datacente.jpg" alt="">
-	<figcaption>312datacente</figcaption>
-</figure>
+![312datacente](../../../../static/images/312datacente.jpg "312datacente")
 ### Tier V: The “We Swear It Won’t Break” Tier
 This tier guarantees:
 - 99.999999% uptime
@@ -33,10 +30,7 @@ This tier guarantees:
 - A technician who lives inside the UPS room
 - A priest on standby for exorcisms
 ________________________________________
-<figure>
-	<img src="../../../../static/images/Priest%20in%20data%20center%20waiting%20for%20an%20exorcism.jpg" alt="">
-	<figcaption>Priest in data center waiting for an exorcism</figcaption>
-</figure>
+![Priest in data center waiting for an exorcism](../../../../static/images/Priest%20in%20data%20center%20waiting%20for%20an%20exorcism.jpg "Priest in data center waiting for an exorcism")
 ### Tier VI: The “We Built This on a Volcano” Tier
 For clients who demand:
 - Zero downtime
@@ -50,10 +44,7 @@ ________________________________________
 ### Tier VII: The “We Can Survive a Nuclear Strike” Tier
 Features:
 - EMP proof everything
-<figure>
-	<img src="../../../../static/images/Gravity%20is%20overrated.jpg" alt="">
-	<figcaption>Gravity is overrated</figcaption>
-</figure>
+![Gravity is overrated](../../../../static/images/Gravity%20is%20overrated.jpg "Gravity is overrated")
 - Walls thicker than a bank vault
 - A bunker stocked with snacks for 200 years
 - A dedicated team of engineers who haven’t seen sunlight since 2014
@@ -63,10 +54,7 @@ This tier rejects the laws of nature entirely.
 - Gravity resistant racks
 - Quantum powered cooling
 - Servers that exist in multiple states of uptime simultaneously
-<figure>
-	<img src="../../../../static/images/Back%20to%20an%20unhappy%20marriage.jpg" alt="">
-	<figcaption>Back to an unhappy marriage</figcaption>
-</figure>
+![Back to an unhappy marriage](../../../../static/images/Back%20to%20an%20unhappy%20marriage.jpg "Back to an unhappy marriage")
 - Schrödinger’s BMS
 ________________________________________
 ### Tier IX: The “We Maintain the Universe” Tier
