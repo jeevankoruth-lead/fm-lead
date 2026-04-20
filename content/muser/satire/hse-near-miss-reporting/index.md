@@ -18,25 +18,25 @@ But that was before HSE realized the truth:
 **Everything is a near miss.
 All the time.
 Forever.**
-![Near miss reporting graph](/images/Near%20miss%20reporting%20graph.jpg)
+![Near miss reporting graph](images/Near miss reporting graph.png)
 In the modern CRES world, a near miss isn’t just:
 - A falling object
 - A slip
 - Sitting
 - Breathing
 - Thinking
-![Therapist can share your work load. She is already paid](/images/Therapist%20can%20share%20your%20work%20load.%20She%20is%20already%20paid.jpg)
+![Therapist can share your work load. She is already paid](images/Therapist can share your work load. She is already paid.png)
 And therefore, it must be reported.
 ________________________________________
 ### The 24/7 Near Miss Lifestyle
-![Near Miss Pyramid](/images/Near%20Miss%20Pyramid.jpg)
+![Near Miss Pyramid](images/Near Miss Pyramid.png)
 Paranoid, even.
 So now, every Facilities professional must live in a constant state of:
 - Observation
 - Self reflection
 - Mild existential dread
 You’re not just doing your job — you’re starring in a never ending safety documentary.
-![Just because things could go wrong, doesn't mean you are wrong](/images/Just%20because%20things%20could%20go%20wrong,%20doesn't%20mean%20you%20are%20wrong.jpg)
+![Just because things could go wrong, doesn't mean you are wrong](images/Just because things could go wrong, doesn't mean you are wrong.png)
 Here are some real world scenarios that now qualify:
 1. You walked past a chair.
 It could have broken.
@@ -55,8 +55,7 @@ You could have strained your brain.
 Near miss.
 Report them all.
 ________________________________________
-{{< figure src="images/Near miss reporting graph.png" title="Near miss reporting graph" caption="Near miss reporting graph" >}}
-![Near miss reporting graph](/images/Near%20miss%20reporting%20graph.png)
+
 ### The Near Miss Reporting Kit™
 To support this new lifestyle, every employee must carry:
 - A Near Miss Logbook
