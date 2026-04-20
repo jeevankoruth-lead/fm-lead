@@ -2,7 +2,7 @@
 title: "Employees who work on any Floor above Ground Floor are Effectively Working at Heights"
 description: "Satirical commentary on risk inflation in office HSE, where desk tasks become high-risk operations."
 date: 2026-02-14
-featureimage: "images/wahthumb.jpg"
+featureimage: "images/wahthumb.png"
 draft: false
 tags: ["Free Muser"]
 ---

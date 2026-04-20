@@ -2,7 +2,7 @@
 title: "Bigger Your Title, Bigger your Forehead Sticker"
 description: "Satire on title inflation and corporate hierarchy, where bigger job labels replace measurable contribution."
 date: 2026-02-14
-featureimage: "images/foreheadthumb.jpg"
+featureimage: "images/foreheadthumb.png"
 draft: false
 tags: ["Free Muser"]
 ---

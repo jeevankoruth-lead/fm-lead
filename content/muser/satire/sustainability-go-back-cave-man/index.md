@@ -2,7 +2,7 @@
 title: "Sustainability in CRES. Actionable Steps"
 description: "Satirical commentary on extreme sustainability narratives and the gap between slogans and workable progress."
 date: 2026-02-14
-featureimage: "images/cavethumb.jpg"
+featureimage: "images/cavethumb.png"
 draft: false
 tags: ["Free Muser"]
 ---
