@@ -2,7 +2,7 @@
 title: "Casio GA-2100-4A - Watch"
 description: "Hands-on review of the Casio GA-2100-4A, covering design, durability, real-world usability, and value for everyday wear."
 date: 2026-02-15
-featureimage: "images/casio-ga-2100-4a-watch-1.jpg"
+featureimage: "images/casio-ga-2100-4a-watch-1thumb.jpg"
 draft: false
 tags: ["Free Muser"]
 ---
