@@ -22,7 +22,7 @@ If we want TRUE reliability, TRUE uptime, TRUE operational supremacy…
 We need at least 400 tiers. Minimum.
 Because nothing says “resilient infrastructure” like a tiering system so complicated it requires its own PhD.
 ________________________________________
-![312datacente](images/312datacente.png "312datacente")
+![312datacente](images/312datacentethumb.png "312datacente")
 ### Tier V: The “We Swear It Won’t Break” Tier
 This tier guarantees:
 - 99.999999% uptime
