@@ -1,7 +1,7 @@
 ---
 title: "High Performance Team Members Should be Asset Tagged"
 date: 2026-02-14
-featureimage: "/images/forest extended.png"
+featureimage: "images/technicianassetcodethumb.jpg"
 draft: false
 tags: ["Free Muser"]
 ---
