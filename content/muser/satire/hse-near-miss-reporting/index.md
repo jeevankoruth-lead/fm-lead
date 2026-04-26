@@ -18,25 +18,21 @@ But that was before HSE realized the truth:
 **Everything is a near miss.
 All the time.
 Forever.**
-![Near miss reporting graph](images/Near miss reporting graph.png)
 In the modern CRES world, a near miss isn’t just:
 - A falling object
 - A slip
 - Sitting
 - Breathing
 - Thinking
-![Therapist can share your work load. She is already paid](images/Therapist can share your work load. She is already paid.png)
 And therefore, it must be reported.
 ________________________________________
 ### The 24/7 Near Miss Lifestyle
-![Near Miss Pyramid](images/Near Miss Pyramid.png)
 Paranoid, even.
 So now, every Facilities professional must live in a constant state of:
 - Observation
 - Self reflection
 - Mild existential dread
 You’re not just doing your job — you’re starring in a never ending safety documentary.
-![Just because things could go wrong, doesn't mean you are wrong](images/Just because things could go wrong, doesn't mean you are wrong.png)
 Here are some real world scenarios that now qualify:
 1. You walked past a chair.
 It could have broken.
@@ -69,7 +65,6 @@ Optional:
 A therapist.
 ________________________________________
 {{< figure src="images/Therapist can share your work load. She is already paid.png" title="Therapist can share your work load. She is already paid" caption="Therapist can share your work load. She is already paid" >}}
-![Therapist can share your work load. She is already paid](/images/Therapist%20can%20share%20your%20work%20load.%20She%20is%20already%20paid.png)
 ### The Near Miss Reporting Frequency Standard
 HSE recommends reporting:
 - 1 near miss every hour (Beginner)
@@ -91,7 +86,6 @@ Bottom	“I felt like something might have happened”
 The goal is to fill the bottom layer until the pyramid collapses under its own weight.
 ________________________________________
 {{< figure src="images/Near Miss Pyramid.png" title="Near Miss Pyramid" caption="Near Miss Pyramid" >}}
-![Near Miss Pyramid](/images/Near%20Miss%20Pyramid.png)
 ### The Near Miss Hotline
 To improve reporting efficiency, CRES should implement:
 - A 24/7 hotline
@@ -110,7 +104,6 @@ This is known as the Safety Paradox:
 The safer things get, the more unsafe we must pretend they are.
 ________________________________________
 {{< figure src="images/Just because things could go wrong, doesn't mean you are wrong.png" title="Just because things could go wrong, doesn't mean you are wrong" caption="Just because things could go wrong, doesn't mean you are wrong" >}}
-![Just because things could go wrong, doesn't mean you are wrong](/images/Just%20because%20things%20could%20go%20wrong,%20doesn't%20mean%20you%20are%20wrong.png)
 ### Conclusion: Near Miss Reporting Should Never Stop
 In the new world of Facilities and CRES:
 - Every moment is a hazard
