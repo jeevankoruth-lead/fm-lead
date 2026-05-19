@@ -1,3 +1,6 @@
+# ---
+math: true
+---
 # DESIGN AND IMPLEMENTATION
 
 ## APPROACH
