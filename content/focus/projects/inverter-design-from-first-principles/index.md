@@ -159,19 +159,21 @@ capacitor. The selection and sizing of the capacitor will determine the
 voltage ripple of the output. Shown below is the circuit schematic of
 the input stage of the system:
 
-![Figure
 12.](media/image4.png){alt="C:\\Users\\PVT\\Desktop\\Wind integration\\Simulations\\Full.png"
 width="3.1927766841644796in" height="1.5748698600174977in"}
+
+![Figure 12.](media/image4.png)
 
 Circuit diagram of the input stage of the system
 
 The following equation was used to determine the capacitor size,
 
-  -----------------------------------------------------------------------------------------------
-       $$C_{filter} = \frac{0,045.P_{load}}{\eta.{V_{in,\ min.\ pk}}^{2}}$$   []{#_Ref402389989
-                                                                              .anchor}*(1)*
-  ---- ---------------------------------------------------------------------- -------------------
 
+  -----------------------------------------------------------------------------------------------
+  $$
+  C_{filter} = \frac{0.045 P_{load}}{\eta (V_{in, min, pk})^2}
+  $$
+  *(1)*
   -----------------------------------------------------------------------------------------------
 
 Where $C_{filter}\$is the value of the input capacitor (Farads, F);
