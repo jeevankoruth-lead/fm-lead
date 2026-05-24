@@ -46,7 +46,19 @@
       {{ end }}
     </div>
       <!-- MathJax for LaTeX math rendering -->
-      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>
+          window.MathJax = {
+            tex: {
+              inlineMath: [['$', '$'], ['\\(', '\\)']],
+              displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            options: {
+              skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+              ignoreHtmlClass: 'tex2jax_ignore'
+            }
+          };
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   </body>
   {{ if site.Params.buymeacoffee.globalWidget | default false }}
     <script
