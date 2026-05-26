@@ -55,6 +55,20 @@ enableRobotsTXT = true
     [markup.goldmark.renderer]
       unsafe = true
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = false
+  [markup.tableOfContents]
+    endLevel = 3
+    ordered = false
+    startLevel = 2
+  [markup.math]
+    enable = true
+
 [imaging]
   quality = 75
   resampleFilter = "Lanczos"

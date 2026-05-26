@@ -36,12 +36,13 @@ figcaption {
   --fm-article-image-width: 860px;
 }
 
+
 .article-content figure,
 .article-content figure.fm-article-image {
   width: 100%;
-  max-width: min(100%, var(--fm-article-image-width));
   margin: 1.75rem auto;
 }
+
 
 .article-content figure img,
 .article-content figure.fm-article-image img,
@@ -50,7 +51,6 @@ figcaption {
 .article-content li > img {
   display: block;
   width: 100%;
-  max-width: min(100%, var(--fm-article-image-width));
   height: auto;
   margin-left: auto;
   margin-right: auto;
