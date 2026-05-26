@@ -50,10 +50,6 @@ enableRobotsTXT = true
   weight = 2
   identifier = "muser"
 
-[markup]
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true
 
 [markup]
   [markup.goldmark]
