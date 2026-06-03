@@ -2536,7 +2536,7 @@ html:not(.dark) body.section-muser article.muser-cinematic .reviews-panel a:focu
 }
 
 .fm-home-cta-button-muser {
-  background: #ff5a1f;
+  background: var(--muser-accent, #ff5a1f);
   border-color: rgba(122, 41, 0, 0.2);
   animation: none;
 }
