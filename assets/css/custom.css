@@ -1904,11 +1904,11 @@ body.section-muser .muser-empty p {
   --fm-hero-grid-opacity: 0.78;
   --fm-hero-grid-saturation: 0.85;
   --fm-hero-grid-contrast: 0.94;
-  --fm-reading-measure: 42ch;
+  --fm-reading-measure: 45ch;
   --fm-body-copy-comfortable: 1.72;
   --fm-card-radius: 14px;
   --fm-card-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
-  --fm-muser-cta-border: rgba(122, 41, 0, 0.2);
+  --fm-muser-cta-border-color: rgba(122, 41, 0, 0.2);
   --fm-muser-accent: #ff5a1f;
 }
 
@@ -1929,7 +1929,7 @@ html.dark {
   --fm-hero-grid-saturation: 0.82;
   --fm-hero-grid-contrast: 0.96;
   --fm-card-shadow: 0 10px 24px rgba(0, 0, 0, 0.32);
-  --fm-muser-cta-border: rgba(255, 210, 184, 0.28);
+  --fm-muser-cta-border-color: rgba(255, 210, 184, 0.28);
   --fm-muser-accent: #ff7b42;
 }
 
@@ -2558,6 +2558,6 @@ html:not(.dark) body.section-muser article.muser-cinematic .reviews-panel a:focu
 
 .fm-home-cta-button-muser {
   background: var(--fm-muser-accent);
-  border-color: var(--fm-muser-cta-border);
+  border-color: var(--fm-muser-cta-border-color);
   animation: none;
 }
