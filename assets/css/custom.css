@@ -1,12 +1,19 @@
-/* Force article content and prose to full width */
+/* Keep article content responsive without viewport overflow */
 .article-content,
 .prose {
-  max-width: 100vw !important;
-  width: 100vw !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
+  width: min(100%, var(--fm-post-content-width, 76ch)) !important;
+  max-width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: clamp(1rem, 2vw, 1.5rem) !important;
+  padding-right: clamp(1rem, 2vw, 1.5rem) !important;
+  box-sizing: border-box;
+}
+
+.article-content :is(p, li, td, th, blockquote, figcaption, a, code),
+.prose :is(p, li, td, th, blockquote, figcaption, a, code) {
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 /* Improved figure and figcaption styling for visible, attractive captions */
 figure {
@@ -43,13 +50,14 @@ figcaption {
 
 /* Unified article image presentation: optimized display width + centered layout */
 :root {
-  --fm-article-image-width: 860px;
+  --fm-post-content-width: 76ch;
+  --fm-article-image-width: 720px;
 }
 
 
 .article-content figure,
 .article-content figure.fm-article-image {
-  width: 100%;
+  width: min(100%, var(--fm-article-image-width));
   margin: 1.75rem auto;
 }
 
@@ -84,7 +92,15 @@ figcaption {
 
 @media (max-width: 768px) {
   :root {
+    --fm-post-content-width: 100%;
     --fm-article-image-width: 100%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  :root {
+    --fm-post-content-width: 72ch;
+    --fm-article-image-width: 640px;
   }
 }
 
