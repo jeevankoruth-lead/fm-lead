@@ -1919,6 +1919,7 @@ html.dark {
   --fm-hero-text-shadow: 0 2px 8px rgba(0, 0, 0, 0.62);
   --fm-card-shadow: 0 10px 24px rgba(0, 0, 0, 0.32);
   --fm-muser-cta-border: rgba(255, 210, 184, 0.28);
+  --muser-accent: #ff7b42;
 }
 
 body.home-bg {
