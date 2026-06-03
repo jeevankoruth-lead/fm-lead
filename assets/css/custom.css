@@ -12,8 +12,7 @@
 
 .article-content :is(p, li, td, th, blockquote, figcaption, a, code),
 .prose :is(p, li, td, th, blockquote, figcaption, a, code) {
-  overflow-wrap: anywhere;
-  word-break: break-word;
+  overflow-wrap: break-word;
 }
 /* Improved figure and figcaption styling for visible, attractive captions */
 figure {
@@ -99,7 +98,6 @@ figcaption {
 
 @media (min-width: 769px) and (max-width: 1024px) {
   :root {
-    --fm-post-content-width: 72ch;
     --fm-article-image-width: 640px;
   }
 }
