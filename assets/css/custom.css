@@ -3,6 +3,7 @@
 .prose {
   width: min(100%, var(--fm-post-content-width)) !important;
   max-width: 100% !important;
+  min-width: 0;
   margin-left: auto !important;
   margin-right: auto !important;
   padding-left: clamp(1rem, 2vw, 1.5rem) !important;
@@ -49,8 +50,8 @@ figcaption {
 
 /* Unified article image presentation: optimized display width + centered layout */
 :root {
-  --fm-post-content-width: 76ch;
-  --fm-article-image-width: 720px;
+  --fm-post-content-width: 72ch;
+  --fm-article-image-width: 620px;
 }
 
 
@@ -98,8 +99,15 @@ figcaption {
 
 @media (min-width: 769px) and (max-width: 1024px) {
   :root {
-    --fm-article-image-width: 640px;
+    --fm-article-image-width: 520px;
   }
+}
+
+.article-content mjx-container[display="true"] {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 html,

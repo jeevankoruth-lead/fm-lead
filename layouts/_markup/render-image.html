@@ -11,7 +11,7 @@
 {{- $imgWidth := "" -}}
 {{- $imgHeight := "" -}}
 {{- $srcset := "" -}}
-{{- $sizes := "(min-width: 1200px) 860px, (min-width: 768px) 78vw, 94vw" -}}
+{{- $sizes := "(min-width: 1200px) 620px, (min-width: 768px) 520px, calc(100vw - 2rem)" -}}
 
 {{- if and $resource (not $isRemote) -}}
   {{- $isSVG := eq $resource.MediaType.SubType "svg" -}}
