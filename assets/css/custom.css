@@ -11,8 +11,8 @@
   box-sizing: border-box;
 }
 
-.article-content :is(p, li, td, th, blockquote, figcaption, a, code, h1, h2, h3, h4, h5, h6),
-.prose :is(p, li, td, th, blockquote, figcaption, a, code, h1, h2, h3, h4, h5, h6) {
+.article-content :is(p, li, td, th, blockquote, figcaption, h1, h2, h3, h4, h5, h6),
+.prose :is(p, li, td, th, blockquote, figcaption, h1, h2, h3, h4, h5, h6) {
   overflow-wrap: break-word;
   word-break: normal;
 }
