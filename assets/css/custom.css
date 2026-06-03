@@ -1898,8 +1898,10 @@ body.section-muser .muser-empty p {
   --fm-focus-ring: #1d4ed8;
   --fm-focus-shadow: rgba(29, 78, 216, 0.28);
   --fm-hero-shadow: 0 14px 34px rgba(15, 23, 42, 0.08);
+  --fm-hero-text-shadow: 0 2px 8px rgba(2, 6, 23, 0.46);
   --fm-card-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
   --fm-muser-cta-border: rgba(122, 41, 0, 0.2);
+  --muser-accent: #ff5a1f;
 }
 
 html.dark {
@@ -1914,6 +1916,7 @@ html.dark {
   --fm-focus-ring: #93c5fd;
   --fm-focus-shadow: rgba(147, 197, 253, 0.32);
   --fm-hero-shadow: 0 18px 38px rgba(0, 0, 0, 0.46);
+  --fm-hero-text-shadow: 0 2px 8px rgba(0, 0, 0, 0.62);
   --fm-card-shadow: 0 10px 24px rgba(0, 0, 0, 0.32);
   --fm-muser-cta-border: rgba(255, 210, 184, 0.28);
 }
@@ -2505,7 +2508,7 @@ html:not(.dark) body.section-muser article.muser-cinematic .reviews-panel a:focu
 }
 
 .fm-home-hero-title {
-  text-shadow: 0 2px 8px rgba(2, 6, 23, 0.46);
+  text-shadow: var(--fm-hero-text-shadow);
 }
 
 .fm-home-hero-tagline {
@@ -2542,7 +2545,7 @@ html:not(.dark) body.section-muser article.muser-cinematic .reviews-panel a:focu
 }
 
 .fm-home-cta-button-muser {
-  background: var(--muser-accent, #ff5a1f);
+  background: var(--muser-accent);
   border-color: var(--fm-muser-cta-border);
   animation: none;
 }
