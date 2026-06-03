@@ -1,18 +1,14 @@
 /* Keep article content responsive without viewport overflow */
-.article-content {
-  width: 100% !important;
-  max-width: var(--fm-post-content-width) !important;
+.article-content,
+.prose {
+  width: min(100%, var(--fm-post-content-width)) !important;
+  max-width: 100% !important;
   min-width: 0;
   margin-left: auto !important;
   margin-right: auto !important;
   padding-left: clamp(1rem, 2vw, 1.5rem) !important;
   padding-right: clamp(1rem, 2vw, 1.5rem) !important;
   box-sizing: border-box;
-}
-
-.prose {
-  min-width: 0;
-  max-width: 100% !important;
 }
 
 .article-content :is(p, li, td, th, blockquote, figcaption, a, code, h1, h2, h3, h4, h5, h6),
@@ -85,6 +81,20 @@ figcaption {
 .article-content li > img {
   margin-top: 1.75rem;
   margin-bottom: 1.75rem;
+}
+
+.article-content :is(img, video, iframe, svg, canvas) {
+  max-width: 100%;
+  height: auto;
+}
+
+.article-content :is(pre, table) {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.article-content :is(a, code) {
+  overflow-wrap: anywhere;
 }
 
 .article-content figure.fm-article-image figcaption {
@@ -1467,9 +1477,8 @@ body.section-focus {
 }
 
 body.section-focus .focus-ops-shell {
-  max-width: 1200px;
-  margin: 2rem auto 3rem;
-  padding-inline: clamp(1rem, 2vw, 1.5rem);
+  max-width: 100%;
+  margin: 2rem 0 3rem;
 }
 
 body.section-focus .focus-ops-hero,
@@ -1665,9 +1674,7 @@ body.section-muser {
 
 body.section-muser .muser-studio-shell {
   width: 100%;
-  max-width: 1240px;
-  margin: 1.5rem auto 3rem;
-  padding-inline: clamp(1rem, 2vw, 1.5rem);
+  margin: 1.5rem 0 3rem;
 }
 
 body.section-muser .muser-studio-hero,
