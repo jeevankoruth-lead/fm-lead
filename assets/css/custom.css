@@ -1901,7 +1901,7 @@ body.section-muser .muser-empty p {
   --fm-hero-text-shadow: 0 2px 8px rgba(2, 6, 23, 0.46);
   --fm-card-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
   --fm-muser-cta-border: rgba(122, 41, 0, 0.2);
-  --muser-accent: #ff5a1f;
+  --fm-muser-accent: #ff5a1f;
 }
 
 html.dark {
@@ -1919,7 +1919,7 @@ html.dark {
   --fm-hero-text-shadow: 0 2px 8px rgba(0, 0, 0, 0.62);
   --fm-card-shadow: 0 10px 24px rgba(0, 0, 0, 0.32);
   --fm-muser-cta-border: rgba(255, 210, 184, 0.28);
-  --muser-accent: #ff7b42;
+  --fm-muser-accent: #ff7b42;
 }
 
 body.home-bg {
@@ -2546,7 +2546,7 @@ html:not(.dark) body.section-muser article.muser-cinematic .reviews-panel a:focu
 }
 
 .fm-home-cta-button-muser {
-  background: var(--muser-accent);
+  background: var(--fm-muser-accent);
   border-color: var(--fm-muser-cta-border);
   animation: none;
 }
