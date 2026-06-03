@@ -2475,3 +2475,77 @@ html:not(.dark) body.section-muser article.muser-cinematic .reviews-panel a:hove
 html:not(.dark) body.section-muser article.muser-cinematic .reviews-panel a:focus-visible {
   color: var(--muser-accent);
 }
+
+/* Cleaner homepage treatment */
+.fm-home {
+  max-width: min(1200px, 100% - 2rem);
+  margin-inline: auto;
+  padding-top: var(--space-24);
+}
+
+.fm-home section {
+  margin-bottom: var(--space-32);
+}
+
+.fm-home-hero {
+  padding: 96px var(--space-24) 64px;
+  border: 1px solid var(--fm-border);
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.08);
+}
+
+.fm-home-hero-grid {
+  opacity: 0.78;
+  filter: saturate(0.85) contrast(0.94);
+}
+
+.fm-home-hero-title {
+  text-shadow: 0 2px 8px rgba(2, 6, 23, 0.46);
+}
+
+.fm-home-hero-tagline {
+  max-width: 42ch;
+  font-weight: 500;
+}
+
+.fm-home-about p,
+.fm-latest-card p {
+  line-height: 1.72;
+  color: var(--fm-muted);
+}
+
+.fm-home-cta-block,
+.fm-latest-card {
+  border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+}
+
+.fm-home-cta-focus,
+.fm-home-cta-muser {
+  background: var(--fm-surface);
+  border-color: var(--fm-border);
+  animation: none;
+}
+
+.fm-home-cta-muser h3 {
+  font-family: inherit;
+  text-shadow: none;
+}
+
+.fm-home-cta-muser h3::after {
+  display: none;
+}
+
+.fm-home-cta-button-muser {
+  background: #ff5a1f;
+  border-color: rgba(122, 41, 0, 0.2);
+  animation: none;
+}
+
+html.dark .fm-home-hero {
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.46);
+}
+
+html.dark .fm-home-cta-block,
+html.dark .fm-latest-card {
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.32);
+}
