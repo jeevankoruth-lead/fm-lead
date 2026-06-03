@@ -1,7 +1,7 @@
 /* Keep article content responsive without viewport overflow */
 .article-content,
 .prose {
-  width: min(100%, var(--fm-post-content-width, 76ch)) !important;
+  width: min(100%, var(--fm-post-content-width)) !important;
   max-width: 100% !important;
   margin-left: auto !important;
   margin-right: auto !important;
