@@ -1,8 +1,7 @@
 /* Keep article content responsive without viewport overflow */
-.article-content,
-.prose {
-  width: min(100%, var(--fm-post-content-width)) !important;
-  max-width: 100% !important;
+.article-content {
+  width: 100% !important;
+  max-width: var(--fm-post-content-width) !important;
   min-width: 0;
   margin-left: auto !important;
   margin-right: auto !important;
@@ -11,9 +10,15 @@
   box-sizing: border-box;
 }
 
-.article-content :is(p, li, td, th, blockquote, figcaption, a, code),
-.prose :is(p, li, td, th, blockquote, figcaption, a, code) {
-  overflow-wrap: break-word;
+.prose {
+  min-width: 0;
+  max-width: 100% !important;
+}
+
+.article-content :is(p, li, td, th, blockquote, figcaption, a, code, h1, h2, h3, h4, h5, h6),
+.prose :is(p, li, td, th, blockquote, figcaption, a, code, h1, h2, h3, h4, h5, h6) {
+  overflow-wrap: anywhere;
+  word-break: normal;
 }
 /* Improved figure and figcaption styling for visible, attractive captions */
 figure {
@@ -1462,8 +1467,9 @@ body.section-focus {
 }
 
 body.section-focus .focus-ops-shell {
-  max-width: 100%;
-  margin: 2rem 0 3rem;
+  max-width: 1200px;
+  margin: 2rem auto 3rem;
+  padding-inline: clamp(1rem, 2vw, 1.5rem);
 }
 
 body.section-focus .focus-ops-hero,
@@ -1596,6 +1602,12 @@ body.section-focus .focus-ops-card-summary {
   color: #2a2a2a;
   line-height: 1.6;
   flex-grow: 1;
+  overflow-wrap: anywhere;
+}
+
+body.section-focus .focus-ops-card-title,
+body.section-focus .focus-ops-card-title a {
+  overflow-wrap: anywhere;
 }
 
 body.section-focus .focus-ops-card-cta {
@@ -1653,7 +1665,9 @@ body.section-muser {
 
 body.section-muser .muser-studio-shell {
   width: 100%;
-  margin: 1.5rem 0 3rem;
+  max-width: 1240px;
+  margin: 1.5rem auto 3rem;
+  padding-inline: clamp(1rem, 2vw, 1.5rem);
 }
 
 body.section-muser .muser-studio-hero,
@@ -1850,6 +1864,7 @@ body.section-muser .muser-card-title {
   font-family: 'Playfair Display', serif;
   font-size: 1.55rem;
   line-height: 1.22;
+  overflow-wrap: anywhere;
 }
 
 body.section-muser .muser-card-title a {
@@ -1866,6 +1881,7 @@ body.section-muser .muser-card-summary {
   margin: 0.85rem 0 0;
   color: rgba(245, 237, 224, 0.9);
   line-height: 1.6;
+  overflow-wrap: anywhere;
 }
 
 body.section-muser .muser-card-cta {
