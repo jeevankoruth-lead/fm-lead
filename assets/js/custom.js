@@ -8,9 +8,8 @@
     animatedElements.forEach(function(el) {
       el.classList.remove('focus-seq', 'free-rand');
       // Restore original text if it was wrapped
-      if (el.querySelectorAll('span').length > 0) {
-        const text = el.textContent;
-        el.innerHTML = text;
+      if (el.querySelector('span')) {
+        el.textContent = el.textContent;
       }
     });
     
@@ -32,6 +31,21 @@
       let currentX = -220;
       let currentY = -220;
       let rafId = null;
+      let rect = null;
+      let rectUpdateRaf = null;
+
+      const updateRect = function() {
+        rect = hero.getBoundingClientRect();
+      };
+      updateRect();
+
+      const scheduleRectUpdate = function() {
+        if (rectUpdateRaf) return;
+        rectUpdateRaf = requestAnimationFrame(function() {
+          updateRect();
+          rectUpdateRaf = null;
+        });
+      };
 
       const tick = function() {
         currentX += (targetX - currentX) * 0.18;
@@ -52,15 +66,16 @@
       };
 
       hero.addEventListener('pointerenter', function() {
+        updateRect();
         hero.classList.add('is-spotlight-active');
       });
 
       hero.addEventListener('pointermove', function(event) {
-        const rect = hero.getBoundingClientRect();
+        if (!rect) updateRect();
         targetX = event.clientX - rect.left;
         targetY = event.clientY - rect.top;
         ensureAnimation();
-      });
+      }, { passive: true });
 
       hero.addEventListener('pointerleave', function() {
         hero.classList.remove('is-spotlight-active');
@@ -68,6 +83,8 @@
         targetY = -220;
         ensureAnimation();
       });
+
+      window.addEventListener('resize', scheduleRectUpdate, { passive: true });
     }
-  });
+  }, { once: true });
 })();

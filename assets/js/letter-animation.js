@@ -1,15 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
   const cycleTotal = 8000; // 8 seconds per cycle (much faster)
 
-  function prepareAndAnimate(container) {
+  function wrapLetters(container) {
     if (!container) return;
-    // avoid double-wrapping
     if (container.dataset.lettersWrapped === '1') return;
+
     const text = container.textContent.trim();
     if (!text) return;
+
     container.dataset.lettersWrapped = '1';
     container.innerHTML = '';
     const spans = [];
+
     for (const ch of text) {
       const span = document.createElement('span');
       span.textContent = ch;
@@ -17,6 +19,13 @@ document.addEventListener("DOMContentLoaded", function () {
       container.appendChild(span);
       if (!span.classList.contains('space')) spans.push(span);
     }
+
+    return spans;
+  }
+
+  function prepareAndAnimate(container) {
+    const spans = wrapLetters(container);
+    if (!spans || !spans.length) return;
 
     const N = spans.length || 1;
     const revealDuration = Math.round(cycleTotal * 0.75);
@@ -50,20 +59,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function prepareAndAnimateRandom(container) {
-    if (!container) return;
-    if (container.dataset.lettersWrapped === '1') return;
-    const text = container.textContent.trim();
-    if (!text) return;
-    container.dataset.lettersWrapped = '1';
-    container.innerHTML = '';
-    const spans = [];
-    for (const ch of text) {
-      const span = document.createElement('span');
-      span.textContent = ch;
-      if (ch === ' ') span.classList.add('space');
-      container.appendChild(span);
-      if (!span.classList.contains('space')) spans.push(span);
-    }
+    const spans = wrapLetters(container);
+    if (!spans || !spans.length) return;
 
     const N = spans.length || 1;
     const revealDuration = Math.round(cycleTotal * 0.75);
@@ -99,25 +96,31 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Try explicit selectors first
-  const left = document.querySelector('.focus-seq') || document.querySelector('.left-panel');
-  const right = document.querySelector('.free-rand') || document.querySelector('.right-panel');
+  let left = document.querySelector('.focus-seq') || document.querySelector('.left-panel');
+  let right = document.querySelector('.free-rand') || document.querySelector('.right-panel');
 
-  // If not found, search for visible elements that contain the keywords and have large font-size
-  function findVisibleLargeKeyword(keyword) {
-    const candidates = Array.from(document.querySelectorAll('h1,h2,div,span'))
-      .filter(e => e.textContent && new RegExp(keyword, 'i').test(e.textContent) && e.offsetWidth > 0 && e.offsetHeight > 0);
-    if (!candidates.length) return null;
-    // prefer larger font-size
-    candidates.sort((a, b) => {
-      const fa = parseFloat(window.getComputedStyle(a).fontSize) || 0;
-      const fb = parseFloat(window.getComputedStyle(b).fontSize) || 0;
-      return fb - fa;
-    });
-    return candidates[0];
+  function findBestVisibleMatch(keyword) {
+    const rx = new RegExp(keyword, 'i');
+    const candidates = document.querySelectorAll('.hero-title, .hero-title-muser, .left-panel, .right-panel, h1, h2, [data-title]');
+    let best = null;
+    let bestFont = -1;
+
+    for (const candidate of candidates) {
+      const text = candidate.textContent;
+      if (!text || !rx.test(text)) continue;
+      if (candidate.offsetWidth <= 0 || candidate.offsetHeight <= 0) continue;
+      const fontSize = parseFloat(window.getComputedStyle(candidate).fontSize) || 0;
+      if (fontSize > bestFont) {
+        best = candidate;
+        bestFont = fontSize;
+      }
+    }
+
+    return best;
   }
 
-  if (!left) left = findVisibleLargeKeyword('focus');
-  if (!right) right = findVisibleLargeKeyword('muser');
+  if (!left) left = findBestVisibleMatch('focus');
+  if (!right) right = findBestVisibleMatch('muser');
 
   // add classes so CSS rules apply and animate both sides
   if (left) {
