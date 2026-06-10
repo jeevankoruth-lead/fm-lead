@@ -43,7 +43,7 @@ figcaption {
   --space-32: 32px;
   --space-48: 48px;
   --focus: #0a2342;
-  --muser: #ff4f00;
+  --muser: #2f9e44;
   --text-light: #f8fafc;
   --surface: rgba(10, 12, 20, 0.68);
   --surface-border: rgba(255, 255, 255, 0.14);
@@ -449,12 +449,12 @@ html.dark .header-nav-label {
 
 .header-nav-group-muser .header-nav-links a:hover,
 .header-nav-group-muser .header-nav-links a:focus-visible {
-  color: #ff8a2a;
+  color: #6fcf97;
 }
 
 html.dark .header-nav-group-muser .header-nav-links a:hover,
 html.dark .header-nav-group-muser .header-nav-links a:focus-visible {
-  color: #ffae67;
+  color: #9be7b5;
 }
 
 .header-controls {
@@ -869,21 +869,21 @@ html.dark .fm-home-cta-block {
 /* Muser card: warmer, expressive, editorial */
 .fm-home-cta-muser {
   background:
-    radial-gradient(circle at 18% 20%, rgba(255, 79, 0, 0.2), transparent 38%),
-    radial-gradient(circle at 82% 85%, rgba(255, 175, 83, 0.22), transparent 42%),
-    linear-gradient(150deg, #fff6ef 0%, #fff1e5 100%);
-  border-color: rgba(255, 79, 0, 0.24);
+    radial-gradient(circle at 18% 20%, rgba(47, 158, 68, 0.24), transparent 38%),
+    radial-gradient(circle at 82% 85%, rgba(109, 211, 139, 0.24), transparent 42%),
+    linear-gradient(150deg, #eef8f0 0%, #e5f4e8 100%);
+  border-color: rgba(47, 158, 68, 0.26);
   animation: fmMuserCanvasDrift 9s ease-in-out infinite;
 }
 
 .fm-home-cta-muser h3 {
-  color: #7a2900;
+  color: #1e5130;
   font-family: 'Playfair Display', serif;
   position: relative;
   display: inline-block;
   background: none;
   -webkit-text-fill-color: currentColor;
-  text-shadow: 0 1px 0 rgba(255, 244, 236, 0.28);
+  text-shadow: 0 1px 0 rgba(238, 248, 240, 0.5);
 }
 
 .fm-home-cta-muser h3::after {
@@ -893,21 +893,21 @@ html.dark .fm-home-cta-block {
   height: 3px;
   margin: 10px auto 0;
   border-radius: 999px;
-  background: linear-gradient(90deg, rgba(255, 79, 0, 0.25), rgba(255, 79, 0, 0.78), rgba(255, 175, 83, 0.38));
+  background: linear-gradient(90deg, rgba(47, 158, 68, 0.28), rgba(47, 158, 68, 0.8), rgba(109, 211, 139, 0.45));
   animation: fmMuserUnderlinePulse 2.6s ease-in-out infinite;
 }
 
 .fm-home-cta-button-muser {
   position: relative;
-  background: linear-gradient(90deg, #ff4f00 0%, #ff6a00 50%, #ff4f00 100%);
+  background: linear-gradient(90deg, #2f9e44 0%, #4cbf66 50%, #2f9e44 100%);
   background-size: 210% 100%;
-  border-color: rgba(122, 41, 0, 0.3);
+  border-color: rgba(24, 73, 41, 0.35);
   animation: fmMuserButtonShift 3.2s linear infinite;
 }
 
 .fm-home-cta-button-muser:hover,
 .fm-home-cta-button-muser:focus-visible {
-  background: linear-gradient(90deg, #e34700 0%, #ff5f00 55%, #e34700 100%);
+  background: linear-gradient(90deg, #23803a 0%, #36a651 55%, #23803a 100%);
 }
 
 @keyframes fmMuserCanvasDrift {
@@ -1683,10 +1683,12 @@ body.section-focus .focus-ops-empty p {
 }
 
 body.section-muser {
-  --muser-accent: #ff8a2a;
-  --muser-accent-strong: #ffb067;
-  color: #f5ede0;
-  background: linear-gradient(160deg, #4b0082 0%, #26134b 48%, #0f1a3a 100%);
+  --muser-accent: #6dd38b;
+  --muser-accent-strong: #a6ebbf;
+  color: #e8f5eb;
+  background: linear-gradient(160deg, #135439 0%, #0f352a 48%, #0b241d 100%);
+  background-size: 180% 180%;
+  animation: fmMuserForestFlow 20s ease-in-out infinite;
   font-family: 'Inter', sans-serif;
 }
 
@@ -1706,10 +1708,10 @@ body.section-muser .muser-studio-hero {
   position: relative;
   overflow: hidden;
   border-radius: 22px;
-  border: 1px solid rgba(245, 237, 224, 0.2);
-  background: radial-gradient(circle at 10% 20%, rgba(255, 95, 95, 0.32), transparent 34%),
-    radial-gradient(circle at 88% 15%, rgba(245, 237, 224, 0.16), transparent 36%),
-    linear-gradient(140deg, rgba(75, 0, 130, 0.96), rgba(20, 24, 61, 0.95));
+  border: 1px solid rgba(232, 245, 235, 0.2);
+  background: radial-gradient(circle at 10% 20%, rgba(109, 211, 139, 0.28), transparent 34%),
+    radial-gradient(circle at 88% 15%, rgba(232, 245, 235, 0.13), transparent 36%),
+    linear-gradient(140deg, rgba(19, 84, 57, 0.96), rgba(11, 36, 29, 0.95));
 }
 
 body.section-muser .muser-studio-art {
@@ -1723,6 +1725,7 @@ body.section-muser .muser-art-shape {
   border-radius: 999px;
   filter: blur(1px);
   opacity: 0.88;
+  animation: fmMuserArtFloat 14s ease-in-out infinite;
 }
 
 body.section-muser .muser-art-one {
@@ -1730,7 +1733,8 @@ body.section-muser .muser-art-one {
   height: 160px;
   top: -42px;
   left: -34px;
-  background: rgba(255, 95, 95, 0.72);
+  background: rgba(79, 201, 121, 0.66);
+  animation-delay: 0s;
 }
 
 body.section-muser .muser-art-two {
@@ -1738,7 +1742,8 @@ body.section-muser .muser-art-two {
   height: 140px;
   right: 10%;
   top: 36%;
-  background: rgba(245, 237, 224, 0.18);
+  background: rgba(210, 245, 223, 0.2);
+  animation-delay: 1.8s;
 }
 
 body.section-muser .muser-art-three {
@@ -1746,13 +1751,34 @@ body.section-muser .muser-art-three {
   height: 220px;
   right: -75px;
   bottom: -75px;
-  background: rgba(255, 95, 95, 0.34);
+  background: rgba(47, 158, 68, 0.34);
+  animation-delay: 3.2s;
+}
+
+@keyframes fmMuserForestFlow {
+  0%,
+  100% {
+    background-position: 0% 40%;
+  }
+  50% {
+    background-position: 100% 60%;
+  }
+}
+
+@keyframes fmMuserArtFloat {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-14px) scale(1.04);
+  }
 }
 
 body.section-muser .muser-studio-title {
   position: relative;
   margin: 0;
-  color: #f5ede0;
+  color: #eef9f1;
   font-family: 'Playfair Display', serif;
   font-size: clamp(2.2rem, 5vw, 3.4rem);
   font-weight: 700;
@@ -1764,7 +1790,7 @@ body.section-muser .muser-studio-subtitle {
   position: relative;
   margin: 0.9rem 0 0;
   max-width: 72ch;
-  color: rgba(245, 237, 224, 0.92);
+  color: rgba(232, 245, 235, 0.92);
   font-size: 1.05rem;
   line-height: 1.6;
 }
@@ -1783,9 +1809,9 @@ body.section-muser .muser-story-headings span {
   gap: 0.45rem;
   padding: 0.42rem 0.78rem;
   border-radius: 999px;
-  color: #f5ede0;
-  background: rgba(245, 237, 224, 0.13);
-  border: 1px solid rgba(245, 237, 224, 0.22);
+  color: #e8f5eb;
+  background: rgba(210, 245, 223, 0.12);
+  border: 1px solid rgba(210, 245, 223, 0.2);
   font-size: 0.84rem;
   font-weight: 600;
 }
@@ -1794,21 +1820,21 @@ body.section-muser .muser-story-headings span i {
   width: 10px;
   height: 10px;
   border-radius: 999px;
-  background: #ff5f5f;
+  background: #6dd38b;
 }
 
 body.section-muser .muser-studio-intro {
   margin: -24px 0 1.5rem;
   max-width: 760px;
   border-radius: 16px;
-  border: 1px solid rgba(245, 237, 224, 0.22);
-  background: rgba(12, 18, 42, 0.65);
+  border: 1px solid rgba(232, 245, 235, 0.2);
+  background: rgba(7, 29, 23, 0.65);
   backdrop-filter: blur(3px);
 }
 
 body.section-muser .muser-studio-intro p {
   margin: 0;
-  color: rgba(245, 237, 224, 0.9);
+  color: rgba(232, 245, 235, 0.9);
   line-height: 1.6;
 }
 
@@ -1816,8 +1842,8 @@ body.section-muser .muser-studio-intro blockquote,
 body.section-muser .article-content blockquote {
   margin: 1rem 0 0;
   padding: 0.75rem 0 0.2rem 0.9rem;
-  border-left: 3px solid #ff5f5f;
-  color: #f5ede0;
+  border-left: 3px solid #6dd38b;
+  color: #e8f5eb;
   font-family: 'Playfair Display', serif;
   font-style: italic;
   font-size: 1.08rem;
@@ -1836,15 +1862,16 @@ body.section-muser .muser-card {
   break-inside: avoid;
   border-radius: 16px;
   overflow: hidden;
-  border: 1px solid rgba(245, 237, 224, 0.2);
-  background: linear-gradient(165deg, rgba(75, 0, 130, 0.45), rgba(15, 26, 58, 0.82));
+  border: 1px solid rgba(232, 245, 235, 0.2);
+  background: linear-gradient(165deg, rgba(19, 84, 57, 0.44), rgba(9, 30, 24, 0.84));
   transition: transform 300ms ease-in-out, background-color 300ms ease-in-out, box-shadow 300ms ease-in-out;
+  animation: fmMuserCardFloat 9s ease-in-out infinite;
 }
 
 body.section-muser .muser-card:hover,
 body.section-muser .muser-card:focus-within {
-  transform: rotate(-0.8deg) translateY(-4px);
-  background: linear-gradient(165deg, rgba(255, 95, 95, 0.25), rgba(15, 26, 58, 0.9));
+  transform: rotate(-0.9deg) translateY(-6px) scale(1.01);
+  background: linear-gradient(165deg, rgba(109, 211, 139, 0.26), rgba(9, 30, 24, 0.92));
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.34);
 }
 
@@ -1857,7 +1884,29 @@ body.section-muser .muser-card-1:hover,
 body.section-muser .muser-card-3:hover,
 body.section-muser .muser-card-1:focus-within,
 body.section-muser .muser-card-3:focus-within {
-  transform: rotate(0.85deg) translateY(-4px);
+  transform: rotate(0.9deg) translateY(-6px) scale(1.01);
+}
+
+body.section-muser .muser-card-1 {
+  animation-delay: 0.7s;
+}
+
+body.section-muser .muser-card-2 {
+  animation-delay: 1.4s;
+}
+
+body.section-muser .muser-card-3 {
+  animation-delay: 2.1s;
+}
+
+@keyframes fmMuserCardFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
 }
 
 body.section-muser .muser-card-image-wrap {
@@ -1881,7 +1930,7 @@ body.section-muser .muser-card-kicker {
   font-size: 0.76rem;
   letter-spacing: 0.11em;
   text-transform: uppercase;
-  color: rgba(245, 237, 224, 0.72);
+  color: rgba(232, 245, 235, 0.72);
 }
 
 body.section-muser .muser-card-title {
@@ -1893,7 +1942,7 @@ body.section-muser .muser-card-title {
 }
 
 body.section-muser .muser-card-title a {
-  color: #f5ede0;
+  color: #e8f5eb;
   text-decoration: none;
 }
 
@@ -1904,7 +1953,7 @@ body.section-muser .muser-card-title a:focus-visible {
 
 body.section-muser .muser-card-summary {
   margin: 0.85rem 0 0;
-  color: rgba(245, 237, 224, 0.9);
+  color: rgba(232, 245, 235, 0.9);
   line-height: 1.6;
   overflow-wrap: break-word;
 }
@@ -1912,8 +1961,8 @@ body.section-muser .muser-card-summary {
 body.section-muser .muser-card-cta {
   margin-top: 1rem;
   color: var(--muser-accent);
-  border: 1px solid rgba(255, 138, 42, 0.55);
-  background: rgba(255, 138, 42, 0.09);
+  border: 1px solid rgba(109, 211, 139, 0.52);
+  background: rgba(109, 211, 139, 0.1);
   transition: transform 300ms cubic-bezier(0.18, 0.89, 0.32, 1.28), color 300ms ease-in-out;
 }
 
@@ -1925,8 +1974,8 @@ body.section-muser .muser-card-cta:focus-visible {
 
 body.section-muser .muser-empty {
   border-radius: 14px;
-  border: 1px dashed rgba(245, 237, 224, 0.35);
-  background: rgba(15, 26, 58, 0.58);
+  border: 1px dashed rgba(232, 245, 235, 0.32);
+  background: rgba(9, 30, 24, 0.58);
 }
 
 body.section-muser .muser-empty p {
@@ -2245,8 +2294,8 @@ body.section-muser .reviews-main .article-content {
   margin: 0 auto 4rem;
   padding: clamp(1rem, 2.2vw, 1.5rem);
   border-radius: 18px;
-  border: 1px solid rgba(245, 237, 224, 0.2);
-  background: rgba(12, 18, 42, 0.42);
+  border: 1px solid rgba(232, 245, 235, 0.2);
+  background: rgba(9, 30, 24, 0.42);
 }
 
 body.section-muser .tag-free-muser {
@@ -2256,9 +2305,9 @@ body.section-muser .tag-free-muser {
   margin: 0 0 0.9rem;
   padding: 0.34rem 0.78rem;
   border-radius: 999px;
-  border: 1px solid rgba(255, 95, 95, 0.45);
-  background: rgba(255, 95, 95, 0.12);
-  color: #ffd7d7;
+  border: 1px solid rgba(109, 211, 139, 0.5);
+  background: rgba(109, 211, 139, 0.12);
+  color: #d7f6e1;
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -2269,7 +2318,7 @@ body.section-muser .reviews-main .article-content h2,
 body.section-muser .reviews-main .article-content h3 {
   margin-top: 2.1rem;
   margin-bottom: 0.8rem;
-  color: #f8ecdf;
+  color: #ebf8ef;
   font-family: 'Playfair Display', serif;
   line-height: 1.2;
 }
@@ -2278,13 +2327,13 @@ body.section-muser .reviews-main .article-content p,
 body.section-muser .reviews-main .article-content li,
 body.section-muser .reviews-main .article-content td,
 body.section-muser .reviews-main .article-content th {
-  color: rgba(245, 237, 224, 0.92);
+  color: rgba(232, 245, 235, 0.92);
 }
 
 body.section-muser .reviews-main .article-content hr {
   margin: 1.9rem 0;
   border: 0;
-  border-top: 1px dashed rgba(245, 237, 224, 0.34);
+  border-top: 1px dashed rgba(232, 245, 235, 0.32);
 }
 
 body.section-muser .reviews-main .article-content figure {
@@ -2295,7 +2344,7 @@ body.section-muser .reviews-main .article-content figure img,
 body.section-muser .reviews-main .article-content > img {
   width: 100%;
   border-radius: 14px;
-  border: 1px solid rgba(245, 237, 224, 0.24);
+  border: 1px solid rgba(232, 245, 235, 0.24);
   box-shadow: 0 14px 34px rgba(0, 0, 0, 0.28);
 }
 
@@ -2304,14 +2353,14 @@ body.section-muser .reviews-main .article-content table {
   border-collapse: separate;
   border-spacing: 0;
   margin: 1.5rem 0;
-  border: 1px solid rgba(245, 237, 224, 0.22);
+  border: 1px solid rgba(232, 245, 235, 0.22);
   border-radius: 14px;
   overflow: hidden;
 }
 
 body.section-muser .reviews-main .article-content thead th {
-  background: rgba(255, 95, 95, 0.16);
-  color: #fff0f0;
+  background: rgba(109, 211, 139, 0.16);
+  color: #eef9f1;
   font-weight: 700;
 }
 
@@ -2321,7 +2370,7 @@ body.section-muser .reviews-main .article-content tbody tr:nth-child(odd) {
 
 body.section-muser .reviews-main .article-content th,
 body.section-muser .reviews-main .article-content td {
-  border-color: rgba(245, 237, 224, 0.15);
+  border-color: rgba(232, 245, 235, 0.15);
 }
 
 body.section-muser .reviews-panel {
@@ -2388,7 +2437,7 @@ html:not(.dark) body.section-muser .reviews-main .article-content thead th {
 }
 
 html:not(.dark) body.section-muser .reviews-main .article-content tbody tr:nth-child(odd) {
-  background: rgba(99, 102, 241, 0.04);
+  background: rgba(47, 158, 68, 0.06);
 }
 
 body.section-muser article.muser-cinematic #single_header {
@@ -2397,16 +2446,16 @@ body.section-muser article.muser-cinematic #single_header {
   margin: 1.7rem auto 1.1rem;
   padding: clamp(1.1rem, 2vw, 1.6rem);
   border-radius: 18px;
-  border: 1px solid rgba(245, 237, 224, 0.24);
+  border: 1px solid rgba(232, 245, 235, 0.24);
   background:
-    radial-gradient(circle at 12% 10%, rgba(255, 95, 95, 0.26), transparent 36%),
-    linear-gradient(160deg, rgba(44, 17, 74, 0.74), rgba(11, 19, 41, 0.72));
+    radial-gradient(circle at 12% 10%, rgba(109, 211, 139, 0.24), transparent 36%),
+    linear-gradient(160deg, rgba(19, 84, 57, 0.74), rgba(9, 30, 24, 0.72));
   overflow: hidden;
 }
 
 body.section-muser article.muser-cinematic #single_header h1 {
   margin-bottom: 0.6rem;
-  color: #fff2e8;
+  color: #eefaf2;
   font-family: 'Playfair Display', serif;
   font-size: clamp(2rem, 5vw, 3rem);
   line-height: 1.08;
@@ -2416,7 +2465,7 @@ body.section-muser article.muser-cinematic #single_header h1 {
 }
 
 body.section-muser article.muser-cinematic #single_header .text-neutral-500 {
-  color: rgba(245, 237, 224, 0.84);
+  color: rgba(232, 245, 235, 0.84);
 }
 
 body.section-muser article.muser-cinematic .article-content {
@@ -2428,13 +2477,13 @@ body.section-muser article.muser-cinematic .article-content > p:first-of-type {
   margin-top: 0.2rem;
   font-size: clamp(1.14rem, 2.4vw, 1.32rem);
   line-height: 1.75;
-  color: #fff0e4;
+  color: #e9f7ee;
 }
 
 body.section-muser article.muser-cinematic .article-content > p:first-of-type::first-letter {
   float: left;
   margin: 0.18rem 0.45rem 0.05rem 0;
-  color: #ff8f8f;
+  color: #7ad89a;
   font-family: 'Playfair Display', serif;
   font-size: 3.4em;
   font-weight: 700;
@@ -2457,7 +2506,7 @@ body.section-muser article.muser-cinematic .article-content h2::after {
   width: min(132px, 36%);
   height: 2px;
   border-radius: 999px;
-  background: linear-gradient(90deg, rgba(255, 95, 95, 1), rgba(255, 95, 95, 0));
+  background: linear-gradient(90deg, rgba(109, 211, 139, 1), rgba(109, 211, 139, 0));
 }
 
 body.section-muser article.muser-cinematic .article-content h3 {
@@ -2472,34 +2521,34 @@ body.section-muser article.muser-cinematic .article-content > img {
 body.section-muser article.muser-cinematic .article-content figure img,
 body.section-muser article.muser-cinematic .article-content > img {
   border-radius: 16px;
-  border: 1px solid rgba(245, 237, 224, 0.28);
+  border: 1px solid rgba(232, 245, 235, 0.28);
   box-shadow: 0 18px 38px rgba(0, 0, 0, 0.34);
 }
 
 body.section-muser article.muser-cinematic .article-content blockquote {
   margin: 1.7rem 0;
   padding: 1rem 1.05rem;
-  border-left: 4px solid #ff5f5f;
+  border-left: 4px solid #6dd38b;
   border-radius: 0 12px 12px 0;
-  background: rgba(255, 95, 95, 0.1);
-  color: #fff2e6;
+  background: rgba(109, 211, 139, 0.12);
+  color: #ecf8ef;
   font-size: 1.14rem;
   line-height: 1.65;
 }
 
 body.section-muser article.muser-cinematic .reviews-panel > div {
-  border: 1px solid rgba(245, 237, 224, 0.24);
-  background: rgba(12, 18, 42, 0.55);
+  border: 1px solid rgba(232, 245, 235, 0.24);
+  background: rgba(9, 30, 24, 0.55);
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.24);
 }
 
 body.section-muser article.muser-cinematic .reviews-panel h2 {
-  color: #fff0e4;
+  color: #e9f7ee;
   font-family: 'Playfair Display', serif;
 }
 
 body.section-muser article.muser-cinematic .reviews-panel a {
-  color: rgba(245, 237, 224, 0.92);
+  color: rgba(232, 245, 235, 0.92);
 }
 
 body.section-muser article.muser-cinematic .reviews-panel a:hover,
@@ -2508,10 +2557,10 @@ body.section-muser article.muser-cinematic .reviews-panel a:focus-visible {
 }
 
 html:not(.dark) body.section-muser article.muser-cinematic #single_header {
-  border-color: rgba(99, 102, 241, 0.22);
+  border-color: rgba(47, 158, 68, 0.22);
   background:
-    radial-gradient(circle at 12% 10%, rgba(236, 72, 153, 0.18), transparent 36%),
-    linear-gradient(160deg, rgba(255, 255, 255, 0.95), rgba(243, 246, 255, 0.93));
+    radial-gradient(circle at 12% 10%, rgba(109, 211, 139, 0.18), transparent 36%),
+    linear-gradient(160deg, rgba(255, 255, 255, 0.95), rgba(239, 250, 243, 0.93));
 }
 
 html:not(.dark) body.section-muser article.muser-cinematic #single_header h1 {

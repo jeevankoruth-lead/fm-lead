@@ -34,9 +34,9 @@ enableRobotsTXT = true
   text = "#0A2342"
 
 [themes.muser]
-  primary = "#FF4F00"
-  background = "#FFF7F0"
-  text = "#1A1A1A"
+  primary = "#2F9E44"
+  background = "#EEF8F0"
+  text = "#16331F"
 
   [[menu.main]]
   name = "Focus Mindset"
