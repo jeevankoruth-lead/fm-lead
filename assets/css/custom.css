@@ -716,12 +716,12 @@ html.dark .fm-home-category-block {
 
 .fm-home-category-links a[href^="/muser/"]:hover,
 .fm-home-category-links a[href^="/muser/"]:focus-visible {
-  color: #ff8a2a;
+  color: #6fcf97;
 }
 
 html.dark .fm-home-category-links a[href^="/muser/"]:hover,
 html.dark .fm-home-category-links a[href^="/muser/"]:focus-visible {
-  color: #ffae67;
+  color: #9be7b5;
 }
 
 .fm-home-category-links a + a {
@@ -965,28 +965,28 @@ html.dark .fm-home-cta-button-focus:focus-visible {
 
 html.dark .fm-home-cta-muser {
   background:
-    radial-gradient(circle at 18% 20%, rgba(255, 79, 0, 0.2), transparent 38%),
-    radial-gradient(circle at 82% 85%, rgba(255, 175, 83, 0.15), transparent 42%),
-    linear-gradient(150deg, #352118 0%, #2a1b14 100%);
-  border-color: rgba(255, 137, 79, 0.28);
+    radial-gradient(circle at 18% 20%, rgba(47, 158, 68, 0.24), transparent 38%),
+    radial-gradient(circle at 82% 85%, rgba(109, 211, 139, 0.18), transparent 42%),
+    linear-gradient(150deg, #183527 0%, #142a20 100%);
+  border-color: rgba(109, 211, 139, 0.3);
 }
 
 html.dark .fm-home-cta-muser h3 {
-  color: #ffd9c2;
+  color: #d9f7e3;
   background: none;
   -webkit-text-fill-color: currentColor;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
 }
 
 html.dark .fm-home-cta-button-muser {
-  background: #ff7b42;
-  border-color: rgba(255, 210, 184, 0.28);
-  color: #2a1308;
+  background: #6dd38b;
+  border-color: rgba(166, 235, 191, 0.38);
+  color: #0f2518;
 }
 
 html.dark .fm-home-cta-button-muser:hover,
 html.dark .fm-home-cta-button-muser:focus-visible {
-  background: #ff905f;
+  background: #8ae0a4;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1032,12 +1032,12 @@ html.dark .fm-latest-card {
 
 .fm-latest-card h3 a[href^="/muser/"]:hover,
 .fm-latest-card h3 a[href^="/muser/"]:focus-visible {
-  color: #ff8a2a;
+  color: #6fcf97;
 }
 
 html.dark .fm-latest-card h3 a[href^="/muser/"]:hover,
 html.dark .fm-latest-card h3 a[href^="/muser/"]:focus-visible {
-  color: #ffae67;
+  color: #9be7b5;
 }
 
 .fm-latest-card p {
@@ -2020,8 +2020,8 @@ body.section-muser .muser-empty p {
   --fm-body-copy-comfortable: 1.72;
   --fm-card-radius: 14px;
   --fm-card-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
-  --fm-muser-cta-border-color: rgba(122, 41, 0, 0.2);
-  --fm-muser-accent: #ff5a1f;
+  --fm-muser-cta-border-color: rgba(47, 158, 68, 0.32);
+  --fm-muser-accent: #2f9e44;
 }
 
 html.dark {
@@ -2041,8 +2041,8 @@ html.dark {
   --fm-hero-grid-saturation: 0.82;
   --fm-hero-grid-contrast: 0.96;
   --fm-card-shadow: 0 10px 24px rgba(0, 0, 0, 0.32);
-  --fm-muser-cta-border-color: rgba(255, 210, 184, 0.28);
-  --fm-muser-accent: #ff7b42;
+  --fm-muser-cta-border-color: rgba(166, 235, 191, 0.36);
+  --fm-muser-accent: #6dd38b;
 }
 
 body.home-bg {
@@ -2659,13 +2659,22 @@ html:not(.dark) body.section-muser article.muser-cinematic .reviews-panel a:focu
   animation: none;
 }
 
+.fm-home-cta-muser {
+  background:
+    radial-gradient(circle at 18% 20%, rgba(47, 158, 68, 0.2), transparent 38%),
+    radial-gradient(circle at 82% 85%, rgba(109, 211, 139, 0.22), transparent 42%),
+    linear-gradient(150deg, #eef8f0 0%, #e5f4e8 100%);
+  border-color: rgba(47, 158, 68, 0.24);
+  animation: fmMuserCanvasDrift 9s ease-in-out infinite;
+}
+
 .fm-home-cta-muser h3 {
-  font-family: inherit;
-  text-shadow: none;
+  font-family: 'Playfair Display', serif;
+  text-shadow: 0 1px 0 rgba(238, 248, 240, 0.5);
 }
 
 .fm-home-cta-muser h3::after {
-  display: none;
+  display: block;
 }
 
 .fm-home-cta-button-muser {
