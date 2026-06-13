@@ -10,7 +10,6 @@ enableRobotsTXT = true
   images = ["/logo-v2.png"]
   robots = "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
   disableAssetsBusting = true
-  custom_CSS = ["css/custom.css"]
 
   [params.Author]
     name = "FM-Lead"
