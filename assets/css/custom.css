@@ -1,12 +1,61 @@
-/* Force article content and prose to full width */
+/* Article content width control */
 .article-content,
 .prose {
-  max-width: 100vw !important;
-  width: 100vw !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+  overflow-wrap: break-word !important;
+  word-wrap: break-word !important;
+}
+
+/* Ensure all text elements wrap properly */
+.article-content p,
+.article-content h1,
+.article-content h2,
+.article-content h3,
+.article-content h4,
+.article-content h5,
+.article-content h6,
+.article-content li,
+.article-content blockquote,
+.article-content pre,
+.article-content code,
+.article-content table,
+.prose p,
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6,
+.prose li,
+.prose blockquote,
+.prose pre,
+.prose code,
+.prose table {
+  max-width: 100% !important;
+  overflow-wrap: break-word !important;
+  word-wrap: break-word !important;
+  hyphens: auto !important;
+}
+
+/* Prevent code blocks from overflowing */
+.article-content pre,
+.prose pre {
+  overflow-x: auto !important;
+  white-space: pre-wrap !important;
+  word-break: break-all !important;
+}
+
+/* Prevent tables from overflowing */
+.article-content table,
+.prose table {
+  display: block !important;
+  overflow-x: auto !important;
+  max-width: 100% !important;
 }
 /* Improved figure and figcaption styling for visible, attractive captions */
 figure {
@@ -91,10 +140,27 @@ figcaption {
 html,
 body {
   min-height: 100%;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 html {
   font-size: 16px;
+}
+
+/* Prevent horizontal overflow globally */
+* {
+  box-sizing: border-box;
+}
+
+body,
+main,
+article,
+section,
+.article-content,
+.prose {
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body.home-bg {
